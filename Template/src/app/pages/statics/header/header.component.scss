@@ -1,14 +1,17 @@
 $primary-color: #FF6B6B;
 $secundary-color: #ecd24c;
-$button-color: #1A535C;
+$button-color: #048a9e;
 
 .toolbar{
   background-color: $primary-color;
   justify-content: space-between;
+  height: 80px;
+  //border-bottom: solid 4px #e93737;
+  box-shadow: 1px 6px 5px rgb(224, 44, 44);
 
   .menu {
     color: $button-color;
-    font-size: 40px;
+    font-size: 43px;
     cursor: pointer;
   }
 
@@ -22,7 +25,7 @@ $button-color: #1A535C;
 
     span{
       font-family: cursive;
-      font-size: 35px;
+      font-size: 38px;
       font-weight: 600;
       color: $secundary-color;
 
