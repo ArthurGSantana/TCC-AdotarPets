@@ -1,0 +1,22 @@
+<mat-toolbar class="toolbar d-flex">
+  <ng-container>
+    <button mat-button [matMenuTriggerFor]="menu">
+      <i class="material-icons menu"> menu </i>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>Item 1</button>
+      <button mat-menu-item>Item 2</button>
+    </mat-menu>
+  </ng-container>
+  <a routerLink="">
+    <div >
+      <span> Adota </span>
+      <img src="../../../../assets/pata-amarela.png" alt="pata-amarela">
+      <span> Pets </span>
+    </div>
+  </a>
+  <button mat-stroked-button class="login">
+    <i class="material-icons"> exit_to_app </i>
+    Login
+  </button>
+</mat-toolbar>

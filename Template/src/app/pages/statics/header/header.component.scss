@@ -1,0 +1,63 @@
+$primary-color: #FF6B6B;
+$secundary-color: #ecd24c;
+$button-color: #048a9e;
+
+.toolbar{
+  background-color: $primary-color;
+  justify-content: space-between;
+  height: 80px;
+  //border-bottom: solid 4px #e93737;
+  box-shadow: 1px 6px 5px rgb(224, 44, 44);
+
+  .menu {
+    color: $button-color;
+    font-size: 43px;
+    cursor: pointer;
+  }
+
+  a{
+    text-decoration: none;
+  }
+
+  div{
+    display: flex;
+    align-items: center;
+
+    span{
+      font-family: cursive;
+      font-size: 38px;
+      font-weight: 600;
+      color: $secundary-color;
+
+    }
+
+    img {
+      width: 100px;
+      height: 60px;
+    }
+  }
+
+  .login{
+    background-color: $primary-color;
+    color: $button-color;
+    width: 100px;
+    height: 45px;
+    font-size: 18px;
+    font-weight: 600;
+    border: solid 2px $button-color;
+
+    i{
+      margin-left: -7px;
+      font-weight: 600;
+      font-size: 30px;
+    }
+  }
+
+  .login:hover {
+    background-color: $button-color;
+    color: $primary-color;
+    border: solid 2px $primary-color;
+  }
+
+}
+
