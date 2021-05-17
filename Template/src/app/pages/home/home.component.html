@@ -1,75 +1,80 @@
 <app-header></app-header>
+<app-sidenav *ngIf="ativaSidenav"></app-sidenav>
 
 <div class="container-card">
   <mat-card class="mat-card">
     <mat-card-title class="cardTitle">
-      Procure seu Pet
+      Procure seu Pet!
     </mat-card-title>
 
     <mat-card-content class="cardContainer">
       <div class="selectTop">
-        <mat-form-field appearance="outline">
-          <mat-label>Favorite food</mat-label>
-          <mat-select  name="food">
-            <mat-option >
-
+        <mat-form-field appearance="outline" class="mat-form">
+          <mat-label>Estado</mat-label>
+          <mat-select name="estado" [(ngModel)]="estadoSelecionado" [disabled]="mostraTodos">
+            <mat-option *ngFor="let estado of estados" [value]=estado>
+              {{estado}}
             </mat-option>
           </mat-select>
         </mat-form-field>
 
-        <mat-form-field appearance="outline">
-          <mat-label>Favorite food</mat-label>
-          <mat-select  name="food">
-            <mat-option >
-
+        <mat-form-field appearance="outline" class="mat-form">
+          <mat-label>Porte</mat-label>
+          <mat-select name="porte" [(ngModel)]="porteSelecionado" [disabled]="mostraTodos">
+            <mat-option *ngFor="let porte of portes" [value]=porte>
+              {{porte}}
             </mat-option>
           </mat-select>
         </mat-form-field>
       </div>
 
       <div class="selectMid">
-        <mat-form-field appearance="outline">
-          <mat-label>Favorite food</mat-label>
-          <mat-select  name="food">
-            <mat-option >
-
+        <mat-form-field appearance="outline" class="mat-form">
+          <mat-label>Cidade</mat-label>
+          <mat-select name="cidade" [(ngModel)]="cidadeSelecionada" [disabled]="mostraTodos">
+            <mat-option *ngFor="let cidade of cidades" [value]=cidade>
+              {{cidade}}
             </mat-option>
           </mat-select>
         </mat-form-field>
 
-        <mat-form-field appearance="outline">
-          <mat-label>Favorite food</mat-label>
-          <mat-select  name="food">
-            <mat-option >
-
+        <mat-form-field appearance="outline" class="mat-form">
+          <mat-label>Sexo</mat-label>
+          <mat-select name="sexo" [(ngModel)]="sexoSelecionado" [disabled]="mostraTodos">
+            <mat-option *ngFor="let sex of sexo" [value]=sex>
+              {{sex}}
             </mat-option>
           </mat-select>
         </mat-form-field>
       </div>
 
       <div class="selectBottom">
-        <mat-form-field appearance="outline">
-          <mat-label>Favorite food</mat-label>
-          <mat-select  name="food">
-            <mat-option >
-
+        <mat-form-field appearance="outline" class="mat-form">
+          <mat-label>Espécie</mat-label>
+          <mat-select name="especie" [(ngModel)]="especieSelecionada" [disabled]="mostraTodos">
+            <mat-option *ngFor="let especie of especies" [value]=especie>
+              {{especie}}
             </mat-option>
           </mat-select>
         </mat-form-field>
 
-        <mat-form-field appearance="outline">
-          <mat-label>Favorite food</mat-label>
-          <mat-select  name="food">
-            <mat-option >
-
+        <mat-form-field appearance="outline" class="mat-form">
+          <mat-label>Mostrar todos? (opcional)</mat-label>
+          <mat-select name="all" [(ngModel)]="allSelecionado">
+            <mat-option *ngFor="let opt of all" [value]=opt (click)="allControl()">
+              {{opt}}
             </mat-option>
           </mat-select>
         </mat-form-field>
       </div>
 
+      <button mat-raised-button class="btn-card">
+        Procurar
+        <i class="material-icons">search</i>
+      </button>
+
     </mat-card-content>
 
   </mat-card>
 </div>
-
 

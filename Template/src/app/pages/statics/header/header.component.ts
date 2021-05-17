@@ -1,3 +1,4 @@
+import { HomeComponent } from './../../home/home.component';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private homeComp: HomeComponent
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  ativaSidenav(): void{
+    this.homeComp.recebeSidenav();
   }
 
 }
