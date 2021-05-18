@@ -1,3 +1,4 @@
+import { StaticsService } from './../shared/statics.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidenavComponent implements OnInit {
 
-  constructor() { }
+  ativaSidenav: boolean = false;
+
+  constructor(
+    private staticServ: StaticsService
+  ) { }
 
   ngOnInit(): void {
+    this.staticServ.openSidenav.subscribe(res => {
+      res === true ? this.ativaSidenav = true : this.ativaSidenav = true;
+    });
   }
 
 }

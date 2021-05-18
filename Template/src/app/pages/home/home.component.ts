@@ -24,7 +24,6 @@ export class HomeComponent implements OnInit {
   allSelecionado: string = "";
 
   mostraTodos: boolean = false;
-  ativaSidenav: boolean = false;
 
   constructor(
     private homeServ: HomeService
@@ -44,9 +43,5 @@ export class HomeComponent implements OnInit {
   allControl(): void{
     this.allSelecionado === "Sim, me mostre todos!" ? this.mostraTodos = true : this.mostraTodos = false;
   };
-
-  recebeSidenav(): void{
-    this.ativaSidenav === false ? this.ativaSidenav = true : this.ativaSidenav = false;
-  }
 
 }

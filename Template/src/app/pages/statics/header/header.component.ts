@@ -1,5 +1,6 @@
-import { HomeComponent } from './../../home/home.component';
+import { StaticsService } from './../shared/statics.service';
 import { Component, OnInit } from '@angular/core';
+import { SidenavComponent } from './../sidenav/sidenav.component';
 
 @Component({
   selector: 'app-header',
@@ -8,15 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  openSide: boolean = false;
+
   constructor(
-    private homeComp: HomeComponent
+    private staticServ: StaticsService
   ) { }
 
   ngOnInit(): void {
   }
 
   ativaSidenav(): void{
-    this.homeComp.recebeSidenav();
-  }
+    this.openSide ? this.openSide = false : this.openSide = true;
+    this.staticServ.openSidenav.emit(this.openSide);
+  };
 
 }

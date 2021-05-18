@@ -1,5 +1,43 @@
-<mat-sidenav-container class="sideContainer">
-  <mat-sidenav  #sidenav mode="side" opened>
-    conteudo
+<mat-sidenav-container class="navContainer">
+  <mat-sidenav class="sideContainer" #sidenav [mode]="'side'" [opened]="ativaSidenav" fixedInViewport="true">
+    <mat-nav-list class="nav-list">
+      <a mat-list-item (click)="ativaSidenav = false" class="a-back">
+        <i class="material-icons back">
+            keyboard_backspace
+        </i>
+      </a>
+
+      <a mat-list-item class="list-item inicial">
+        <span>Pagina Inicial</span>
+      </a>
+
+      <a mat-list-item class="list-item">
+        <span>Quem somos?</span>
+      </a>
+
+      <a mat-list-item class="list-item">
+        <span>Perdi meu Pet!</span>
+      </a>
+
+      <a mat-list-item class="list-item">
+        <span>Achei um Pet!</span>
+      </a>
+
+      <a mat-list-item class="list-item">
+        <span>ONGs</span>
+      </a>
+
+      <a mat-list-item class="list-item">
+        <span>Informações</span>
+      </a>
+
+      <a mat-list-item class="list-item">
+        <span>Parcerias</span>
+      </a>
+
+      <a mat-list-item class="list-item">
+        <span>Dúvidas</span>
+      </a>
+    </mat-nav-list>
   </mat-sidenav>
 </mat-sidenav-container>
