@@ -1,4 +1,6 @@
+import { StaticsService } from './../shared/statics.service';
 import { Component, OnInit } from '@angular/core';
+import { SidenavComponent } from './../sidenav/sidenav.component';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  openSide: boolean = false;
+
+  constructor(
+    private staticServ: StaticsService
+  ) { }
 
   ngOnInit(): void {
   }
+
+  ativaSidenav(): void{
+    this.openSide ? this.openSide = false : this.openSide = true;
+    this.staticServ.openSidenav.emit(this.openSide);
+  };
 
 }
