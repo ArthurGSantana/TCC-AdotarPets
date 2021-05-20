@@ -1,14 +1,15 @@
-$card-color: #4ECDC4;
-$button-color: #057f92;
-$secundary-color: rgb(248, 245, 66);
+$primary-color: #780000;
+$secundary-color: #fdf0d5;
+$button-color: #c1121f;
 
 body {
-  background-color: rgb(148, 94, 28) !important;
+  background-image: url('../../../assets/fundo-patinha.png');
+  //height: 100%;
 }
 
 .container-card {
   width: 100%;
-  height: 850px;
+  height: 80%;
   display: flex;
   justify-content: center;
 
@@ -17,15 +18,15 @@ body {
     height: 430px;
     margin: 50px 0;
     border-radius: 15px;
-    border: solid 3px $button-color;
-    background-image: linear-gradient($card-color, white);
+    border: solid 3px $primary-color;
+    background-image: linear-gradient($button-color, white);
     display: flex;
     flex-direction: column;
     align-items: center;
 
 
     .cardTitle {
-      color: $button-color;
+      color: $secundary-color;
       font-size: 35px;
       font-family: cursive;
       font-weight: bolder;
@@ -67,8 +68,8 @@ body {
         width: 180px;
         height: 45px;
         font-size: 20px;
-        background-image: linear-gradient($button-color, white);
-        color: $button-color;
+        background-image: linear-gradient($primary-color, $button-color);
+        color: $secundary-color;
       }
     }
 
@@ -76,11 +77,29 @@ body {
 }
 
 ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
-  color: $button-color;
+  color: $primary-color;
 };
 
+::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+  color: $primary-color;
+}
+
 ::ng-deep .mat-form-field-label {
-  color: $button-color;
+  color: $primary-color;
   font-size: 15px !important;
 };
+
+::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
+  color:$primary-color;
+}
+
+::ng-deep .mat-select-arrow  {
+  color: $primary-color;
+}
+
+::ng-deep .mat-select-arrow:focus {
+  color: $primary-color;
+}
+
+
 
