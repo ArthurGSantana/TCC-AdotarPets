@@ -1,10 +1,10 @@
-$primary-color: #048a9e;
-$secundary-color: rgb(248, 245, 66);
-$card-color: #4ECDC4;
+$primary-color: #780000;
+$secundary-color: #fdf0d5;
+$button-color: #c1121f;
 
 .sideContainer {
-  background-image: linear-gradient($primary-color, $card-color);
-  box-shadow: 0px 6px 5px #0a5b68;
+  background-image: linear-gradient($primary-color, #851e1e);
+  box-shadow: 0px 6px 5px #6d0202;
   width: 150px;
   height: 100%;
 
@@ -31,7 +31,7 @@ $card-color: #4ECDC4;
   }
 
   .list-item {
-    border-bottom: 1px solid $primary-color;
+    border-bottom: 1px solid #5a0505;
     height: 65px;
 
     span {
