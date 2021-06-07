@@ -16,7 +16,9 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list'
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
+import { MatInputModule } from '@angular/material/input';
+import { MatStepperModule } from '@angular/material/stepper';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './pages/statics/header/header.component';
@@ -24,6 +26,9 @@ import { SidenavComponent } from './pages/statics/sidenav/sidenav.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { QuemSomosComponent } from './pages/quem-somos/quem-somos.component';
+import { AchadosProcuradosComponent } from './pages/achados-procurados/achados-procurados.component';
+import { InformacoesComponent } from './pages/informacoes/informacoes.component';
+import { DuvidasComponent } from './pages/duvidas/duvidas.component';
 
 
 @NgModule({
@@ -33,7 +38,10 @@ import { QuemSomosComponent } from './pages/quem-somos/quem-somos.component';
     SidenavComponent,
     HomeComponent,
     LoginComponent,
-    QuemSomosComponent
+    QuemSomosComponent,
+    AchadosProcuradosComponent,
+    InformacoesComponent,
+    DuvidasComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +60,9 @@ import { QuemSomosComponent } from './pages/quem-somos/quem-somos.component';
     MatSnackBarModule,
     MatFormFieldModule,
     MatInputModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatStepperModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
