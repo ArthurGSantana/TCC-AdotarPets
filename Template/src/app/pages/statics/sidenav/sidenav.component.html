@@ -7,19 +7,19 @@
         </i>
       </a>
 
-      <a mat-list-item class="list-item inicial">
+      <a mat-list-item class="list-item inicial" routerLink=''>
         <span>Pagina Inicial</span>
       </a>
 
-      <a mat-list-item class="list-item">
+      <a mat-list-item class="list-item" routerLink='/quem-somos'>
         <span>Quem somos?</span>
       </a>
 
-      <a mat-list-item class="list-item">
+      <a mat-list-item class="list-item" [routerLink]="['/achados-perdidos/perdido']">
         <span>Perdi meu Pet!</span>
       </a>
 
-      <a mat-list-item class="list-item">
+      <a mat-list-item class="list-item" [routerLink]="['/achados-perdidos/achado']">
         <span>Achei um Pet!</span>
       </a>
 
@@ -27,17 +27,14 @@
         <span>ONGs</span>
       </a>
 
-      <a mat-list-item class="list-item">
-        <span>Informações</span>
+      <a mat-list-item class="list-item" [routerLink]="['/informacoes']">
+        <span>Contatos</span>
       </a>
 
-      <a mat-list-item class="list-item">
-        <span>Parcerias</span>
+      <a mat-list-item class="list-item" [routerLink]="['/duvidas']">
+        <span style="margin-left: 28px;">Por que adotar?</span>
       </a>
 
-      <a mat-list-item class="list-item">
-        <span>Dúvidas</span>
-      </a>
     </mat-nav-list>
   </mat-sidenav>
 </mat-sidenav-container>

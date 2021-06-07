@@ -1,0 +1,147 @@
+<body>
+  <app-header></app-header>
+  <app-sidenav></app-sidenav>
+
+  <div class="card-container">
+    <mat-card class="card">
+        <mat-card-header class="header">
+            <mat-card-title class="title">{{title}}</mat-card-title>
+            <i class="material-icons" (click)="verifica()">contact_support</i>
+
+        </mat-card-header>
+
+        <mat-card-content>
+          <mat-horizontal-stepper linear #stepper class="steper">
+            <mat-step [stepControl]="petForm">
+              <form [formGroup]="petForm">
+                <ng-template matStepLabel>Informações sobre o pet</ng-template>
+                <div class="div-container primeira-div">
+                  <mat-form-field appearance="outline" class="form-field" >
+                    <mat-label>Espécie</mat-label>
+                    <mat-select  name="food" formControlName="especie" >
+                      <mat-option *ngFor="let especie of especies" [value]="especie">
+                        {{especie}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+
+                  <mat-form-field appearance="outline" class="form-field" >
+                    <mat-label>Porte</mat-label>
+                    <mat-select  name="food" formControlName="tamanho">
+                      <mat-option *ngFor="let tamanho of tamanhos" [value]="tamanho">
+                        {{tamanho}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+
+                <div class="div-container">
+                  <mat-form-field class="" appearance="outline" class="form-field">
+                    <mat-label>Nome (opcional)</mat-label>
+                    <input matInput placeholder="Coloque o nome do pet" formControlName="nome" >
+                  </mat-form-field>
+
+                  <mat-form-field class="" appearance="outline" class="form-field" >
+                    <mat-label>Cidade</mat-label>
+                    <input matInput formControlName="cidade">
+                  </mat-form-field>
+                </div>
+
+                <div class="text-container">
+                  <mat-form-field appearance="outline" class="textarea" >
+                    <mat-label>Informações sobre o pet</mat-label>
+                    <textarea matInput formControlName="infos" style="resize: none"></textarea>
+                  </mat-form-field>
+                </div>
+
+                <div class="img-container">
+                  <span>Adicione imagens do pet</span>
+                  <button mat-raised-button class="btn" (click)="input.click()">
+                    Adicionar
+                    <i class="material-icons">image</i>
+                  </button>
+                  <input type="file" #input hidden>
+                </div>
+                <button mat-raised-button matStepperNext class="next">Próximo</button>
+              </form>
+            </mat-step>
+
+            <mat-step [stepControl]="clientForm">
+              <form [formGroup]="clientForm">
+                <ng-template matStepLabel>Informações sobre você</ng-template>
+                <div class=" div-client">
+                  <div class="div-interior">
+                    <i class="material-icons">account_box</i>
+                    <mat-form-field appearance="outline" class="form-field-client" >
+                      <mat-label>Nome</mat-label>
+                      <input matInput formControlName="nome" >
+                    </mat-form-field>
+                  </div>
+
+                  <div class="div-interior">
+                    <i class="material-icons">location_city</i>
+                    <mat-form-field appearance="outline" class="form-field-client" >
+                      <mat-label>Cidade</mat-label>
+                      <input matInput formControlName="cidade" >
+                    </mat-form-field>
+                  </div>
+                </div>
+
+                <div class="div-container div-client">
+                  <div class="div-interior">
+                    <i class="material-icons">smartphone</i>
+                    <mat-form-field appearance="outline" class="form-field-client" >
+                      <mat-label>Telefone</mat-label>
+                      <input matInput formControlName="telefone" >
+                    </mat-form-field>
+                  </div>
+
+                  <div class="div-interior">
+                    <i class="material-icons">email</i>
+                    <mat-form-field appearance="outline" class="form-field-client" >
+                      <mat-label>E-mail</mat-label>
+                      <input matInput formControlName="email" >
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div class="buttons">
+                  <button mat-raised-button matStepperPrevious class="antes">Anterior</button>
+                  <button mat-raised-button matStepperNext class="prox">Próximo</button>
+                </div>
+              </form>
+            </mat-step>
+
+            <mat-step>
+              <ng-template matStepLabel>Finalizar</ng-template>
+              <div class="step-finish">
+                <mat-card class="card-finish">
+                  <mat-card-content class="content-finish">
+                    <section>
+                      <h1>
+                        <i class="material-icons">pets</i>
+                      </h1>
+                      <span>
+                        Se os dados anteriores estiverem corretos,
+                        clique em <mark>Finalizar processo</mark> para que as informações
+                        cheguem até nós. Manteremos contato por WhatsApp ou pelo seu E-mail.
+                        <h2>Aguarde...</h2>
+                      </span>
+                    </section>
+                  </mat-card-content>
+                </mat-card>
+                <div class="button-div">
+                  <button mat-raised-button>Finalizar processo</button>
+                </div>
+                <div class="div-button">
+                  <button mat-raised-button matStepperPrevious class="anterior">Anterior</button>
+                </div>
+              </div>
+            </mat-step>
+          </mat-horizontal-stepper>
+        </mat-card-content>
+
+
+    </mat-card>
+  </div>
+
+</body>

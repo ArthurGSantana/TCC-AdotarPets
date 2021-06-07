@@ -19,14 +19,15 @@ body {
     margin: 50px 0;
     border-radius: 15px;
     border: solid 3px $primary-color;
-    background-image: linear-gradient($button-color, white);
+    //background-image: linear-gradient($button-color, $secundary-color);
+    background-color: $secundary-color;
     display: flex;
     flex-direction: column;
     align-items: center;
 
 
     .cardTitle {
-      color: $secundary-color;
+      color: $primary-color;
       font-size: 35px;
       font-family: cursive;
       font-weight: bolder;
