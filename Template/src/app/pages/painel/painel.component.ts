@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PainelComponent implements OnInit {
 
+  controlBorder: number = 1;
+
   constructor() { }
 
   ngOnInit(): void {
