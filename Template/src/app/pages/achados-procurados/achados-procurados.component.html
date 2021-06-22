@@ -6,7 +6,7 @@
     <mat-card class="card">
         <mat-card-header class="header">
             <mat-card-title class="title">{{title}}</mat-card-title>
-            <i class="material-icons" (click)="verifica()">contact_support</i>
+            <i class="material-icons" (click)="openDialog()">contact_support</i>
 
         </mat-card-header>
 
@@ -55,7 +55,7 @@
                 </div>
 
                 <div class="img-container">
-                  <span>Adicione imagens do pet</span>
+                  <span>Adicione imagens do pet <span style="font-size: 15px;">(opcional)</span></span>
                   <button mat-raised-button class="btn" (click)="input.click()">
                     Adicionar
                     <i class="material-icons">image</i>

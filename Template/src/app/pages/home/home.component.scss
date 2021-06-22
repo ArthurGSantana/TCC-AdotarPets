@@ -29,13 +29,13 @@ body {
     .cardTitle {
       color: $primary-color;
       font-size: 35px;
-      font-family: cursive;
-      font-weight: bolder;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 800;
       height: 50px;
     }
 
     .cardContainer {
-      width: 900px;
+      width: 100%;
       height: 350px;
       display: flex;
       flex-direction: column;
@@ -74,6 +74,13 @@ body {
       }
     }
 
+
+  }
+  @media (max-width: 950px){
+
+    .mat-card {
+      width: 480px;
+    }
   }
 }
 

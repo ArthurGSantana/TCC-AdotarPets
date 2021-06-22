@@ -1,8 +1,71 @@
 $primary-color: #780000;
-$secundary-color: #faf2e3ec;
-$button-color: #c1121f;
+$secundary-color: #faf2e3de;
+$button-color: #c1121ea6;
 
 body {
   background-image: url('../../../assets/fundo-patinha.png');
+
+  .card-container {
+    height: 80%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    .card {
+      box-sizing: border-box;
+      margin-top: 50px;
+      height: 75%;
+      width: 25%;
+      border-radius: 10px;
+      border: 2px solid $primary-color;
+      background-color: $secundary-color;
+
+      .cabecalho {
+        height: 40%;
+        width: 100%;
+        border: 2px solid $primary-color;
+
+        img {
+          image-rendering: pixelated;
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      .content {
+        text-align: start;
+        overflow: auto;
+
+        h1 {
+          color: $primary-color;
+          font-weight: 700;
+          font-family: Arial, Helvetica, sans-serif;
+        }
+
+        div {
+          color: black;
+          font-family: Arial, Helvetica, sans-serif;
+          font-size: 19px;
+          font-weight: 500;
+          text-overflow: ellipsis;
+          overflow: hidden;
+
+        }
+
+        @media (max-width: 1190px) {
+          div {
+            text-overflow: ellipsis;
+            overflow: hidden;
+          }
+        }
+      }
+    }
+
+    i {
+      font-size: 55px;
+      color: $primary-color;
+    }
+  }
 
 }
