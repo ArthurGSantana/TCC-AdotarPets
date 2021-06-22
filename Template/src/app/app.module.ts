@@ -19,6 +19,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatStepperModule } from '@angular/material/stepper';
 import {MatGridListModule} from '@angular/material/grid-list';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './pages/statics/header/header.component';
@@ -29,6 +30,7 @@ import { QuemSomosComponent } from './pages/quem-somos/quem-somos.component';
 import { AchadosProcuradosComponent } from './pages/achados-procurados/achados-procurados.component';
 import { InformacoesComponent } from './pages/informacoes/informacoes.component';
 import { DuvidasComponent } from './pages/duvidas/duvidas.component';
+import { DialogInfoComponent } from './shared/dialog-info/dialog-info.component';
 
 
 @NgModule({
@@ -41,7 +43,8 @@ import { DuvidasComponent } from './pages/duvidas/duvidas.component';
     QuemSomosComponent,
     AchadosProcuradosComponent,
     InformacoesComponent,
-    DuvidasComponent
+    DuvidasComponent,
+    DialogInfoComponent
   ],
   imports: [
     BrowserModule,
@@ -62,7 +65,8 @@ import { DuvidasComponent } from './pages/duvidas/duvidas.component';
     MatInputModule,
     ReactiveFormsModule,
     MatStepperModule,
-    MatGridListModule
+    MatGridListModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,15 @@
+$primary-color: #780000;
+$secundary-color: #fdf0d5;
+$button-color: #c1121f;
+
+.container {
+  padding: 0 !important;
+  width: 300px;
+  height: 300px;
+
+  .titulo {
+    font-size: 25px;
+    font-weight: 700;
+    color: $primary-color;
+  }
+}

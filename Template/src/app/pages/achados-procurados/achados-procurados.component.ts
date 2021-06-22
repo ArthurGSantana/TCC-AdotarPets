@@ -2,7 +2,9 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import {STEPPER_GLOBAL_OPTIONS} from '@angular/cdk/stepper';
+import { MatDialog } from '@angular/material/dialog';
 
+import { DialogInfoComponent } from './../../shared/dialog-info/dialog-info.component';
 import { HomeService } from './../home/shared/home.service';
 
 @Component({
@@ -27,7 +29,8 @@ export class AchadosProcuradosComponent implements OnInit, OnDestroy {
     private router: ActivatedRoute,
     private route: Router,
     private homeServ: HomeService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private dialog: MatDialog
   ) { }
 
   ngOnInit(): void {
@@ -63,6 +66,10 @@ export class AchadosProcuradosComponent implements OnInit, OnDestroy {
 
   verifica(): void{
     this.info === 'perdido' ? this.title = 'Perdeu seu Pet?' : this.title = 'Achou um Pet?'
+  };
+
+  openDialog(): void{
+    this.dialog.open(DialogInfoComponent);
   }
 
 }

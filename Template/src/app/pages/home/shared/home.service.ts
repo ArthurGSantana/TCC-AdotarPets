@@ -9,7 +9,7 @@ export class HomeService {
 
   estados: string[] = ["São Paulo"];
   cidades: string[] = ["Batatais", "São Joaquim da Barra"];
-  especies: string[] = ["Cachorro", "Gato", "Salamandra"];
+  especies: string[] = ["Cachorro", "Gato"];
   portes: string[]= ["Pequeno", "Médio", "Grande"];
   sexo: string[] = ["Fêmea", "Macho"];
   all: string[] = ["Não, já sei o que eu quero!", "Sim, me mostre todos!"];
