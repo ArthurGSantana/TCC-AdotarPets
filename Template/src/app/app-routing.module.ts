@@ -1,7 +1,8 @@
-import { DuvidasComponent } from './pages/duvidas/duvidas.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import { PainelComponent } from './pages/painel/painel.component';
+import { DuvidasComponent } from './pages/duvidas/duvidas.component';
 import { AchadosProcuradosComponent } from './pages/achados-procurados/achados-procurados.component';
 import { QuemSomosComponent } from './pages/quem-somos/quem-somos.component';
 import { LoginComponent } from './pages/login/login.component';
@@ -15,7 +16,8 @@ const routes: Routes = [
   { path: 'quem-somos', component: QuemSomosComponent},
   { path: 'achados-perdidos/:info', component: AchadosProcuradosComponent },
   { path: 'informacoes', component: InformacoesComponent },
-  { path: 'duvidas', component: DuvidasComponent }
+  { path: 'duvidas', component: DuvidasComponent },
+  { path: 'painel', component: PainelComponent }
 ];
 
 @NgModule({

@@ -1,3 +1,7 @@
+$primary-color: #780000;
+$secundary-color: #f7f1e5f8;
+$button-color: #c1121f;
+
 
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
@@ -37,3 +41,12 @@ $Template-theme: mat-light-theme((
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.snack {
+  background-color: white;
+  color: $primary-color;
+  border: 2px solid $primary-color;
+  font-weight: 600;
+  font-size: 20%;
+}

@@ -31,6 +31,8 @@ import { AchadosProcuradosComponent } from './pages/achados-procurados/achados-p
 import { InformacoesComponent } from './pages/informacoes/informacoes.component';
 import { DuvidasComponent } from './pages/duvidas/duvidas.component';
 import { DialogInfoComponent } from './shared/dialog-info/dialog-info.component';
+import { PainelComponent } from './pages/painel/painel.component';
+import { HeaderLoginComponent } from './pages/statics/header-login/header-login.component';
 
 
 @NgModule({
@@ -44,7 +46,9 @@ import { DialogInfoComponent } from './shared/dialog-info/dialog-info.component'
     AchadosProcuradosComponent,
     InformacoesComponent,
     DuvidasComponent,
-    DialogInfoComponent
+    DialogInfoComponent,
+    PainelComponent,
+    HeaderLoginComponent
   ],
   imports: [
     BrowserModule,
