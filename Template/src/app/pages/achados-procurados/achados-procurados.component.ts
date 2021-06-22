@@ -65,7 +65,7 @@ export class AchadosProcuradosComponent implements OnInit, OnDestroy {
   }
 
   verifica(): void{
-    this.info === 'perdido' ? this.title = 'Perdeu seu Pet?' : this.title = 'Achou um Pet?'
+    this.info === 'perdido' ? this.title = 'Perdeu seu Pet?' : this.title = 'Achou algum Pet?'
   };
 
   openDialog(): void{

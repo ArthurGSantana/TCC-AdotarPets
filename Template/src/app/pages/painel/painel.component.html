@@ -1,4 +1,23 @@
 <body>
 
   <app-header-login></app-header-login>
+
+  <mat-toolbar class="toolbar">
+
+    <div class="content-info" [class.border-focus]="controlBorder === 1" (click)="controlBorder=1">
+      <i class="material-icons">apps</i>
+      <span>Informações gerais</span>
+    </div>
+
+    <div class="content-info" [class.border-focus]="controlBorder === 2" (click)="controlBorder=2">
+      <i class="material-icons">queue</i>
+      <span>Adicionar/Remover</span>
+    </div>
+
+    <div class="content-info" [class.border-focus]="controlBorder === 3" (click)="controlBorder=3">
+      <i class="material-icons">error</i>
+      <span>Avisos</span>
+    </div>
+
+  </mat-toolbar>
 </body>
