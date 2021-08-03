@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import { AvisosComponent } from './pages/painel/components/avisos/avisos.component';
+import { AdicionarPetComponent } from './pages/painel/components/adicionar-pet/adicionar-pet.component';
+import { InformacoesGeraisComponent } from './pages/painel/components/informacoes-gerais/informacoes-gerais.component';
 import { PainelComponent } from './pages/painel/painel.component';
 import { DuvidasComponent } from './pages/duvidas/duvidas.component';
 import { AchadosProcuradosComponent } from './pages/achados-procurados/achados-procurados.component';
@@ -17,7 +20,11 @@ const routes: Routes = [
   { path: 'achados-perdidos/:info', component: AchadosProcuradosComponent },
   { path: 'informacoes', component: InformacoesComponent },
   { path: 'duvidas', component: DuvidasComponent },
-  { path: 'painel', component: PainelComponent }
+  { path: 'painel', component: PainelComponent, children: [
+    { path: 'informacoes-gerais', component: InformacoesGeraisComponent },
+    { path: 'editar', component: AdicionarPetComponent },
+    { path: 'avisos', component: AvisosComponent }
+  ]}
 ];
 
 @NgModule({

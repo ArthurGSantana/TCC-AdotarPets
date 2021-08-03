@@ -1,3 +1,4 @@
+import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
@@ -7,16 +8,21 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class PainelService {
 
 constructor(
-  private snack: MatSnackBar
+  private snack: MatSnackBar,
+  private firebase: AngularFireDatabase
 ) { }
 
   showMessage(msg: string): void{
     this.snack.open(msg, 'X', {
-      duration: 4000,
+      duration: 3000,
       horizontalPosition: 'center',
       verticalPosition: 'top',
       panelClass: 'snack'
     })
-  }
+  };
+
+  getAll(): AngularFireList<any> {
+    return this.firebase.list('contatos');
+  };
 
 }

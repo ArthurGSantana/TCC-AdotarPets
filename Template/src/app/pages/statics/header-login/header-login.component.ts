@@ -1,5 +1,8 @@
-import { PainelService } from './shared/painel.service';
+import { AngularFireList } from '@angular/fire/database';
 import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+
+import { PainelService } from './shared/painel.service';
 
 @Component({
   selector: 'app-header-login',
@@ -9,6 +12,7 @@ import { AfterViewInit, Component, OnInit } from '@angular/core';
 export class HeaderLoginComponent implements OnInit, AfterViewInit {
 
   ONG: string = 'ONG ainda não cadastrada';
+  contatos!: AngularFireList<any>;
 
   constructor(
     private painelService: PainelService
@@ -18,6 +22,13 @@ export class HeaderLoginComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    this.painelService.showMessage(`Boas vindas ${this.ONG}! Seu painel está pronto!`)
+    this.painelService.showMessage(`Boas vindas ${this.ONG}! Seu painel está pronto!`);
+    this.contatos = this.painelService.getAll();
+
+  }
+
+  click() {
+    console.log(this.contatos);
+
   }
 }
