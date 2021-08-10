@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 
+// Angular Material
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -20,6 +21,10 @@ import { MatStepperModule } from '@angular/material/stepper';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { MatDialogModule } from '@angular/material/dialog';
 
+//PrimeNg
+import { ButtonModule } from 'primeng/button';
+
+//Componentes
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './pages/statics/header/header.component';
 import { SidenavComponent } from './pages/statics/sidenav/sidenav.component';
@@ -40,6 +45,7 @@ import { AvisosComponent } from './pages/painel/components/avisos/avisos.compone
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { environment } from '../environments/environment';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 
 @NgModule({
@@ -81,7 +87,9 @@ import { environment } from '../environments/environment';
     MatGridListModule,
     MatDialogModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    AngularFirestoreModule,
+    ButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

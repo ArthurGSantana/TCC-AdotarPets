@@ -12,7 +12,8 @@ import { PainelService } from './shared/painel.service';
 export class HeaderLoginComponent implements OnInit, AfterViewInit {
 
   ONG: string = 'ONG ainda não cadastrada';
-  contatos!: AngularFireList<any>;
+  contatos!: any[];
+  item$!: Observable<any[]>;
 
   constructor(
     private painelService: PainelService
@@ -23,7 +24,9 @@ export class HeaderLoginComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     this.painelService.showMessage(`Boas vindas ${this.ONG}! Seu painel está pronto!`);
-    this.contatos = this.painelService.getAll();
+    this.painelService.getAll().subscribe(res => {
+      this.contatos = res;
+    });
 
   }
 

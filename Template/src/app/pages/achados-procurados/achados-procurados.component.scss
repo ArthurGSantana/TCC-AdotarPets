@@ -125,7 +125,7 @@ body {
           background-color: $primary-color;
           float: right;
           margin-right: -20px;
-          margin-top: 15px;
+          margin-top: -25px;
         }
 
         .buttons {
@@ -139,6 +139,7 @@ body {
             width: 130px;
             color: white;
             background-color: $primary-color;
+            margin-top: -40px;
           }
 
           .antes {
@@ -147,6 +148,7 @@ body {
             color: $primary-color;
             background-color: white;
             border: 1px solid $primary-color;
+            margin-top: -40px;
           }
         }
 
@@ -201,7 +203,7 @@ body {
           }
 
           .button-div {
-            width: 44%;
+            width: 40%;
 
             button {
               width: 100% !important;
@@ -217,7 +219,7 @@ body {
             width: 100%;
             display: flex;
             justify-content: flex-start;
-            margin-top: 58px;
+            //margin-top: 58px;
 
             .anterior {
               margin-left: -17px;
