@@ -3,10 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 
+// Angular Material
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-//import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatCardModule} from '@angular/material/card';
@@ -21,6 +21,10 @@ import { MatStepperModule } from '@angular/material/stepper';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { MatDialogModule } from '@angular/material/dialog';
 
+//PrimeNg
+import { ButtonModule } from 'primeng/button';
+
+//Componentes
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './pages/statics/header/header.component';
 import { SidenavComponent } from './pages/statics/sidenav/sidenav.component';
@@ -33,6 +37,15 @@ import { DuvidasComponent } from './pages/duvidas/duvidas.component';
 import { DialogInfoComponent } from './shared/dialog-info/dialog-info.component';
 import { PainelComponent } from './pages/painel/painel.component';
 import { HeaderLoginComponent } from './pages/statics/header-login/header-login.component';
+import { InformacoesGeraisComponent } from './pages/painel/components/informacoes-gerais/informacoes-gerais.component';
+import { AdicionarPetComponent } from './pages/painel/components/adicionar-pet/adicionar-pet.component';
+import { AvisosComponent } from './pages/painel/components/avisos/avisos.component';
+
+//Firebase
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { environment } from '../environments/environment';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 
 @NgModule({
@@ -48,7 +61,10 @@ import { HeaderLoginComponent } from './pages/statics/header-login/header-login.
     DuvidasComponent,
     DialogInfoComponent,
     PainelComponent,
-    HeaderLoginComponent
+    HeaderLoginComponent,
+    InformacoesGeraisComponent,
+    AdicionarPetComponent,
+    AvisosComponent
   ],
   imports: [
     BrowserModule,
@@ -56,7 +72,6 @@ import { HeaderLoginComponent } from './pages/statics/header-login/header-login.
     BrowserAnimationsModule,
     MatToolbarModule,
     FontAwesomeModule,
-    //MatIconModule
     MatButtonModule,
     MatMenuModule,
     MatCardModule,
@@ -70,7 +85,11 @@ import { HeaderLoginComponent } from './pages/statics/header-login/header-login.
     ReactiveFormsModule,
     MatStepperModule,
     MatGridListModule,
-    MatDialogModule
+    MatDialogModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
+    AngularFirestoreModule,
+    ButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
