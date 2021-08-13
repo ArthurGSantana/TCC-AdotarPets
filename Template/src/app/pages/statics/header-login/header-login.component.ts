@@ -1,8 +1,8 @@
-import { AngularFireList } from '@angular/fire/database';
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 
-import { PainelService } from './shared/painel.service';
+import { LoginService } from './../../login/shared/login.service';
+import { PainelService } from '../../painel/shared/painel.service';
 
 @Component({
   selector: 'app-header-login',
@@ -12,10 +12,11 @@ import { PainelService } from './shared/painel.service';
 export class HeaderLoginComponent implements OnInit, AfterViewInit {
 
   ONG: string = 'ONG ainda não cadastrada';
-  contatos!: any[];
+  contas!: any[];
   item$!: Observable<any[]>;
 
   constructor(
+    private loginService: LoginService,
     private painelService: PainelService
   ) { }
 
@@ -24,14 +25,14 @@ export class HeaderLoginComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     this.painelService.showMessage(`Boas vindas ${this.ONG}! Seu painel está pronto!`);
-    this.painelService.getAll().subscribe(res => {
-      this.contatos = res;
+    this.loginService.getAllAccount().subscribe(res => {
+      this.contas = res;
     });
 
   }
 
   click() {
-    console.log(this.contatos);
+    console.log(this.contas);
 
   }
 }
