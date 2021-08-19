@@ -20,9 +20,12 @@ import { MatInputModule } from '@angular/material/input';
 import { MatStepperModule } from '@angular/material/stepper';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatRippleModule } from '@angular/material/core';
+
 
 //PrimeNg
 import { ButtonModule } from 'primeng/button';
+import { ChartModule } from 'primeng/chart';
 
 //Componentes
 import { AppComponent } from './app.component';
@@ -46,6 +49,11 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { registerLocaleData } from '@angular/common';
+import en from '@angular/common/locales/en';
+import { HttpClientModule } from '@angular/common/http';
+
+registerLocaleData(en);
 
 
 @NgModule({
@@ -89,7 +97,10 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFirestoreModule,
-    ButtonModule
+    HttpClientModule,
+    ButtonModule,
+    MatRippleModule,
+    ChartModule
   ],
   providers: [],
   bootstrap: [AppComponent]

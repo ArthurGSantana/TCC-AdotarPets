@@ -14,6 +14,7 @@ export class HeaderLoginComponent implements OnInit, AfterViewInit {
   ONG: string = 'ONG ainda não cadastrada';
   contas!: any[];
   item$!: Observable<any[]>;
+  nameAccount: string = '';
 
   constructor(
     private loginService: LoginService,
@@ -21,10 +22,13 @@ export class HeaderLoginComponent implements OnInit, AfterViewInit {
   ) { }
 
   ngOnInit(): void {
+    this.loginService.loginEvent.subscribe(res => {
+      this.nameAccount = res;
+    });
   }
 
   ngAfterViewInit(): void {
-    this.painelService.showMessage(`Boas vindas ${this.ONG}! Seu painel está pronto!`);
+    this.painelService.showMessage(`Boas vindas ${this.nameAccount}! Seu painel está pronto!`);
     this.loginService.getAllAccount().subscribe(res => {
       this.contas = res;
     });
