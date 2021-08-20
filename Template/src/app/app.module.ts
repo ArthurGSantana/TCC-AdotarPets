@@ -21,7 +21,7 @@ import { MatStepperModule } from '@angular/material/stepper';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatRippleModule } from '@angular/material/core';
-
+import { MatDividerModule } from '@angular/material/divider';
 
 //PrimeNg
 import { ButtonModule } from 'primeng/button';
@@ -100,7 +100,8 @@ registerLocaleData(en);
     HttpClientModule,
     ButtonModule,
     MatRippleModule,
-    ChartModule
+    ChartModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
