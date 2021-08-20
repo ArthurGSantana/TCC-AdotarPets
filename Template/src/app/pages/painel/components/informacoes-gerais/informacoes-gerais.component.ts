@@ -18,23 +18,23 @@ export class InformacoesGeraisComponent implements OnInit {
 
     config!: AppConfig;
 
+    animaisTotal: number = 55
+
     constructor(private infoService: InfoGeralService) {}
 
     ngOnInit() {
         this.data = {
-            labels: ['A','B','C'],
+            labels: ['Cachorros','Gatos'],
             datasets: [
                 {
-                    data: [300, 50, 100],
+                    data: [300, 50],
                     backgroundColor: [
-                        "#42A5F5",
-                        "#66BB6A",
-                        "#FFA726"
+                        "#B71C1C",
+                        "#BDBDBD"
                     ],
                     hoverBackgroundColor: [
-                        "#64B5F6",
-                        "#81C784",
-                        "#FFB74D"
+                        "#EF5350",
+                        "#E0E0E0"
                     ]
                 }
             ]
