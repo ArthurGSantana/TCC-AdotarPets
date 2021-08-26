@@ -15,3 +15,33 @@
     Login
   </button>
 </mat-toolbar>
+
+<section *ngIf="openSide" [class.fadeInDown]="controlFadeDown" [class.fadeOutUp]="controlFade">
+  <mat-nav-list class="nav-list">
+
+    <a mat-list-item class="list-item inicial" routerLink=''>
+      <span>Pagina Inicial</span>
+    </a>
+
+    <a mat-list-item class="list-item" routerLink='/quem-somos'>
+      <span>Quem somos?</span>
+    </a>
+
+    <a mat-list-item class="list-item" [routerLink]="['/achados-perdidos/perdido']">
+      <span>Perdi meu Pet!</span>
+    </a>
+
+    <a mat-list-item class="list-item" [routerLink]="['/achados-perdidos/achado']">
+      <span>Achei um Pet!</span>
+    </a>
+
+    <a mat-list-item class="list-item" [routerLink]="['/informacoes']">
+      <span>Contatos</span>
+    </a>
+
+    <a mat-list-item class="list-item" [routerLink]="['/duvidas']">
+      <span style="margin-left: 28px;">Por que adotar?</span>
+    </a>
+
+  </mat-nav-list>
+</section>

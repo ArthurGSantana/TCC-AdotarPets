@@ -5,13 +5,13 @@ $button-color: #c1121f;
 .toolbar{
   background-color: $primary-color;
   justify-content: space-between;
-  height: 80px;
+  height: 55px;
   //border-bottom: solid 4px #e93737;
   box-shadow: 0px 6px 5px #5f0101;
 
   .menu {
     color: $secundary-color;
-    font-size: 43px;
+    font-size: 38px;
     cursor: pointer;
   }
 
@@ -24,15 +24,15 @@ $button-color: #c1121f;
     align-items: center;
 
     span{
-      font-family: cursive;
-      font-size: 38px;
-      font-weight: 600;
+      font-family: 'Libre Baskerville', serif;
+      font-size: 2rem;
+      font-weight: bold;
       color: $secundary-color;
       margin: 0 8px 0 10px;
     }
 
     .iconTolbar {
-      font-size: 80px;
+      font-size: 3rem;
       color: $secundary-color;
     }
   }
@@ -41,7 +41,7 @@ $button-color: #c1121f;
     background-color: $secundary-color;
     color: $primary-color;
     width: 100px;
-    height: 45px;
+    height: 38px;
     font-size: 18px;
     font-weight: 600;
     border: solid 2px $secundary-color;
@@ -58,6 +58,94 @@ $button-color: #c1121f;
     color: $secundary-color;
     border: solid 2px $secundary-color;
   }
-
 }
 
+section {
+  z-index: 100;
+  width: 100%;
+  height: 45px;
+  background-color: #780000;
+  border-top: 2px solid #480101;
+  border-bottom: 2px solid #480101;
+  position: absolute;
+}
+
+@-webkit-keyframes fadeInDown {
+  0% {
+     opacity: 0;
+     -webkit-transform: translateY(-20px);
+  }
+  100% {
+     opacity: 1;
+     -webkit-transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+     opacity: 0;
+     transform: translateY(-20px);
+  }
+  100% {
+     opacity: 1;
+     transform: translateY(0);
+  }
+}
+
+.fadeInDown {
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+  -webkit-animation-duration: .2s;
+  animation-duration: .2s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.fadeOutUp {
+  -webkit-animation-duration: .2s;
+  animation-duration: .2s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: fadeOutUp;
+  animation-name: fadeOutUp;
+}
+
+@-webkit-keyframes fadeOutUp {
+  0% {
+     opacity: 1;
+     -webkit-transform: translateY(0);
+  }
+  100% {
+     opacity: 0;
+     -webkit-transform: translateY(-20px);
+  }
+}
+
+@keyframes fadeOutUp {
+  0% {
+     opacity: 1;
+     transform: translateY(0);
+  }
+  100% {
+     opacity: 0;
+     transform: translateY(-20px);
+  }
+}
+
+
+.nav-list {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 !important;
+
+  a {
+    height: 40px !important;
+
+    span {
+      font-family: 'Libre Baskerville', serif;
+      color: $secundary-color;
+      font-weight: bold;
+    }
+  }
+}

@@ -1,0 +1,20 @@
+section {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+
+  div {
+    width: 30%;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    mat-card {
+      height: 150px;
+      width: 50%;
+    }
+  }
+}

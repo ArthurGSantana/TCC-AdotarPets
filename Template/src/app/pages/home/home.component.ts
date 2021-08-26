@@ -38,6 +38,10 @@ export class HomeComponent implements OnInit {
     this.sexo = this.homeServ.sexo;
     this.all = this.homeServ.all;
 
+    this.homeServ.getAllPets().subscribe(res => {
+      console.log(res)
+    })
+
   };
 
   allControl(): void{

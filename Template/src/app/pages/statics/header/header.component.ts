@@ -10,6 +10,8 @@ import { SidenavComponent } from './../sidenav/sidenav.component';
 export class HeaderComponent implements OnInit {
 
   openSide: boolean = false;
+  controlFade: boolean = false;
+  controlFadeDown: boolean = false;
 
   constructor(
     private staticServ: StaticsService
@@ -19,8 +21,15 @@ export class HeaderComponent implements OnInit {
   }
 
   ativaSidenav(): void{
-    this.openSide ? this.openSide = false : this.openSide = true;
-    this.staticServ.openSidenav.emit(this.openSide);
+    this.controlFadeDown = !this.controlFadeDown
+    this.openSide === true ? this.controlFade = true : this.controlFade = false;
+    if(this.controlFadeDown) {
+      this.openSide = !this.openSide;
+    } else {
+      setTimeout(() => {
+        this.openSide = !this.openSide;
+      }, 300);
+    }
   };
 
 }

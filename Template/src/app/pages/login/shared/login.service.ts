@@ -1,3 +1,4 @@
+import { Account } from './../../../shared/interfaces/account.model';
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -15,8 +16,8 @@ export class LoginService {
     private snack: MatSnackBar
   ) { }
 
-  getAllAccount(): Observable<any[]> {
-    return this.firebase.list('contas').valueChanges();
+  getAllAccount(): Observable<Account[]> {
+    return this.firebase.list<Account>('contas').valueChanges();
   };
 
   showMessage(msg: string): void{
