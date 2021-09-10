@@ -1,3 +1,5 @@
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { PetsModel } from './../../shared/interfaces/Pets.model';
 import { Component, OnInit } from '@angular/core';
 
 import { HomeService } from './shared/home.service';
@@ -24,13 +26,16 @@ export class HomeComponent implements OnInit {
   allSelecionado: string = "";
 
   mostraTodos: boolean = false;
+  formPets!: FormGroup;
+
+  allPets: PetsModel[] = [];
 
   constructor(
-    private homeServ: HomeService
+    private homeServ: HomeService,
+    private formBuilder: FormBuilder
   ) { }
 
   ngOnInit(): void {
-
     this.estados = this.homeServ.estados;
     this.cidades = this.homeServ.cidades;
     this.especies = this.homeServ.especies;
@@ -39,13 +44,20 @@ export class HomeComponent implements OnInit {
     this.all = this.homeServ.all;
 
     this.homeServ.getAllPets().subscribe(res => {
+      this.allPets = res;
       console.log(res)
-    })
+    }, error => {
+      console.log(error);
+    });
 
   };
 
   allControl(): void{
     this.allSelecionado === "Sim, me mostre todos!" ? this.mostraTodos = true : this.mostraTodos = false;
   };
+
+  onSubmit(): void {
+    console.log(this.formPets.value)
+  }
 
 }

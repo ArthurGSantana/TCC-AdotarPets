@@ -1,23 +1,28 @@
 <section>
-  <div>
+  <div *ngFor="let pet of petsAll" class="div-ctn">
     <mat-card>
+      <button mat-mini-fab class="button-fab">
+        <i *ngIf="pet.sexo === 'macho'" class="fa fa-mars macho"></i>
+        <i *ngIf="pet.sexo === 'femea'" class="fa fa-venus femea"></i>
+      </button>
+      <mat-card-title class="card-title">
+        <img [src]="pet.imagem" alt="imagem pets">
+      </mat-card-title>
+      <mat-card-content class="content">
+        <div>
+          <span>Idade: <span>{{pet.idade}} anos</span></span>
+        </div>
+        <div>
+          <span>Porte: <span>{{pet.porte}}</span></span>
+        </div>
+        <div>
+          <span>Cidade: <span>{{pet.cidade}}</span></span>
+        </div>
+      </mat-card-content>
 
+      <div class="btn-ctn">
+        <button mat-raised-button class="adotar">Adotar</button>
+      </div>
     </mat-card>
   </div>
-  <div>
-    <mat-card>
-
-    </mat-card>
-  </div>
-  <div>
-    <mat-card>
-
-    </mat-card>
-  </div>
-  <div>
-    <mat-card>
-
-    </mat-card>
-  </div>
-
 </section>

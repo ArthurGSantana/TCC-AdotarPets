@@ -1,3 +1,4 @@
+import { HomeService } from './../../../home/shared/home.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdicionarPetComponent implements OnInit {
 
-  constructor() { }
+  cidades: string[] = [""];
+  especies: string[] = [""];
+  portes: string[] = [""];
+  sexo: string[] = [""];
+
+  cidadeSelect!: string;
+  especieSelect!: string;
+  porteSelect!: string;
+  sexoSelect!: string;
+  idade!: number;
+
+  constructor(
+    private homeService: HomeService
+  ) { }
 
   ngOnInit(): void {
+    this.cidades = this.homeService.cidades;
+    this.especies = this.homeService.especies;
+    this.portes = this.homeService.portes;
+    this.sexo = this.homeService.sexo;
   }
 
 }

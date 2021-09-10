@@ -22,6 +22,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatRippleModule } from '@angular/material/core';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatTabsModule } from '@angular/material/tabs';
+
 
 //PrimeNg
 import { ButtonModule } from 'primeng/button';
@@ -103,7 +105,8 @@ registerLocaleData(en);
     ButtonModule,
     MatRippleModule,
     ChartModule,
-    MatDividerModule
+    MatDividerModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
