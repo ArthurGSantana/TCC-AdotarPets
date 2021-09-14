@@ -2,8 +2,8 @@
   <div *ngFor="let pet of petsAll" class="div-ctn">
     <mat-card>
       <button mat-mini-fab class="button-fab">
-        <i *ngIf="pet.sexo === 'macho'" class="fa fa-mars macho"></i>
-        <i *ngIf="pet.sexo === 'femea'" class="fa fa-venus femea"></i>
+        <i *ngIf="pet.sexo === 'Macho'" class="fa fa-mars macho"></i>
+        <i *ngIf="pet.sexo === 'Fêmea'" class="fa fa-venus femea"></i>
       </button>
       <mat-card-title class="card-title">
         <img [src]="pet.imagem" alt="imagem pets">

@@ -52,18 +52,36 @@
           </mat-form-field>
         </div>
 
+        <section class="footer">
+          <button
+            mat-raised-button
+            (click)="salvarPet()">
+            Adicionar
+          </button>
+        </section>
+
       </div>
       <div class="preview">
         <span>Preview da imagem</span>
         <div class="img-ctn">
-          <img src="" alt="">
+          <img [src]="preview" alt="preview foto" *ngIf="preview">
         </div>
-        <button mat-raised-button>Procurar Imagem</button>
+
+        <button
+          mat-raised-button
+          immediateClick
+          type="button"
+          (click)="input.click()">
+          Procurar Imagem
+        </button>
+
+        <input
+          type="file"
+          #input
+          hidden
+          accept="image/*"
+          (change)="getFileImage($event)">
       </div>
     </mat-card-content>
-
-    <section class="footer">
-      <button mat-raised-button>Salvar Pet</button>
-    </section>
   </mat-card>
 </div>

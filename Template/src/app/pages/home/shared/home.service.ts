@@ -1,3 +1,4 @@
+import { PetsModel } from './../../../shared/interfaces/Pets.model';
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { Observable } from 'rxjs';
@@ -21,4 +22,8 @@ export class HomeService {
   getAllPets(): Observable<any[]> {
     return this.firebase.list<any>('animais').valueChanges();
   };
+
+  createNewPet(pet: PetsModel): any{
+    return this.firebase.list<any>('animais').push(pet);
+  }
 }

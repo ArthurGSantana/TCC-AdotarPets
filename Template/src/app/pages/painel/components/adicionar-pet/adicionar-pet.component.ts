@@ -1,3 +1,4 @@
+import { PetsModel } from './../../../../shared/interfaces/Pets.model';
 import { HomeService } from './../../../home/shared/home.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -17,7 +18,19 @@ export class AdicionarPetComponent implements OnInit {
   especieSelect!: string;
   porteSelect!: string;
   sexoSelect!: string;
-  idade!: number;
+  idade!: string;
+
+  file!: File;
+  preview!: string;
+
+  pet: PetsModel = {
+    imagem: '',
+    cidade: '',
+    idade: '',
+    porte: '',
+    sexo: '',
+    especie: ''
+  };
 
   constructor(
     private homeService: HomeService
@@ -28,6 +41,32 @@ export class AdicionarPetComponent implements OnInit {
     this.especies = this.homeService.especies;
     this.portes = this.homeService.portes;
     this.sexo = this.homeService.sexo;
+  }
+
+  getFileImage(event: any): void{
+    let imgfile = event.target.files[0] as File
+    this.file = imgfile;
+    const reader = new FileReader();
+    reader.onload = (event: any) => {
+      this.preview = event.target.result;
+      this.pet.imagem = this.preview;
+    };
+    reader.readAsDataURL(imgfile);
+  };
+
+  salvarPet(): void {
+    if(this.cidadeSelect && this.especieSelect && this.porteSelect && this.sexoSelect && this.idade && this.preview) {
+      this.pet = {
+        especie: this.especieSelect,
+        idade: this.idade,
+        imagem: this.preview,
+        porte: this.porteSelect,
+        sexo: this.sexoSelect,
+        cidade: this.cidadeSelect
+      };
+
+      this.homeService.createNewPet(this.pet);
+    }
   }
 
 }

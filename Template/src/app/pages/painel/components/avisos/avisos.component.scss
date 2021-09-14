@@ -1,0 +1,26 @@
+$primary-color: #780000;
+$secundary-color: #fdf0d5;
+
+section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  mat-card {
+    width: 60%;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px dashed $primary-color;
+
+    span {
+      color: rgb(155, 154, 154);
+      font-weight: bold;
+      font-size: 1rem;
+    }
+  }
+}
+
