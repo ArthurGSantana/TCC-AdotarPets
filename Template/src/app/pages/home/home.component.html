@@ -72,7 +72,7 @@
             </mat-form-field>
           </div>
 
-          <button mat-raised-button class="btn-card">
+          <button mat-raised-button class="btn-card" (click)="procurarPets()">
             Procurar
             <i class="material-icons">search</i>
           </button>
@@ -85,6 +85,10 @@
 
 <div class="body2">
   <app-display-pets [petsAll]="allPets"></app-display-pets>
+
+  <section class="footer">
+
+  </section>
 </div>
 
 </body>

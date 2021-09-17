@@ -28,6 +28,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 //PrimeNg
 import { ButtonModule } from 'primeng/button';
 import { ChartModule } from 'primeng/chart';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 //Componentes
 import { AppComponent } from './app.component';
@@ -106,7 +107,8 @@ registerLocaleData(en);
     MatRippleModule,
     ChartModule,
     MatDividerModule,
-    MatTabsModule
+    MatTabsModule,
+    SweetAlert2Module.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

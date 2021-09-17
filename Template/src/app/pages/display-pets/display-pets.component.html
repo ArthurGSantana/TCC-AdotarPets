@@ -8,17 +8,25 @@
       <mat-card-title class="card-title">
         <img [src]="pet.imagem" alt="imagem pets">
       </mat-card-title>
-      <mat-card-content class="content">
-        <div>
-          <span>Idade: <span>{{pet.idade}} anos</span></span>
-        </div>
-        <div>
-          <span>Porte: <span>{{pet.porte}}</span></span>
-        </div>
-        <div>
-          <span>Cidade: <span>{{pet.cidade}}</span></span>
-        </div>
-      </mat-card-content>
+      <section class="content">
+        <section class="cima">
+          <div class="cima-div">
+            <span class="dianho">{{pet.idade}}</span>
+            <span>Anos</span>
+          </div>
+          <div class="cima-div">
+            <span class="dianho">{{pet.porte === 'Grande' && 'G' ||
+              pet.porte === 'Pequeno' && 'P' || pet.porte === 'Médio' && 'M'}}
+            </span>
+            <span>Porte</span>
+          </div>
+        </section>
+        <section class="baixo">
+          <div class="baixo-div">
+            <span><i class="fa fa-map-pin"></i><span>{{pet.cidade}}</span></span>
+          </div>
+        </section>
+      </section>
 
       <div class="btn-ctn">
         <button mat-raised-button class="adotar">Adotar</button>
