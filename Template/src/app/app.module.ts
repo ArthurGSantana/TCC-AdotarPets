@@ -22,10 +22,13 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatRippleModule } from '@angular/material/core';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatTabsModule } from '@angular/material/tabs';
+
 
 //PrimeNg
 import { ButtonModule } from 'primeng/button';
 import { ChartModule } from 'primeng/chart';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 //Componentes
 import { AppComponent } from './app.component';
@@ -43,6 +46,7 @@ import { HeaderLoginComponent } from './pages/statics/header-login/header-login.
 import { InformacoesGeraisComponent } from './pages/painel/components/informacoes-gerais/informacoes-gerais.component';
 import { AdicionarPetComponent } from './pages/painel/components/adicionar-pet/adicionar-pet.component';
 import { AvisosComponent } from './pages/painel/components/avisos/avisos.component';
+import { DisplayPetsComponent } from './pages/display-pets/display-pets.component';
 
 //Firebase
 import { AngularFireModule } from '@angular/fire';
@@ -72,7 +76,8 @@ registerLocaleData(en);
     HeaderLoginComponent,
     InformacoesGeraisComponent,
     AdicionarPetComponent,
-    AvisosComponent
+    AvisosComponent,
+    DisplayPetsComponent
   ],
   imports: [
     BrowserModule,
@@ -101,7 +106,9 @@ registerLocaleData(en);
     ButtonModule,
     MatRippleModule,
     ChartModule,
-    MatDividerModule
+    MatDividerModule,
+    MatTabsModule,
+    SweetAlert2Module.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

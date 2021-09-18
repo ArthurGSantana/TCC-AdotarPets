@@ -1,1 +1,87 @@
-<p>adicionar-pet works!</p>
+<div class="card-container">
+  <mat-card class="card">
+    <mat-card-title class="title">
+      Adicionar Pet
+    </mat-card-title>
+    <mat-card-content class="content">
+      <div class="seletores">
+        <div>
+          <mat-form-field appearance="outline" class="mat-form">
+            <mat-label>Espécie</mat-label>
+            <mat-select name="especie" [(ngModel)]="especieSelect">
+              <mat-option *ngFor="let especie of especies" [value]=especie>
+                {{especie}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="mat-form">
+            <mat-label>Porte</mat-label>
+            <mat-select name="porte" [(ngModel)]="porteSelect">
+              <mat-option *ngFor="let porte of portes" [value]=porte>
+                {{porte}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field appearance="outline" class="mat-form">
+            <mat-label>Idade</mat-label>
+            <input type="number" matInput [(ngModel)]="idade">
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="mat-form">
+            <mat-label>Sexo</mat-label>
+            <mat-select name="sexo" [(ngModel)]="sexoSelect">
+              <mat-option *ngFor="let sex of sexo" [value]=sex>
+                {{sex}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div>
+          <mat-form-field appearance="outline" class="mat-form">
+            <mat-label>Cidade</mat-label>
+            <mat-select name="cidade" [(ngModel)]="cidadeSelect">
+              <mat-option *ngFor="let cidade of cidades" [value]=cidade>
+                {{cidade}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <section class="footer">
+          <button
+            mat-raised-button
+            (click)="salvarPet()">
+            Adicionar
+          </button>
+        </section>
+
+      </div>
+      <div class="preview">
+        <span>Preview da imagem</span>
+        <div class="img-ctn">
+          <img [src]="preview" alt="preview foto" *ngIf="preview">
+        </div>
+
+        <button
+          mat-raised-button
+          immediateClick
+          type="button"
+          (click)="input.click()">
+          Procurar Imagem
+        </button>
+
+        <input
+          type="file"
+          #input
+          hidden
+          accept="image/*"
+          (change)="getFileImage($event)">
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
