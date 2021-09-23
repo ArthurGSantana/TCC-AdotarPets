@@ -23,7 +23,8 @@ export class DisplayPetsComponent implements OnInit {
     this.dialog.open(PetDialogComponent, {
       data: {
         pet: pet
-      }
+      },
+      height: '600px'
     });
   }
 

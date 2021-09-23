@@ -1,3 +1,28 @@
-<p>
-  pet-dialog works!
-</p>
+<button mat-dialog-close class="close" mat-mini-fab><i class="fa fa-times"></i></button>
+<section class="img-ctn">
+  <div class="title">
+    <span> Adota </span>
+    <i class="material-icons iconTolbar">pets</i>
+    <span> Pets </span>
+  </div>
+
+  <div class="div-ctn">
+    <img [src]="data.pet.imagem" alt="imagem do pet">
+  </div>
+
+  <mat-card class="card">
+    <h2>Informações</h2>
+    <div>
+      <span><strong>Espécie: </strong>{{data.pet.especie}}</span>
+      <span><strong>Idade: </strong>{{data.pet.idade}}</span>
+      <span><strong>Porte: </strong>{{data.pet.porte}}</span>
+      <span><strong>Sexo: </strong>{{data.pet.sexo}}</span>
+      <span><strong>Cidade: </strong>{{data.pet.cidade}}</span>
+    </div>
+
+  </mat-card>
+</section>
+
+<section class="info-ctn">
+
+</section>

@@ -1,3 +1,4 @@
+import { PetDialogComponent } from './pages/pet-dialog/pet-dialog.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -77,7 +78,8 @@ registerLocaleData(en);
     InformacoesGeraisComponent,
     AdicionarPetComponent,
     AvisosComponent,
-    DisplayPetsComponent
+    DisplayPetsComponent,
+    PetDialogComponent
   ],
   imports: [
     BrowserModule,
