@@ -57,6 +57,7 @@ $button-color: #c1121ea6;
     flex-direction: column;
     align-items: center;
     border: 2px dashed $primary-color;
+    margin-bottom: 18px;
 
     h2 {
       font-weight: bold;
@@ -81,6 +82,59 @@ $button-color: #c1121ea6;
           font-weight: bold;
         }
       }
+    }
+  }
+}
+
+hr{
+  margin-top: 40px;
+}
+
+.info-ctn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  .title-div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 25px;
+
+    span {
+      font-family: 'Libre Baskerville', serif;
+      font-weight: bold;
+      background: -webkit-linear-gradient($primary-color, #0C0C0C);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 1.2rem;
+    }
+  }
+
+  .ctn {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    i {
+      margin-top: -18px;
+      font-size: 2rem;
+      background: -webkit-linear-gradient($primary-color, #0C0C0C);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    mat-form-field {
+      width: 80%;
+    }
+
+    button {
+      width: 50%;
+      background-image: linear-gradient($primary-color, #0C0C0C);
+      color: $secundary-color;
     }
   }
 }
