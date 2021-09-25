@@ -9,7 +9,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class LoginService {
 
-  loginEvent: BehaviorSubject<string> = new BehaviorSubject<string>('');
+  loginEvent: BehaviorSubject<Account> = new BehaviorSubject<Account>({login: '', senha: '', ong: ''});
 
   constructor(
     private firebase: AngularFireDatabase,

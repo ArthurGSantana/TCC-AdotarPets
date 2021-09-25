@@ -2,6 +2,7 @@ import { InfoGeralService } from './shared/info-geral.service';
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { AppConfig } from './shared/graph.model';
+import { LoginService } from 'src/app/pages/login/shared/login.service';
 
 @Component({
   selector: 'app-informacoes-gerais',
@@ -20,7 +21,10 @@ export class InformacoesGeraisComponent implements OnInit {
 
     animaisTotal: number = 55
 
-    constructor(private infoService: InfoGeralService) {}
+    constructor(
+        private infoService: InfoGeralService,
+        private loginService: LoginService
+        ) {}
 
     ngOnInit() {
         this.data = {
@@ -46,6 +50,10 @@ export class InformacoesGeraisComponent implements OnInit {
             this.config = config;
             this.updateChartOptions();
         });
+
+        this.loginService.loginEvent.subscribe(res => {
+      
+        })
     }
 
     updateChartOptions() {

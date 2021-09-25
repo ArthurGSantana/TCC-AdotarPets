@@ -5,4 +5,5 @@ export interface PetsModel {
   imagem: string;
   porte: string;
   sexo: string;
+  ong: string;
 }

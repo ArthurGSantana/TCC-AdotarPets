@@ -1,3 +1,5 @@
+import { Account } from './../../../../shared/interfaces/account.model';
+import { LoginService } from './../../../login/shared/login.service';
 import { PetsModel } from './../../../../shared/interfaces/Pets.model';
 import { HomeService } from './../../../home/shared/home.service';
 import { Component, OnInit } from '@angular/core';
@@ -19,6 +21,7 @@ export class AdicionarPetComponent implements OnInit {
   porteSelect!: string;
   sexoSelect!: string;
   idade!: string;
+  onAccount!: Account;
 
   file!: File;
   preview!: string;
@@ -29,11 +32,13 @@ export class AdicionarPetComponent implements OnInit {
     idade: '',
     porte: '',
     sexo: '',
-    especie: ''
+    especie: '',
+    ong: ''
   };
 
   constructor(
-    private homeService: HomeService
+    private homeService: HomeService,
+    private loginService: LoginService
   ) { }
 
   ngOnInit(): void {
@@ -41,6 +46,10 @@ export class AdicionarPetComponent implements OnInit {
     this.especies = this.homeService.especies;
     this.portes = this.homeService.portes;
     this.sexo = this.homeService.sexo;
+
+    this.loginService.loginEvent.subscribe(res => {
+      this.onAccount = res;
+    });
   }
 
   getFileImage(event: any): void{
@@ -62,7 +71,8 @@ export class AdicionarPetComponent implements OnInit {
         imagem: this.preview,
         porte: this.porteSelect,
         sexo: this.sexoSelect,
-        cidade: this.cidadeSelect
+        cidade: this.cidadeSelect,
+        ong: this.onAccount.ong
       };
 
       this.homeService.createNewPet(this.pet);

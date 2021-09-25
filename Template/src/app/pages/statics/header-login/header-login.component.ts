@@ -23,7 +23,7 @@ export class HeaderLoginComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     this.loginService.loginEvent.subscribe(res => {
-      this.nameAccount = res;
+      this.nameAccount = res.login;
     });
   }
 

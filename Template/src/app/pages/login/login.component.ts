@@ -39,8 +39,8 @@ export class LoginComponent implements OnInit, AfterViewInit {
     this.contas.forEach(item => {
       if (item.login === this.loginForm.value.login){
         if (item.senha === this.loginForm.value.senha){
-          this.loginService.loginEvent.next(item.login);
-          this.router.navigate(['painel/informacoes-gerais'])
+          this.loginService.loginEvent.next(item);
+          this.router.navigate(['painel/informacoes-gerais']);
         } else {
           this.loginService.showMessage('Senha incorreta, tente novamente!');
         };
