@@ -1,3 +1,5 @@
+import { Subject } from 'rxjs';
+import { HomeService } from './../home/shared/home.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { PetsModel } from './../../shared/interfaces/Pets.model';
 import { Component, Inject, OnInit } from '@angular/core';
@@ -15,7 +17,8 @@ export class PetDialogComponent implements OnInit {
 
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: any,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private homeService: HomeService
   ) { }
 
   ngOnInit() {
@@ -29,13 +32,22 @@ export class PetDialogComponent implements OnInit {
 
   onSubmit(): void {
     Swal.fire({
+      title: 'Aguarde...',
+      allowOutsideClick: false,
+      didOpen: () => {
+        Swal.showLoading()
+      },
+    });
+    let values = JSON.stringify(this.clientForm.value);
+    let ong = this.data.pet.ong
+    this.homeService.createNotification(values, ong);
+    Swal.fire({
       icon: 'success',
       title: 'Solicitação feita!',
       allowOutsideClick: false,
       showConfirmButton: false,
       timer: 1500
-    })
-    console.log(this.clientForm)
-  }
+    });
+  };
 
 }

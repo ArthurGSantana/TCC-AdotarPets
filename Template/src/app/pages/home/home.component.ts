@@ -61,7 +61,7 @@ export class HomeComponent implements OnInit {
       didOpen: () => {
         Swal.showLoading()
       },
-  });
+    });
     this.homeServ.getAllPets().subscribe(res => {
       this.allPets = res;
       this.guardPets = res;

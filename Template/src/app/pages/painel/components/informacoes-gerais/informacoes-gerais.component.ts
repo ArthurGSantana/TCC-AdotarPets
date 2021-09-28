@@ -19,7 +19,7 @@ export class InformacoesGeraisComponent implements OnInit {
 
     config!: AppConfig;
 
-    animaisTotal: number = 55
+    animaisTotal: number = 55;
 
     constructor(
         private infoService: InfoGeralService,

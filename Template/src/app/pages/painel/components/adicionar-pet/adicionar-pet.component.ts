@@ -49,6 +49,7 @@ export class AdicionarPetComponent implements OnInit {
 
     this.loginService.loginEvent.subscribe(res => {
       this.onAccount = res;
+      console.log(res)
     });
   }
 

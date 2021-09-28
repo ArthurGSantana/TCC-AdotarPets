@@ -25,5 +25,14 @@ export class HomeService {
 
   createNewPet(pet: PetsModel): any{
     return this.firebase.list<any>('animais').push(pet);
-  }
+  };
+
+  getNotification(obj: string): Observable<any[]> {
+    return this.firebase.list<any>(`notificacoes/${obj}`).valueChanges();
+  };
+
+  createNotification(obj: any, pat: string): any{
+    return this.firebase.list<any>(`notificacoes/${pat}`).push(obj);
+  };
+
 }
