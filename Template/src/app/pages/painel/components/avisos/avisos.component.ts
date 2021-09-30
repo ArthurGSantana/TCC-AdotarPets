@@ -21,10 +21,12 @@ export class AvisosComponent implements OnInit {
     this.loginService.loginEvent.subscribe(res => {
       this.homeService.getNotification(res.ong).subscribe(result => {
         result.forEach(item => {
-          this.allNotifications.push(item);
-
-        })
-        console.log(this.allNotifications)
+          let objParse = Object.values(item);
+          objParse.forEach(x => {
+            this.allNotifications.push(JSON.parse(x as any));
+          })
+          console.log(this.allNotifications)
+        });
       });
     });
 

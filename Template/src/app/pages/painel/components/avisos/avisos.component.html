@@ -3,5 +3,14 @@
       <span *ngIf="!allNotifications">
         Sem notificações até o momento!
       </span>
+      <section class="session">
+        <div *ngFor="let obj of allNotifications" class="divider">
+          <span>{{obj.name}}</span>
+          <span>{{obj.city}}</span>
+          <span>{{obj.address}}</span>
+          <span>{{obj.phone}}</span>
+          <button mat-flat-button>Ver Mais</button>
+        </div>
+      </section>
   </mat-card>
 </section>
