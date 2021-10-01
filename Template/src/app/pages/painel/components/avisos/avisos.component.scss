@@ -7,10 +7,27 @@ section {
   justify-content: center;
   align-items: center;
   height: 100%;
+  flex-direction: column;
+
+  .ctn-span {
+    border: 2px solid $primary-color;
+    border-radius: 10px 10px 0px 0px;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    background-color: $primary-color;
+
+    .notify {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: $secundary-color;
+    }
+  }
 
   mat-card {
     width: 80%;
-    height: 150px;
+    height: 330px;
     display: flex;
     justify-content: center;
     align-items: center;

@@ -1,3 +1,4 @@
+import { InfoNotifyComponent } from './pages/painel/components/avisos/components/info-notify/info-notify.component';
 import { PetDialogComponent } from './pages/pet-dialog/pet-dialog.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -79,7 +80,8 @@ registerLocaleData(en);
     AdicionarPetComponent,
     AvisosComponent,
     DisplayPetsComponent,
-    PetDialogComponent
+    PetDialogComponent,
+    InfoNotifyComponent
   ],
   imports: [
     BrowserModule,
