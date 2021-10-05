@@ -13,6 +13,8 @@ export class AvisosComponent implements OnInit {
 
   allNotifications: any[] = [];
   notify: any[] = [];
+  user!: any;
+  ong!: any;
 
   constructor(
     private homeService: HomeService,
@@ -22,19 +24,27 @@ export class AvisosComponent implements OnInit {
 
   ngOnInit(): void {
     
-    this.loginService.loginEvent.subscribe(res => {
-      this.homeService.getNotification(res.ong).subscribe(result => {
-        console.log(result)
-        result.forEach(item => {
-          let objParse = Object.values(item);
-          objParse.forEach(x => {
-            this.allNotifications.push(x);
-          })
-          
-        });
-        this.allNotifications.forEach(item => {
-          this.notify.push(JSON.parse(item));
-        });
+    this.user = localStorage.getItem('login');
+    this.ong = localStorage.getItem('ong');
+
+    console.log(this.user, this.ong)
+    if(this.user) {
+      this.getNotification();
+    };
+  }
+
+  getNotification(): void {
+    this.homeService.getNotification(this.ong).subscribe(result => {
+      console.log(result)
+      result.forEach(item => {
+        this.allNotifications.push(item);
+        /* let objParse = Object.values(item);
+        objParse.forEach(x => {
+          this.allNotifications.push(x);
+        }) */
+      });
+      this.allNotifications.forEach(item => {
+        this.notify.push(JSON.parse(item));
       });
     });
   }
@@ -44,7 +54,8 @@ export class AvisosComponent implements OnInit {
       data: {
         dataInfo: obj
       },
-      height: '600px'
+      height: '600px',
+      width: '700px'
     });
   }
 

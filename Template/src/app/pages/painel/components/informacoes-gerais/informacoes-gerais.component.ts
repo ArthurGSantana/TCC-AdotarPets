@@ -50,10 +50,6 @@ export class InformacoesGeraisComponent implements OnInit {
             this.config = config;
             this.updateChartOptions();
         });
-
-        this.loginService.loginEvent.subscribe(res => {
-      
-        })
     }
 
     updateChartOptions() {
