@@ -2,12 +2,13 @@ import { InfoNotifyComponent } from './components/info-notify/info-notify.compon
 import { MatDialog } from '@angular/material/dialog';
 import { LoginService } from './../../../login/shared/login.service';
 import { HomeService } from './../../../home/shared/home.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-avisos',
   templateUrl: './avisos.component.html',
   styleUrls: ['./avisos.component.scss']
+
 })
 export class AvisosComponent implements OnInit {
 
@@ -54,8 +55,9 @@ export class AvisosComponent implements OnInit {
       data: {
         dataInfo: obj
       },
-      height: '600px',
-      width: '700px'
+      height: '500px',
+      width: '700px',
+      panelClass: 'info-notify'
     });
   }
 

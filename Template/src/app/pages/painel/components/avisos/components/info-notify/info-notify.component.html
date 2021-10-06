@@ -1,5 +1,6 @@
 <section>
   <div class="title-top">
+    <i class="material-icons">new_releases</i>
     <span>Pedido de Adoção</span>
   </div>
 
@@ -35,11 +36,54 @@
       </mat-card>
     </div>
     <div class="ctn-2">
+      <div class="infra">
+        <div class="title-infra">
+          <span>
+            Informações sobre o responsável
+          </span>
+        </div>
+        <div class="mid-infra">
+          <span>
+            <i class="material-icons">
+              person
+            </i>
+            <span>{{data.dataInfo.name}}</span>
+          </span>
+        </div>
+        <div class="mid-infra">
+          <span>
+            <i class="material-icons">
+              phone
+            </i>
+            <span>{{data.dataInfo.phone}}</span>
+          </span>
+        </div>
+        <div class="mid-infra">
+          <span>
+            <i class="material-icons">
+              location_city
+            </i>
+            <span>{{data.dataInfo.city}}</span>
+          </span>
+        </div>
+        <div class="mid-infra">
+          <span>
+            <i class="material-icons">
+              home
+            </i>
+            <span>{{data.dataInfo.address}}</span>
+          </span>
+        </div>
+      </div>
 
     </div>
   </div>
 
-  <div class="footer">
-
+  <div class="footer-infra">
+    <div class="footer-low">
+      <a href="https://api.whatsapp.com/send?phone={{data.dataInfo.phone}}" target="_blank"><button mat-raised-button class="whats"><i class="fa fa-whatsapp"></i></button></a>
+      <button mat-raised-button class="close" mat-dialog-close><i class="material-icons">close</i> Fechar</button>
+      <button mat-raised-button class="del" (click)="deleteNotify()"><i class="material-icons">delete</i> Excluir</button>
+    </div>
   </div>
 </section>

@@ -16,4 +16,8 @@ export class InfoNotifyComponent implements OnInit {
     console.log(this.data.dataInfo)
   }
 
+  deleteNotify(): void {
+    
+  }
+
 }
