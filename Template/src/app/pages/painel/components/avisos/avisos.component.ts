@@ -25,8 +25,8 @@ export class AvisosComponent implements OnInit {
 
   ngOnInit(): void {
     
-    this.user = localStorage.getItem('login');
-    this.ong = localStorage.getItem('ong');
+    this.user = sessionStorage.getItem('login');
+    this.ong = sessionStorage.getItem('ong');
 
     console.log(this.user, this.ong)
     if(this.user) {

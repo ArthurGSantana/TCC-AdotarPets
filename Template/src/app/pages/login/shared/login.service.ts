@@ -28,4 +28,11 @@ export class LoginService {
       panelClass: 'snack'
     })
   };
+
+  isAuthenticate(): boolean {
+    let authenticate: boolean = false;
+    let user = sessionStorage.getItem('login');
+    if(user) authenticate = true;
+    return authenticate;
+  };
 }

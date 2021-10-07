@@ -39,8 +39,8 @@ export class LoginComponent implements OnInit, AfterViewInit {
     this.contas.forEach(item => {
       if (item.login === this.loginForm.value.login){
         if (item.senha === this.loginForm.value.senha){
-          localStorage.setItem('login', item.login);
-            localStorage.setItem('ong', item.ong);
+          sessionStorage.setItem('login', item.login);
+          sessionStorage.setItem('ong', item.ong);
           this.loginService.loginEvent.next(item);
           this.router.navigate(['painel/informacoes-gerais']);
         } else {
