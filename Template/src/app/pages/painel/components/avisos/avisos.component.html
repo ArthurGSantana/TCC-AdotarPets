@@ -8,9 +8,9 @@
       </span>
       <section class="session">
         <div *ngFor="let obj of notify" class="divider">
+          <span class="adota">ADOÇÃO</span>
           <span>{{obj.name}}</span>
           <span>{{obj.city}}</span>
-          <span>{{obj.address}}</span>
           <span>{{obj.phone}}</span>
           <button mat-flat-button (click)="openNotify(obj)">Ver Mais</button>
         </div>

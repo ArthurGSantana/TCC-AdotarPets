@@ -55,6 +55,17 @@ $button-color: #c1121f;
     border: solid 2px $secundary-color;
   }
 
+  .close {
+    background-color: #780000;
+    color: $secundary-color;
+    width: 50px;
+    height: 35;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+  }
+
 }
 
 

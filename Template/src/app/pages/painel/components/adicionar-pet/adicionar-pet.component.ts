@@ -3,6 +3,7 @@ import { LoginService } from './../../../login/shared/login.service';
 import { PetsModel } from './../../../../shared/interfaces/Pets.model';
 import { HomeService } from './../../../home/shared/home.service';
 import { Component, OnInit } from '@angular/core';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-adicionar-pet',
@@ -49,7 +50,6 @@ export class AdicionarPetComponent implements OnInit {
 
     this.loginService.loginEvent.subscribe(res => {
       this.onAccount = res;
-      console.log(res)
     });
   }
 
@@ -65,6 +65,11 @@ export class AdicionarPetComponent implements OnInit {
   };
 
   salvarPet(): void {
+    /* Swal.fire({
+      title: 'Adicionando Pet...',
+      allowOutsideClick: false,
+      didOpen: () => { Swal.showLoading() },
+    }); */
     if(this.cidadeSelect && this.especieSelect && this.porteSelect && this.sexoSelect && this.idade && this.preview) {
       this.pet = {
         especie: this.especieSelect,
@@ -77,7 +82,23 @@ export class AdicionarPetComponent implements OnInit {
       };
 
       this.homeService.createNewPet(this.pet);
-    }
-  }
+      Swal.close();
+      Swal.fire({
+        icon: 'success',
+        title: 'Seu novo Pet foi adicionado!',
+        showConfirmButton: false,
+        timer: 1500
+      });
+
+    } else {
+      Swal.fire({
+        icon: 'error',
+        title: 'Campos Obrigatórios!',
+        text: 'Todos os campos precisam ser preenchidos.',
+        showConfirmButton: true,
+        confirmButtonText: 'Entendi'
+      });
+    };
+  };
 
 }

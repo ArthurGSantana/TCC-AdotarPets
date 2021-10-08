@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { LoginService } from './../../../login/shared/login.service';
 import { HomeService } from './../../../home/shared/home.service';
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-avisos',
@@ -24,11 +25,15 @@ export class AvisosComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    Swal.fire({
+      title: 'Buscando Notificações...',
+      allowOutsideClick: false,
+      didOpen: () => { Swal.showLoading() },
+    });
     
     this.user = sessionStorage.getItem('login');
     this.ong = sessionStorage.getItem('ong');
 
-    console.log(this.user, this.ong)
     if(this.user) {
       this.getNotification();
     };
@@ -36,7 +41,6 @@ export class AvisosComponent implements OnInit {
 
   getNotification(): void {
     this.homeService.getNotification(this.ong).subscribe(result => {
-      console.log(result)
       result.forEach(item => {
         this.allNotifications.push(item);
         /* let objParse = Object.values(item);
@@ -47,6 +51,8 @@ export class AvisosComponent implements OnInit {
       this.allNotifications.forEach(item => {
         this.notify.push(JSON.parse(item));
       });
+
+      Swal.close();
     });
   }
 

@@ -6,8 +6,13 @@
     </span>
   </div>
 
-  <button mat-stroked-button class="login" routerLink="/home" (click)="click()">
-    <i class="material-icons"> arrow_back </i>
-    Voltar
-  </button>
+  <div>
+    <button mat-stroked-button class="login" routerLink="/home">
+      <i class="material-icons"> arrow_back </i>
+      Voltar
+    </button>
+    <button mat-stroked-button class="close" (click)="removeUser()">
+      Sair
+    </button>
+  </div>
 </mat-toolbar>

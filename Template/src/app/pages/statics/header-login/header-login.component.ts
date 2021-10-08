@@ -1,8 +1,10 @@
+import { Router } from '@angular/router';
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { LoginService } from './../../login/shared/login.service';
 import { PainelService } from '../../painel/shared/painel.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-header-login',
@@ -18,7 +20,8 @@ export class HeaderLoginComponent implements OnInit, AfterViewInit {
 
   constructor(
     private loginService: LoginService,
-    private painelService: PainelService
+    private painelService: PainelService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -32,11 +35,16 @@ export class HeaderLoginComponent implements OnInit, AfterViewInit {
     this.loginService.getAllAccount().subscribe(res => {
       this.contas = res;
     });
-
   }
 
-  click() {
-    console.log(this.contas);
+  removeUser(): void {
+    Swal.fire({
+      title: 'Saindo da conta...',
+      allowOutsideClick: false,
+      didOpen: () => { Swal.showLoading() },
+    });
+    sessionStorage.clear();
+    this.router.navigate(['/home']);
+  };
 
-  }
 }

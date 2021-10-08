@@ -10,9 +10,13 @@
       <span> Pets </span>
     </div>
   </a>
-  <button mat-stroked-button class="login" routerLink="/login">
+  <button mat-stroked-button class="login" routerLink="/login" *ngIf="!userOn">
     <i class="material-icons"> exit_to_app </i>
     Login
+  </button>
+  <button mat-stroked-button class="login" routerLink="/painel/informacoes-gerais" *ngIf="userOn">
+    <i class="material-icons"> exit_to_app </i>
+    Painel
   </button>
 </mat-toolbar>
 
