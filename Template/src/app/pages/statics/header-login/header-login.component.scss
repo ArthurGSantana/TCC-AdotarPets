@@ -28,6 +28,12 @@ $button-color: #c1121f;
       color: $primary-color;
     }
 
+    small {
+      font-size: .8rem;
+      color: gray;
+      margin-top: 7px;
+    }
+
   }
 
   .login{
@@ -47,12 +53,6 @@ $button-color: #c1121f;
       font-weight: 600;
       font-size: 1rem;
     }
-  }
-
-  .login:hover {
-    background-color: $primary-color;
-    color: $secundary-color;
-    border: solid 2px $secundary-color;
   }
 
   .close {

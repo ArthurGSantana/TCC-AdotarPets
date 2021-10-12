@@ -10,7 +10,7 @@ $secundary-color: #fdf0d5;
 
   .card {
     width: 70%;
-    height: 90%;
+    height: 450px;
     display: flex;
     padding: 0;
     flex-direction: column;
@@ -35,7 +35,7 @@ $secundary-color: #fdf0d5;
 
       .seletores {
         display: flex;
-        width: 50%;
+        width: 70%;
         flex-direction: column;
 
         div {

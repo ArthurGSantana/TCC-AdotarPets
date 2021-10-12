@@ -55,10 +55,24 @@ section {
     border-radius: 10px;
     background-color: #ebeaea;
 
+    div {
+      border: 1px solid $primary-color;
+      border-radius: 5px;
+      background-color: #ffffff;
+      width: 85px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
     span {
       width: 15%;
       font-size: .9rem;
       color: #0C0C0C;
+    }
+
+    .adota {
+      width: auto;
     }
 
     button {
@@ -78,7 +92,7 @@ section {
 }
 
 .adota {
-  color: #780000 !important;
+  color: $primary-color !important;
   font-weight: bold;
   font-family: 'Libre Baskerville', serif;
 }
