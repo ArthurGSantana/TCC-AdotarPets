@@ -27,7 +27,8 @@ export class PetDialogComponent implements OnInit {
       city: ['', [Validators.required, Validators.minLength(2)]],
       address: ['', [Validators.required, Validators.minLength(5)]],
       phone: ['', [Validators.required, Validators.minLength(8)]],
-      pet: [this.data.pet]
+      pet: [this.data.pet],
+      ativo: [1]
     });
   }
 

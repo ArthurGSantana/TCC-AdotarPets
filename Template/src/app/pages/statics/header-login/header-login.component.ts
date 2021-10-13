@@ -37,12 +37,25 @@ export class HeaderLoginComponent implements OnInit, AfterViewInit {
 
   removeUser(): void {
     Swal.fire({
-      title: 'Saindo da conta...',
-      allowOutsideClick: false,
-      didOpen: () => { Swal.showLoading() },
+      title: 'Deseja sair?',
+      text: "Você irá se desconectar do painel!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Sim',
+      cancelButtonText: 'Não'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: 'Saindo da conta...',
+          allowOutsideClick: false,
+          didOpen: () => { Swal.showLoading() },
+        });
+        sessionStorage.clear();
+        this.router.navigate(['/home']);
+      };
     });
-    sessionStorage.clear();
-    this.router.navigate(['/home']);
   };
 
 }

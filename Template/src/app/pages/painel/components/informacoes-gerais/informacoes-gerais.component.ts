@@ -20,6 +20,8 @@ export class InformacoesGeraisComponent implements OnInit {
     config!: AppConfig;
 
     animaisTotal: number = 55;
+    dataOng: any;
+    ong: any;
 
     constructor(
         private infoService: InfoGeralService,
@@ -27,28 +29,34 @@ export class InformacoesGeraisComponent implements OnInit {
         ) {}
 
     ngOnInit() {
-        this.data = {
-            labels: ['Cachorros','Gatos'],
-            datasets: [
-                {
-                    data: [300, 50],
-                    backgroundColor: [
-                        "#B71C1C",
-                        "#BDBDBD"
-                    ],
-                    hoverBackgroundColor: [
-                        "#EF5350",
-                        "#E0E0E0"
-                    ]
-                }
-            ]
-        };
+        this.ong = sessionStorage.getItem('login');
+        this.loginService.getDataAccount(this.ong).subscribe(res => {
+            this.dataOng = res;
 
-        this.config = this.infoService.config;
-        this.updateChartOptions();
-        this.subscription = this.infoService.configUpdate$.subscribe(config => {
-            this.config = config;
+            this.data = {
+                labels: ['Cachorros','Gatos'],
+                datasets: [
+                    {
+                        /* data: [this.dataOng.cachorros, this.dataOng.gatos], */
+                        data: [this.dataOng.cachorros, this.dataOng.gatos],
+                        backgroundColor: [
+                            "#B71C1C",
+                            "#BDBDBD"
+                        ],
+                        hoverBackgroundColor: [
+                            "#EF5350",
+                            "#E0E0E0"
+                        ]
+                    }
+                ]
+            };
+    
+            this.config = this.infoService.config;
             this.updateChartOptions();
+            this.subscription = this.infoService.configUpdate$.subscribe(config => {
+                this.config = config;
+                this.updateChartOptions();
+            });
         });
     }
 

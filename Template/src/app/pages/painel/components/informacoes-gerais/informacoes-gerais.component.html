@@ -7,26 +7,26 @@
 
     <div class="info-box">
       <div class="title-ctn">
-        <span>Atualizações</span>
+        <span style="display: flex;"> <i class="material-icons">sync</i>&nbsp; Atualizações</span>
       </div>
       <div class="ong">
-        <span>ONG: <strong>{{23}}</strong></span>
+        <span>ONG: <strong>{{dataOng?.nome}}</strong></span>
       </div>
       <hr>
       <div>
-        <span>Cadastrados: <strong>{{animaisTotal}}</strong></span>
+        <span>Cadastrados: <strong>{{dataOng?.cadastrados}}</strong></span>
       </div>
       <hr>
       <div>
-        <span>Adotados: <strong>20</strong></span>
+        <span>Adotados: <strong>{{dataOng?.adotados}}</strong></span>
       </div>
       <hr>
       <div>
-        <span>Ativos: <strong>46</strong></span>
+        <span>Ativos: <strong>{{dataOng?.cadastrados - dataOng?.adotados}}</strong></span>
       </div>
       <hr>
       <div>
-        <span>Cachorros/Gatos: <strong>73/23</strong></span>
+        <span>Cachorros/Gatos: <strong>{{dataOng?.cachorros + ' / ' + dataOng?.gatos}}</strong></span>
       </div>
     </div>
   </mat-card>

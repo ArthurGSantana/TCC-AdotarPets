@@ -25,6 +25,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatRippleModule } from '@angular/material/core';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatBadgeModule } from '@angular/material/badge';
+
 
 
 //PrimeNg
@@ -112,6 +114,7 @@ registerLocaleData(en);
     //ChartModule,
     MatDividerModule,
     MatTabsModule,
+    MatBadgeModule,
     SweetAlert2Module.forRoot()
   ],
   providers: [],

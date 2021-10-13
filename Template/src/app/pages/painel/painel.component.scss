@@ -4,6 +4,7 @@ $button-color: #c1121f;
 
 body {
   background-image: url('../../../assets/fundo-patinha.png');
+  height: 100vh;
 
   .toolbar {
     margin-top: 15px;
@@ -35,6 +36,14 @@ body {
         font-size: 15px;
         font-weight: 600;
         user-select: none;
+      }
+
+      ::ng-deep .mat-badge-medium.mat-badge-after .mat-badge-content {
+        margin-top: 3px !important;
+        margin-right: 15px;
+        background-color: #ffffff;
+        border: 1px solid $primary-color;
+        color: $primary-color !important;
       }
 
     }

@@ -65,6 +65,18 @@ section {
       align-items: center;
     }
 
+    .pointer-off {
+      position: absolute;
+      margin-left: -130px;
+      color: #c3c1c1;
+    }
+
+    .pointer-on {
+      position: absolute;
+      margin-left: -130px;
+      color: #605f5f;
+    }
+
     span {
       width: 15%;
       font-size: .9rem;

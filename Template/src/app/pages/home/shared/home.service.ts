@@ -28,7 +28,7 @@ export class HomeService {
   };
 
   getNotification(obj: string): Observable<any[]> {
-    return this.firebase.list<any>(`notificacoes/${obj}`).valueChanges();
+    return this.firebase.object<any>(`notificacoes/${obj}`).valueChanges();
   };
 
   createNotification(obj: any, pat: string): any{

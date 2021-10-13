@@ -15,7 +15,7 @@
     </div>
 
     <div class="content-info" [class.border-focus]="controlBorder === 3" (click)="navega('3')">
-      <i class="material-icons">error</i>
+      <i class="material-icons" [matBadge]="notifyCount" matBadgeOverlap="false">error</i>
       <span>Avisos</span>
     </div>
 

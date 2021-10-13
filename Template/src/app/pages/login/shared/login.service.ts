@@ -35,4 +35,12 @@ export class LoginService {
     if(user) authenticate = true;
     return authenticate;
   };
+
+  getDataAccount(ong: string): Observable<any> {
+    return this.firebase.object<any>(`ong/${ong}`).valueChanges();
+  };
+
+  updateCount(newOng: any, key: string) {
+    return this.firebase.list('ong').update(key, newOng);
+  };
 }

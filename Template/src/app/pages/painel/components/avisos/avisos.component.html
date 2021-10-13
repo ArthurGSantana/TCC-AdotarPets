@@ -3,12 +3,13 @@
     <span class="notify">Notificações</span>
   </div>
   <mat-card>
-      <span *ngIf="!allNotifications">
+      <span *ngIf="notify.length === 0">
         Sem notificações até o momento!
       </span>
-      <section class="session">
+      <section class="session" *ngIf="notify.length > 0">
         <div *ngFor="let obj of notify" class="divider">
           <div>
+            <i class="material-icons pointer" [ngClass]="{'pointer-on': obj.ativo, 'pointer-off': !obj.ativo}">fiber_manual_record</i>
             <span class="adota">ADOÇÃO</span>
           </div>
           <span>{{obj.name}}</span>

@@ -23,6 +23,8 @@ export class AdicionarPetComponent implements OnInit {
   sexoSelect!: string;
   idade!: string;
   onAccount!: Account;
+  ongSelected: any;
+  dataOng: any;
 
   file!: File;
   preview!: string;
@@ -48,8 +50,10 @@ export class AdicionarPetComponent implements OnInit {
     this.portes = this.homeService.portes;
     this.sexo = this.homeService.sexo;
 
-    this.loginService.loginEvent.subscribe(res => {
-      this.onAccount = res;
+    this.ongSelected = sessionStorage.getItem('login');
+
+    this.loginService.getDataAccount(this.ongSelected).subscribe(res => {
+      this.dataOng = res;
     });
   }
 
@@ -65,11 +69,6 @@ export class AdicionarPetComponent implements OnInit {
   };
 
   salvarPet(): void {
-    /* Swal.fire({
-      title: 'Adicionando Pet...',
-      allowOutsideClick: false,
-      didOpen: () => { Swal.showLoading() },
-    }); */
     if(this.cidadeSelect && this.especieSelect && this.porteSelect && this.sexoSelect && this.idade && this.preview) {
       this.pet = {
         especie: this.especieSelect,
@@ -78,16 +77,30 @@ export class AdicionarPetComponent implements OnInit {
         porte: this.porteSelect,
         sexo: this.sexoSelect,
         cidade: this.cidadeSelect,
-        ong: this.onAccount.ong
+        ong: this.ongSelected
       };
 
-      this.homeService.createNewPet(this.pet);
-      Swal.close();
       Swal.fire({
-        icon: 'success',
-        title: 'Seu novo Pet foi adicionado!',
-        showConfirmButton: false,
-        timer: 1500
+        title: 'Inserir novo Pet?',
+        text: "Você poderá excluir esse registro futuramente.",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Sim',
+        cancelButtonText: 'Não'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          this.homeService.createNewPet(this.pet);
+          this.updateOng();
+          this.clearFields();
+          Swal.fire({
+            icon: 'success',
+            title: 'Seu novo Pet foi adicionado!',
+            showConfirmButton: false,
+            timer: 1500
+          });
+        };
       });
 
     } else {
@@ -100,5 +113,28 @@ export class AdicionarPetComponent implements OnInit {
       });
     };
   };
+
+  clearFields(): void {
+    this.cidadeSelect = '';
+    this.especieSelect = '';
+    this.porteSelect = '';
+    this.sexoSelect = '';
+    this.idade = '';
+    this.preview = '';
+  };
+
+  updateOng(): void {
+    this.dataOng.cadastrados = this.dataOng.cadastrados + 1;
+
+    if(this.especieSelect === 'Cachorro') {
+      this.dataOng.cachorros = this.dataOng.cachorros + 1;
+    } else {
+      this.dataOng.gatos = this.dataOng.gatos + 1;
+    };
+
+    this.loginService.updateCount(this.dataOng, this.ongSelected).then(res => {
+      
+    })
+  }
 
 }

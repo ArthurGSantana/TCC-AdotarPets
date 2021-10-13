@@ -37,24 +37,31 @@ export class AvisosComponent implements OnInit {
     if(this.user) {
       this.getNotification();
     };
-  }
+  };
 
   getNotification(): void {
     this.homeService.getNotification(this.ong).subscribe(result => {
-      result.forEach(item => {
+      let objects = Object.entries(result);
+
+      objects.forEach(array => {
+        let newObj = JSON.parse(array[1]);
+        newObj.id = array[0].toString();
+        this.notify.push(newObj);
+      });
+      /* result.forEach(item => {
         this.allNotifications.push(item);
-        /* let objParse = Object.values(item);
+        let objParse = Object.values(item);
         objParse.forEach(x => {
           this.allNotifications.push(x);
-        }) */
+        })
       });
       this.allNotifications.forEach(item => {
         this.notify.push(JSON.parse(item));
-      });
+      }); */
 
       Swal.close();
     });
-  }
+  };
 
   openNotify(obj: any): void {
     this.matDialog.open(InfoNotifyComponent, {
@@ -65,6 +72,6 @@ export class AvisosComponent implements OnInit {
       width: '700px',
       panelClass: 'info-notify'
     });
-  }
+  };
 
 }
