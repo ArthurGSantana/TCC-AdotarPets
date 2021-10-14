@@ -24,7 +24,9 @@ export class DisplayPetsComponent implements OnInit {
       data: {
         pet: pet
       },
-      height: '600px'
+      height: '600px',
+      width: '1000px',
+      panelClass: 'modal-add'
     });
   }
 

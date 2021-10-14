@@ -31,7 +31,7 @@ import { MatBadgeModule } from '@angular/material/badge';
 
 //PrimeNg
 import { ButtonModule } from 'primeng/button';
-//import { ChartModule } from 'primeng/chart';
+import { ChartModule } from 'primeng/chart';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 //Componentes
@@ -111,7 +111,7 @@ registerLocaleData(en);
     HttpClientModule,
     ButtonModule,
     MatRippleModule,
-    //ChartModule,
+    ChartModule,
     MatDividerModule,
     MatTabsModule,
     MatBadgeModule,
