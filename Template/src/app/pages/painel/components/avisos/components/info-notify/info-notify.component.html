@@ -1,0 +1,89 @@
+<section>
+  <div class="title-top">
+    <i class="material-icons">new_releases</i>
+    <span>Pedido de Adoção</span>
+  </div>
+
+  <div class="mid">
+    <div class="ctn-1">
+      <mat-card>
+        <button mat-mini-fab class="button-fab">
+          <i *ngIf="data.dataInfo.pet.sexo === 'Macho'" class="fa fa-mars macho"></i>
+          <i *ngIf="data.dataInfo.pet.sexo === 'Fêmea'" class="fa fa-venus femea"></i>
+        </button>
+        <mat-card-title class="card-title">
+          <img [src]="data.dataInfo.pet.imagem" alt="imagem pets">
+        </mat-card-title>
+        <section class="content">
+          <section class="cima">
+            <div class="cima-div">
+              <span class="dianho">{{data.dataInfo.pet.idade}}</span>
+              <span>Anos</span>
+            </div>
+            <div class="cima-div">
+              <span class="dianho">{{data.dataInfo.pet.porte === 'Grande' && 'G' ||
+                data.dataInfo.pet.porte === 'Pequeno' && 'P' || data.dataInfo.pet.porte === 'Médio' && 'M'}}
+              </span>
+              <span>Porte</span>
+            </div>
+          </section>
+          <section class="baixo">
+            <div class="baixo-div">
+              <span><i class="fa fa-map-pin"></i><span>{{data.dataInfo.pet.cidade}}</span></span>
+            </div>
+          </section>
+        </section>
+      </mat-card>
+    </div>
+    <div class="ctn-2">
+      <div class="infra">
+        <div class="title-infra">
+          <span>
+            Informações sobre o responsável
+          </span>
+        </div>
+        <div class="mid-infra">
+          <span>
+            <i class="material-icons">
+              person
+            </i>
+            <span>{{data.dataInfo.name}}</span>
+          </span>
+        </div>
+        <div class="mid-infra">
+          <span>
+            <i class="material-icons">
+              phone
+            </i>
+            <span>{{data.dataInfo.phone}}</span>
+          </span>
+        </div>
+        <div class="mid-infra">
+          <span>
+            <i class="material-icons">
+              location_city
+            </i>
+            <span>{{data.dataInfo.city}}</span>
+          </span>
+        </div>
+        <div class="mid-infra">
+          <span>
+            <i class="material-icons">
+              home
+            </i>
+            <span>{{data.dataInfo.address}}</span>
+          </span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer-infra">
+    <div class="footer-low">
+      <a href="https://api.whatsapp.com/send?phone={{data.dataInfo.phone}}" target="_blank"><button mat-raised-button class="whats"><i class="fa fa-whatsapp"></i></button></a>
+      <button mat-raised-button class="close" mat-dialog-close><i class="material-icons">close</i> Fechar</button>
+      <button mat-raised-button class="del" (click)="deleteNotify()"><i class="material-icons">delete</i> Excluir</button>
+    </div>
+  </div>
+</section>

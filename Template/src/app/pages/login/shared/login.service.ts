@@ -9,7 +9,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class LoginService {
 
-  loginEvent: BehaviorSubject<string> = new BehaviorSubject<string>('');
+  loginEvent: BehaviorSubject<Account> = new BehaviorSubject<Account>({login: '', senha: '', ong: ''});
 
   constructor(
     private firebase: AngularFireDatabase,
@@ -27,5 +27,20 @@ export class LoginService {
       verticalPosition: 'top',
       panelClass: 'snack'
     })
+  };
+
+  isAuthenticate(): boolean {
+    let authenticate: boolean = false;
+    let user = sessionStorage.getItem('login');
+    if(user) authenticate = true;
+    return authenticate;
+  };
+
+  getDataAccount(ong: string): Observable<any> {
+    return this.firebase.object<any>(`ong/${ong}`).valueChanges();
+  };
+
+  updateCount(newOng: any, key: string) {
+    return this.firebase.list('ong').update(key, newOng);
   };
 }

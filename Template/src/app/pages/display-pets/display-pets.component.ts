@@ -1,3 +1,5 @@
+import { PetDialogComponent } from './../pet-dialog/pet-dialog.component';
+import { MatDialog } from '@angular/material/dialog';
 import { PetsModel } from './../../shared/interfaces/Pets.model';
 import { Component, Input, OnInit } from '@angular/core';
 
@@ -10,9 +12,22 @@ export class DisplayPetsComponent implements OnInit {
 
   @Input() petsAll: PetsModel[] = [];
 
-  constructor() { }
+  constructor(
+    private dialog: MatDialog
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  openDialog(pet: PetsModel): void {
+    this.dialog.open(PetDialogComponent, {
+      data: {
+        pet: pet
+      },
+      height: '600px',
+      width: '1000px',
+      panelClass: 'modal-add'
+    });
   }
 
 }

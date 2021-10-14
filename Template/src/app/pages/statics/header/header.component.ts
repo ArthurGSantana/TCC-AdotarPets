@@ -12,12 +12,15 @@ export class HeaderComponent implements OnInit {
   openSide: boolean = false;
   controlFade: boolean = false;
   controlFadeDown: boolean = false;
+  userOn: boolean = false;
 
   constructor(
     private staticServ: StaticsService
   ) { }
 
   ngOnInit(): void {
+    let user = sessionStorage.getItem('login');
+    user ? this.userOn = true : this.userOn = false;
   }
 
   ativaSidenav(): void{

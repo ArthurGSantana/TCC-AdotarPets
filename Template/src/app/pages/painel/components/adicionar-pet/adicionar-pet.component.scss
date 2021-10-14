@@ -10,17 +10,21 @@ $secundary-color: #fdf0d5;
 
   .card {
     width: 70%;
-    height: 90%;
+    height: 450px;
     display: flex;
+    padding: 0;
     flex-direction: column;
-    border: 1px solid rgb(179, 177, 177);
-    box-shadow: 2px 2px rgb(168, 167, 167);
+    border: 2px solid $primary-color;
+    //box-shadow: 2px 2px rgb(168, 167, 167);
 
     .title {
       width: 100%;
       display: flex;
       justify-content: center;
-      color: $primary-color;
+      align-items: center;
+      height: 45px;
+      background-color: $primary-color;
+      color: $secundary-color;
       font-family: 'Libre Baskerville', serif;
       font-weight: bold;
     }
@@ -31,11 +35,11 @@ $secundary-color: #fdf0d5;
 
       .seletores {
         display: flex;
-        width: 50%;
+        width: 70%;
         flex-direction: column;
 
         div {
-          margin-top: 30px;
+          margin-top: 20px;
           display: flex;
           align-items: center;
           justify-content: space-around;

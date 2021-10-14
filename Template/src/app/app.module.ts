@@ -1,3 +1,5 @@
+import { InfoNotifyComponent } from './pages/painel/components/avisos/components/info-notify/info-notify.component';
+import { PetDialogComponent } from './pages/pet-dialog/pet-dialog.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -23,6 +25,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatRippleModule } from '@angular/material/core';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatBadgeModule } from '@angular/material/badge';
+
 
 
 //PrimeNg
@@ -77,7 +81,9 @@ registerLocaleData(en);
     InformacoesGeraisComponent,
     AdicionarPetComponent,
     AvisosComponent,
-    DisplayPetsComponent
+    DisplayPetsComponent,
+    PetDialogComponent,
+    InfoNotifyComponent
   ],
   imports: [
     BrowserModule,
@@ -108,6 +114,7 @@ registerLocaleData(en);
     ChartModule,
     MatDividerModule,
     MatTabsModule,
+    MatBadgeModule,
     SweetAlert2Module.forRoot()
   ],
   providers: [],

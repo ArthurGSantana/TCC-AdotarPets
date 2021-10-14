@@ -1,5 +1,8 @@
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import Swal from 'sweetalert2';
+
+import { HomeService } from './../home/shared/home.service';
 
 @Component({
   selector: 'app-painel',
@@ -9,13 +12,26 @@ import { Component, OnInit } from '@angular/core';
 export class PainelComponent implements OnInit {
 
   controlBorder: number = 1;
+  allNotifications: any[] = [];
+  user!: any;
+  ong!: any;
+  notify: any[] = [];
+  notifyCount: number = 0;
 
   constructor(
-    private router: Router
+    private router: Router,
+    private homeService: HomeService
   ) { }
 
   ngOnInit(): void {
     this.router.navigate(['painel/informacoes-gerais']);
+
+    this.user = sessionStorage.getItem('login');
+    this.ong = sessionStorage.getItem('ong');
+
+    if(this.user) {
+      this.getNotification();
+    };
   }
 
 
@@ -33,6 +49,19 @@ export class PainelComponent implements OnInit {
         this.controlBorder=3;
         this.router.navigate(['painel/avisos']);
         break;
-    }
-  }
+    };
+  };
+
+  getNotification(): void {
+    this.homeService.getNotification(this.ong).subscribe(result => {
+      let objects = Object.entries(result);
+      objects.forEach(array => {
+        let newObj = JSON.parse(array[1]);
+        newObj.id = array[0].toString();
+        this.notify.push(newObj);
+      });
+
+      this.notifyCount = this.notify.length;
+    });
+  };
 }

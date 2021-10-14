@@ -1,3 +1,5 @@
+import { Subject } from 'rxjs';
+import { debounceTime } from 'rxjs/operators'
 import Swal from 'sweetalert2';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
@@ -33,6 +35,8 @@ export class HomeComponent implements OnInit {
   petsFilter: PetsModel[] = [];
   guardPets: PetsModel[] = [];
 
+  debounceSearch: Subject<any> = new Subject<any>();
+
   constructor(
     private homeServ: HomeService,
     private formBuilder: FormBuilder
@@ -47,6 +51,7 @@ export class HomeComponent implements OnInit {
     this.all = this.homeServ.all;
 
     this.getAllPets();
+
   };
 
   getAllPets(): void {
@@ -56,7 +61,7 @@ export class HomeComponent implements OnInit {
       didOpen: () => {
         Swal.showLoading()
       },
-  });
+    });
     this.homeServ.getAllPets().subscribe(res => {
       this.allPets = res;
       this.guardPets = res;

@@ -1,8 +1,10 @@
+import { Router } from '@angular/router';
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { LoginService } from './../../login/shared/login.service';
 import { PainelService } from '../../painel/shared/painel.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-header-login',
@@ -14,17 +16,16 @@ export class HeaderLoginComponent implements OnInit, AfterViewInit {
   ONG: string = 'ONG ainda não cadastrada';
   contas!: any[];
   item$!: Observable<any[]>;
-  nameAccount: string = '';
+  nameAccount: any = '';
 
   constructor(
     private loginService: LoginService,
-    private painelService: PainelService
+    private painelService: PainelService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
-    this.loginService.loginEvent.subscribe(res => {
-      this.nameAccount = res;
-    });
+    this.nameAccount = sessionStorage.getItem('login');
   }
 
   ngAfterViewInit(): void {
@@ -32,11 +33,29 @@ export class HeaderLoginComponent implements OnInit, AfterViewInit {
     this.loginService.getAllAccount().subscribe(res => {
       this.contas = res;
     });
-
   }
 
-  click() {
-    console.log(this.contas);
+  removeUser(): void {
+    Swal.fire({
+      title: 'Deseja sair?',
+      text: "Você irá se desconectar do painel!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Sim',
+      cancelButtonText: 'Não'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: 'Saindo da conta...',
+          allowOutsideClick: false,
+          didOpen: () => { Swal.showLoading() },
+        });
+        sessionStorage.clear();
+        this.router.navigate(['/home']);
+      };
+    });
+  };
 
-  }
 }

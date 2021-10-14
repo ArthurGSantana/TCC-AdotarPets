@@ -87,6 +87,43 @@
   <app-display-pets [petsAll]="allPets"></app-display-pets>
 
   <section class="footer">
+    <mat-nav-list class="nav-list">
+    <div class="f-1">
+      <a mat-list-item class="list-item inicial" routerLink=''>
+        <span>Pagina Inicial</span>
+      </a>
+
+      <a mat-list-item class="list-item" routerLink='/quem-somos'>
+        <span>Quem somos?</span>
+      </a>
+
+      <a mat-list-item class="list-item" [routerLink]="['/achados-perdidos/perdido']">
+        <span>Perdi meu Pet!</span>
+      </a>
+    </div>
+
+    <div class="f-2">
+      <a mat-list-item class="list-item" [routerLink]="['/achados-perdidos/achado']">
+        <span>Achei um Pet!</span>
+      </a>
+
+      <a mat-list-item class="list-item" [routerLink]="['/informacoes']">
+        <span>Contatos</span>
+      </a>
+
+      <a mat-list-item class="list-item" [routerLink]="['/duvidas']">
+        <span>Por que adotar?</span>
+      </a>
+    </div>
+
+    </mat-nav-list>
+
+
+    <div class="title-f">
+      <span> Adota </span>
+      <i class="material-icons iconTolbar">pets</i>
+      <span> Pets </span>
+    </div>
 
   </section>
 </div>

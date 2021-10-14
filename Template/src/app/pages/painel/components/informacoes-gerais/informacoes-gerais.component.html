@@ -1,13 +1,32 @@
 <div class="card-container">
   <mat-card class="card">
-    <p-chart type="pie" [data]="data" [options]="chartOptions" ></p-chart>
+    <div class="chart">
+      <p-chart type="pie" [data]="data" [options]="chartOptions" ></p-chart>
+    </div>
 
     <div class="info-box">
-      <h1>Total de animais cadastrados: {{animaisTotal}}</h1>
-      <h3 class="h3">Animais cadastrados no último mês: <strong>23</strong> </h3>
-      <h3>Média mensal de animais cadastrados: <strong>20</strong> </h3>
-      <h3>Saída de animais para adoção: <strong>46</strong> </h3>
-      <h3>Total geral de cadastros: <strong>73</strong> </h3>
+      <div class="title-ctn">
+        <span style="display: flex;"> <i class="material-icons">sync</i>&nbsp; Atualizações</span>
+      </div>
+      <div class="ong">
+        <span>ONG: <strong>{{dataOng?.nome}}</strong></span>
+      </div>
+      <hr>
+      <div>
+        <span>Cadastrados: <strong>{{dataOng?.cadastrados}}</strong></span>
+      </div>
+      <hr>
+      <div>
+        <span>Adotados: <strong>{{dataOng?.adotados}}</strong></span>
+      </div>
+      <hr>
+      <div>
+        <span>Ativos: <strong>{{dataOng?.cadastrados - dataOng?.adotados}}</strong></span>
+      </div>
+      <hr>
+      <div>
+        <span>Cachorros/Gatos: <strong>{{dataOng?.cachorros + ' / ' + dataOng?.gatos}}</strong></span>
+      </div>
     </div>
   </mat-card>
 </div>

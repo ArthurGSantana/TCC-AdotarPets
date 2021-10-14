@@ -85,7 +85,7 @@ $button-color: #c1121f;
 }
 
 .body2 {
-  background-image: linear-gradient(white, $primary-color);
+  background-image: linear-gradient(transparent, $primary-color);
   //position: fixed;
 }
 
@@ -94,6 +94,57 @@ $button-color: #c1121f;
   height: 150px;
   border-top: 3px solid $secundary-color;
   background-color: #780000;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.f-1 {
+  width: 100%;
+  display: flex;
+  height: 70px;
+
+  span {
+    color: $secundary-color;
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+}
+
+.f-2 {
+  width: 100%;
+  display: flex;
+  height: 70px;
+
+  span {
+    color: $secundary-color;
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+}
+
+.title-f {
+  margin-top: -5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $primary-color;
+
+  span{
+    font-family: 'Libre Baskerville', serif;
+    font-size: 2rem;
+    font-weight: bold;
+    color: $secundary-color;
+    margin: 0 8px 0 10px;
+  }
+
+  .iconTolbar {
+    font-size: 3rem;
+    color: $secundary-color;
+  }
 }
 
 ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {

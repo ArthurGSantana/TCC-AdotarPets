@@ -2,6 +2,7 @@ import { InfoGeralService } from './shared/info-geral.service';
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { AppConfig } from './shared/graph.model';
+import { LoginService } from 'src/app/pages/login/shared/login.service';
 
 @Component({
   selector: 'app-informacoes-gerais',
@@ -18,33 +19,44 @@ export class InformacoesGeraisComponent implements OnInit {
 
     config!: AppConfig;
 
-    animaisTotal: number = 55
+    animaisTotal: number = 55;
+    dataOng: any;
+    ong: any;
 
-    constructor(private infoService: InfoGeralService) {}
+    constructor(
+        private infoService: InfoGeralService,
+        private loginService: LoginService
+        ) {}
 
     ngOnInit() {
-        this.data = {
-            labels: ['Cachorros','Gatos'],
-            datasets: [
-                {
-                    data: [300, 50],
-                    backgroundColor: [
-                        "#B71C1C",
-                        "#BDBDBD"
-                    ],
-                    hoverBackgroundColor: [
-                        "#EF5350",
-                        "#E0E0E0"
-                    ]
-                }
-            ]
-        };
+        this.ong = sessionStorage.getItem('login');
+        this.loginService.getDataAccount(this.ong).subscribe(res => {
+            this.dataOng = res;
 
-        this.config = this.infoService.config;
-        this.updateChartOptions();
-        this.subscription = this.infoService.configUpdate$.subscribe(config => {
-            this.config = config;
+            this.data = {
+                labels: ['Cachorros','Gatos'],
+                datasets: [
+                    {
+                        /* data: [this.dataOng.cachorros, this.dataOng.gatos], */
+                        data: [this.dataOng.cachorros, this.dataOng.gatos],
+                        backgroundColor: [
+                            "#B71C1C",
+                            "#BDBDBD"
+                        ],
+                        hoverBackgroundColor: [
+                            "#EF5350",
+                            "#E0E0E0"
+                        ]
+                    }
+                ]
+            };
+    
+            this.config = this.infoService.config;
             this.updateChartOptions();
+            this.subscription = this.infoService.configUpdate$.subscribe(config => {
+                this.config = config;
+                this.updateChartOptions();
+            });
         });
     }
 

@@ -10,8 +10,9 @@ $secundary-color: #fdf0d5;
 
   .card {
     width: 70%;
-    height: 80%;
+    height: 400px;
     display: flex;
+    flex-direction: row;
     border: 1px solid rgb(179, 177, 177);
     box-shadow: 2px 2px rgb(168, 167, 167);
 
@@ -22,27 +23,51 @@ $secundary-color: #fdf0d5;
       margin-left: -85px !important;
     }
 
+    .chart {
+      width: 65%;
+      border: 2px solid $primary-color;
+      border-radius: 5px 0 0 5px;
+    }
+
     .info-box {
-      margin-left: -100px;
+      border-top: 2px solid $primary-color;
+      border-right: 2px solid $primary-color;
+      border-bottom: 2px solid $primary-color;
+      width: 35%;
+      border-radius: 0 5px 5px 0;
+      //margin-left: -100px;
 
-      h1 {
-        margin-top: 35px;
-        font-weight: bold;
-        color: $primary-color;
+      .title-ctn {
+        height: 35px;
+        width: 100%;
+        display: flex;
+        background-color: #780000;
+        justify-content: center;
+        align-items: center;
+
+        span {
+          color: $secundary-color !important;
+          font-weight: bold;
+          font-size: 1.1rem;
+          font-family: 'Libre Baskerville', serif;
+        }
       }
 
-      .h3 {
-        margin-top: 35px;
+      .ong {
+        margin-top: 25px;
       }
 
-      h3 {
-        border-bottom: 2px solid #000000;
-        margin-bottom: 30px;
-        font-size: 1.2rem !important;
-        font-weight: bold;
+      div {
+        display: flex;
+        justify-content: center;
 
-        strong {
-          color: $primary-color;
+        span {
+          font-weight: bold;
+          color: black;
+
+          strong {
+            color: $primary-color;
+          }
         }
       }
     }
