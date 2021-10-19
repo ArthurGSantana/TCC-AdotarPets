@@ -6,6 +6,7 @@ import { MatDialog } from '@angular/material/dialog';
 
 import { DialogInfoComponent } from './../../shared/dialog-info/dialog-info.component';
 import { HomeService } from './../home/shared/home.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-achados-procurados',
@@ -27,6 +28,7 @@ export class AchadosProcuradosComponent implements OnInit, OnDestroy {
   file!: File;
   preview!: string;
   imagesImport: any[] = [];
+  users: any[] = [];
 
   constructor(
     private router: ActivatedRoute,
@@ -52,7 +54,8 @@ export class AchadosProcuradosComponent implements OnInit, OnDestroy {
       tamanho: ['', Validators.required],
       nome: [''],
       cidade: ['', Validators.required],
-      infos: ['', Validators.required]
+      infos: ['', Validators.required],
+      files: ['']
     });
 
     this.clientForm = this.formBuilder.group({
@@ -61,6 +64,10 @@ export class AchadosProcuradosComponent implements OnInit, OnDestroy {
       telefone: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]]
     });
+
+    this.homeServ.getUsers().subscribe(res => {
+      this.users = res;
+    })
   }
 
   ngOnDestroy(): void {
@@ -98,6 +105,27 @@ export class AchadosProcuradosComponent implements OnInit, OnDestroy {
 
     let w: any = window.open("");
         w.document.write(newImage.outerHTML);
+  };
+
+  onSubmit(): void {
+    this.petForm.get('files')?.setValue(this.imagesImport);
+    let sendForm = {
+      pet: this.petForm.value,
+      user: this.clientForm.value,
+      type: this.info
+    };
+    
+    this.users.forEach((item, index)=> {
+      this.homeServ.createNotification(JSON.stringify(sendForm), item);
+      if(index === this.users.length - 1) {
+        Swal.fire({
+          icon: 'success',
+          title: 'As informações foram enviadas com sucesso!',
+          showConfirmButton: false,
+          timer: 1500
+        });
+      };
+    });
   };
 
 }

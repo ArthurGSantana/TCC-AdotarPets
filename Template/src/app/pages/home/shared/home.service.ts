@@ -35,4 +35,8 @@ export class HomeService {
     return this.firebase.list<any>(`notificacoes/${pat}`).push(obj);
   };
 
+  getUsers(): Observable<any[]> {
+    return this.firebase.list<any>('usuarios').valueChanges();
+  };
+
 }

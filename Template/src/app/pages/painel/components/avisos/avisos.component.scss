@@ -31,6 +31,7 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     border: 2px dashed $primary-color;
 
     span {
@@ -43,6 +44,7 @@ section {
 .session {
   display: flex;
   flex-direction: column;
+  height: none !important;
 
   .divider {
     width: 100%;

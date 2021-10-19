@@ -14,7 +14,9 @@ import Swal from 'sweetalert2';
 export class AvisosComponent implements OnInit {
 
   allNotifications: any[] = [];
-  notify: any[] = [];
+  notifyAdocao: any[] = [];
+  notifyAchado: any[] = [];
+  notifyPerdido: any[] = [];
   user!: any;
   ong!: any;
 
@@ -46,7 +48,13 @@ export class AvisosComponent implements OnInit {
       objects.forEach(array => {
         let newObj = JSON.parse(array[1]);
         newObj.id = array[0].toString();
-        this.notify.push(newObj);
+        if(newObj?.type === 'achado') {
+          this.notifyAchado.push(newObj);
+        } else if(newObj?.type === 'perdido') {
+          this.notifyPerdido.push(newObj);
+        } else {
+          this.notifyAdocao.push(newObj);
+        };
       });
       /* result.forEach(item => {
         this.allNotifications.push(item);
