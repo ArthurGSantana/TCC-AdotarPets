@@ -24,6 +24,9 @@ export class AchadosProcuradosComponent implements OnInit, OnDestroy {
 
   petForm!: FormGroup;
   clientForm!: FormGroup;
+  file!: File;
+  preview!: string;
+  imagesImport: any[] = [];
 
   constructor(
     private router: ActivatedRoute,
@@ -71,5 +74,30 @@ export class AchadosProcuradosComponent implements OnInit, OnDestroy {
   openDialog(): void{
     this.dialog.open(DialogInfoComponent);
   }
+
+  getFileImage(event: any): void {
+    let imgfile = event.target.files[0] as File
+    console.log(imgfile)
+    this.file = imgfile;
+    const reader = new FileReader();
+    reader.onload = (event: any) => {
+      this.preview = event.target.result;
+      let objImage = {
+        fileName: imgfile.name,
+        type: imgfile.type,
+        fileContent: this.preview
+      };
+      this.imagesImport.push(objImage)
+    };
+    reader.readAsDataURL(imgfile);
+  };
+
+  visibility(image: any): void {
+    let newImage = new Image();
+    newImage.src = image.fileContent;
+
+    let w: any = window.open("");
+        w.document.write(newImage.outerHTML);
+  };
 
 }

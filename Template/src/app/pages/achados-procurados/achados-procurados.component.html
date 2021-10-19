@@ -54,13 +54,28 @@
                   </mat-form-field>
                 </div>
 
+                <div class="images">
+                  <span *ngIF="imagesImport.length < 1">Sem imagens...</span>
+                  <section *ngIf="imagesImport.length > 0">
+                    <div *ngFor="let image of imagesImport">
+                      <span>{{image.fileName}}</span>
+                      <button type="button" class="btn-eye" (click)="visibility(image)"><i class="material-icons">visibility</i></button>
+                    </div>
+                  </section>
+                </div>
+
                 <div class="img-container">
                   <span>Adicione imagens do pet <span style="font-size: 15px;">(opcional)</span></span>
                   <button mat-raised-button class="btn" (click)="input.click()">
                     Adicionar
                     <i class="material-icons">image</i>
                   </button>
-                  <input type="file" #input hidden>
+                  <input  
+                    type="file"
+                    #input
+                    hidden
+                    accept="image/*"
+                    (change)="getFileImage($event)">
                 </div>
                 <button mat-raised-button matStepperNext class="next">Próximo</button>
               </form>
