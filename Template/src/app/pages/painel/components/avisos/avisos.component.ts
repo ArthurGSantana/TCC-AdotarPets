@@ -76,9 +76,12 @@ export class AvisosComponent implements OnInit {
     const id = obj.id;
     let newObj = obj;
     delete newObj.id;
+    delete newObj.ativo;
     if(obj.ativo === 1) {
-      //this.homeService.updateActive()
-    }
+      this.homeService.updateActive(newObj, this.ong, id).then(res => {
+        //console.log(res)
+      });
+    };
     this.matDialog.open(InfoNotifyComponent, {
       data: {
         dataInfo: obj
@@ -90,7 +93,15 @@ export class AvisosComponent implements OnInit {
   };
 
   openModal(obj: any): void {
-    console.log(obj)
+    const id = obj.id;
+    let newObj = obj;
+    delete newObj.id;
+    delete newObj.ativo;
+    if(obj.ativo === 1) {
+      this.homeService.updateActive(newObj, this.ong, id).then(res => {
+        //console.log(res)
+      });
+    };
     this.matDialog.open(ProcuraComponent, {
       data: {
         dataInfo: obj

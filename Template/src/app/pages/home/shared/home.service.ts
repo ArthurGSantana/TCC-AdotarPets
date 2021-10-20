@@ -43,4 +43,8 @@ export class HomeService {
     return this.firebase.list<any>(`notificacoes/${path}`).update(key, obj);
   };
 
+  deleteNotification(path: string, key: any): Promise<any> {
+    return this.firebase.object<any>(`notificacoes/${path}/${key}`).remove();
+  };
+
 }
