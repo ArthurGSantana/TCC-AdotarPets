@@ -25,10 +25,10 @@
             <i class="material-icons pointer" [ngClass]="{'pointer-on': obj1.ativo, 'pointer-off': !obj1.ativo}">fiber_manual_record</i>
             <span class="adota">ACHADOS</span>
           </div>
-          <span>{{obj1.name}}</span>
-          <span>{{obj1.city}}</span>
-          <span>{{obj1.phone}}</span>
-          <button mat-flat-button (click)="openNotify(obj1)">Ver Mais</button>
+          <span>{{obj1.user.nome}}</span>
+          <span>{{obj1.user.cidade}}</span>
+          <span>{{obj1.user.telefone}}</span>
+          <button mat-flat-button (click)="openModal(obj1)">Ver Mais</button>
         </div>
       </section>
       <hr *ngIf="notifyPerdido.length > 0" style="width: 100%;">
@@ -38,10 +38,10 @@
             <i class="material-icons pointer" [ngClass]="{'pointer-on': obj2.ativo, 'pointer-off': !obj2.ativo}">fiber_manual_record</i>
             <span class="adota">PERDIDOS</span>
           </div>
-          <span>{{obj2.name}}</span>
-          <span>{{obj2.city}}</span>
-          <span>{{obj2.phone}}</span>
-          <button mat-flat-button (click)="openNotify(obj2)">Ver Mais</button>
+          <span>{{obj2.user.nome}}</span>
+          <span>{{obj2.user.cidade}}</span>
+          <span>{{obj2.user.telefone}}</span>
+          <button mat-flat-button (click)="openModal(obj2)">Ver Mais</button>
         </div>
       </section>
   </mat-card>

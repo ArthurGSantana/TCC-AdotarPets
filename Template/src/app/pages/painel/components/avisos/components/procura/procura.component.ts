@@ -2,21 +2,18 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
-  selector: 'app-info-notify',
-  templateUrl: './info-notify.component.html',
-  styleUrls: ['./info-notify.component.scss']
+  selector: 'app-procura',
+  templateUrl: './procura.component.html',
+  styleUrls: ['./procura.component.scss']
 })
-export class InfoNotifyComponent implements OnInit {
+export class ProcuraComponent implements OnInit {
 
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: any,
   ) { }
 
   ngOnInit() {
-  }
-
-  deleteNotify(): void {
-    
+    console.log(this.data.dataInfo.type)
   }
 
 }

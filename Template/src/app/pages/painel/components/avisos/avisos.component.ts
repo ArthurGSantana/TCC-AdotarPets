@@ -1,3 +1,4 @@
+import { ProcuraComponent } from './components/procura/procura.component';
 import { InfoNotifyComponent } from './components/info-notify/info-notify.component';
 import { MatDialog } from '@angular/material/dialog';
 import { LoginService } from './../../../login/shared/login.service';
@@ -81,5 +82,16 @@ export class AvisosComponent implements OnInit {
       panelClass: 'info-notify'
     });
   };
+
+  openModal(obj: any): void {
+    this.matDialog.open(ProcuraComponent, {
+      data: {
+        dataInfo: obj
+      },
+      height: '500px',
+      width: '700px',
+      panelClass: 'info-notify'
+    });
+  }
 
 }
