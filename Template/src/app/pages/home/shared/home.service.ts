@@ -31,12 +31,16 @@ export class HomeService {
     return this.firebase.object<any>(`notificacoes/${obj}`).valueChanges();
   };
 
-  createNotification(obj: any, pat: string): any{
-    return this.firebase.list<any>(`notificacoes/${pat}`).push(obj);
+  createNotification(obj: any, path: string): any{
+    return this.firebase.list<any>(`notificacoes/${path}`).push(obj);
   };
 
   getUsers(): Observable<any[]> {
     return this.firebase.list<any>('usuarios').valueChanges();
+  };
+
+  updateActive(obj: any, path: string, key: any): Promise<any>{
+    return this.firebase.list<any>(`notificacoes/${path}`).update(key, obj);
   };
 
 }

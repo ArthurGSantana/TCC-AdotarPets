@@ -4,4 +4,101 @@
     <span *ngIf="data.dataInfo?.type === 'achado'">Pet Achado</span>
     <span *ngIf="data.dataInfo?.type === 'perdido'">Pet Perdido</span>
   </div>
+  <div class="container">
+    <div class="pet">
+      <div class="title-pet">
+        <span>
+          Informações sobre o pet
+        </span>
+      </div>
+      <div class="mid-infra">
+        <span>
+          <i class="material-icons">
+            pets
+          </i>
+          <span>{{data.dataInfo.pet.especie}}</span>
+        </span>
+      </div>
+      <div class="mid-infra">
+        <span>
+          <i class="material-icons">
+            filter_list
+          </i>
+          <span>{{data.dataInfo.pet.tamanho}}</span>
+        </span>
+      </div>
+      <div class="mid-infra">
+        <span>
+          <i class="material-icons">
+            location_city
+          </i>
+          <span>{{data.dataInfo.pet.cidade}}</span>
+        </span>
+      </div>
+      <div class="mid-infra">
+        <span>
+          <i class="material-icons">
+            comment
+          </i>
+          <span>{{data.dataInfo.pet.infos}}</span>
+        </span>
+      </div>
+    </div>
+
+    <div class="image">
+      <button *ngIf="imageFiles.length > 1" mat-mini-fab class="left"><i class="material-icons" (click)="carrousel('left')">chevron_left</i></button>
+      <div>
+        <img [src]="imageNow.fileContent" [alt]="imageNow.fileName">
+      </div>
+      <button *ngIf="imageFiles.length > 1" mat-mini-fab class="right"><i class="material-icons" (click)="carrousel('right')">chevron_right</i></button>
+    </div>
+
+    <div class="user">
+      <div class="title-user">
+        <span>
+          Informações sobre o usuário
+        </span>
+      </div>
+      <div class="mid-infra">
+        <span>
+          <i class="material-icons">
+            person
+          </i>
+          <span>{{data.dataInfo.user.nome}}</span>
+        </span>
+      </div>
+      <div class="mid-infra">
+        <span>
+          <i class="material-icons">
+            phone
+          </i>
+          <span>{{data.dataInfo.user.telefone}}</span>
+        </span>
+      </div>
+      <div class="mid-infra">
+        <span>
+          <i class="material-icons">
+            location_city
+          </i>
+          <span>{{data.dataInfo.user.cidade}}</span>
+        </span>
+      </div>
+      <div class="mid-infra">
+        <span>
+          <i class="material-icons">
+            email
+          </i>
+          <span>{{data.dataInfo.user.email}}</span>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-infra">
+    <div class="footer-low">
+      <a href="https://api.whatsapp.com/send?phone={{data.dataInfo.user.telefone}}" target="_blank"><button mat-raised-button class="whats"><i class="fa fa-whatsapp"></i></button></a>
+      <button mat-raised-button class="close" mat-dialog-close><i class="material-icons">close</i> Fechar</button>
+      <button mat-raised-button class="del" (click)="deleteNotify()"><i class="material-icons">delete</i> Excluir</button>
+    </div>
+  </div>
 </section>

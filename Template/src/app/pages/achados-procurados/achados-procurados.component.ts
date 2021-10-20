@@ -112,7 +112,8 @@ export class AchadosProcuradosComponent implements OnInit, OnDestroy {
     let sendForm = {
       pet: this.petForm.value,
       user: this.clientForm.value,
-      type: this.info
+      type: this.info,
+      ativo: 1
     };
     
     this.users.forEach((item, index)=> {

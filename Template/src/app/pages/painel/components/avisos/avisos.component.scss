@@ -27,12 +27,13 @@ section {
 
   mat-card {
     width: 80%;
-    height: 330px;
+    height: 390px;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
     border: 2px dashed $primary-color;
+    overflow-y: auto;
 
     span {
       color: rgb(155, 154, 154);

@@ -1,3 +1,4 @@
+import { ProcuraComponent } from './pages/painel/components/avisos/components/procura/procura.component';
 import { InfoNotifyComponent } from './pages/painel/components/avisos/components/info-notify/info-notify.component';
 import { PetDialogComponent } from './pages/pet-dialog/pet-dialog.component';
 import { NgModule } from '@angular/core';
@@ -83,7 +84,8 @@ registerLocaleData(en);
     AvisosComponent,
     DisplayPetsComponent,
     PetDialogComponent,
-    InfoNotifyComponent
+    InfoNotifyComponent,
+    ProcuraComponent
   ],
   imports: [
     BrowserModule,
