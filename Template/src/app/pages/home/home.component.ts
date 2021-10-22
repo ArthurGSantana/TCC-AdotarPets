@@ -93,8 +93,6 @@ export class HomeComponent implements OnInit {
       if(this.sexoSelecionado) petAux.push(this.sexoSelecionado)
       if(this.especieSelecionada) petAux.push(this.especieSelecionada)
 
-      console.log(petAux)
-
       petAux.forEach((attr, index) => {
         if(petAux.length > 1 && index > 0) {
           this.allPets = this.petsFilter;

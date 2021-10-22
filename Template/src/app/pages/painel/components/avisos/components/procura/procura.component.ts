@@ -61,6 +61,7 @@ export class ProcuraComponent implements OnInit {
       cancelButtonText: 'Não'
     }).then(result => {
       if (result.isConfirmed) {
+        console.log(this.data.dataInfo.id)
         this.homeService.deleteNotification(this.ong, this.data.dataInfo.id).then(res => {
           Swal.fire({
             title: 'Exclusão realizada com sucesso!',

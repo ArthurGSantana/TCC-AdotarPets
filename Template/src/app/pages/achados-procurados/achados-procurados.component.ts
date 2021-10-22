@@ -116,16 +116,15 @@ export class AchadosProcuradosComponent implements OnInit, OnDestroy {
       ativo: 1
     };
     
-    this.users.forEach((item, index)=> {
-      this.homeServ.createNotification(JSON.stringify(sendForm), item);
-      if(index === this.users.length - 1) {
-        Swal.fire({
-          icon: 'success',
-          title: 'As informações foram enviadas com sucesso!',
-          showConfirmButton: false,
-          timer: 1500
-        });
-      };
+    this.users.forEach((item, index, array)=> {
+      this.homeServ.createNotification(sendForm, item);
+    });
+
+    Swal.fire({
+      icon: 'success',
+      title: 'As informações foram enviadas com sucesso!',
+      showConfirmButton: false,
+      timer: 1700
     });
   };
 

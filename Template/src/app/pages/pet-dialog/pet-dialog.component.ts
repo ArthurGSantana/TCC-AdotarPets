@@ -50,7 +50,7 @@ export class PetDialogComponent implements OnInit {
           allowOutsideClick: false,
           didOpen: () => { Swal.showLoading() },
         });
-        let values = JSON.stringify(this.clientForm.value);
+        let values = this.clientForm.value;
         let ong = this.data.pet.ong
         this.homeService.createNotification(values, ong);
         Swal.close();

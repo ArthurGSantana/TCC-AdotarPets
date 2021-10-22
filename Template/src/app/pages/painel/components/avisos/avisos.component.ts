@@ -43,11 +43,14 @@ export class AvisosComponent implements OnInit {
   };
 
   getNotification(): void {
+    this.notifyAchado = [];
+    this.notifyAdocao = [];
+    this.notifyPerdido = [];
+
     this.homeService.getNotification(this.ong).subscribe(result => {
       let objects = Object.entries(result);
-
       objects.forEach(array => {
-        let newObj = JSON.parse(array[1]);
+        let newObj = array[1];
         newObj.id = array[0].toString();
         if(newObj?.type === 'achado') {
           this.notifyAchado.push(newObj);
@@ -76,12 +79,8 @@ export class AvisosComponent implements OnInit {
     const id = obj.id;
     let newObj = obj;
     delete newObj.id;
-    delete newObj.ativo;
-    if(obj.ativo === 1) {
-      this.homeService.updateActive(newObj, this.ong, id).then(res => {
-        //console.log(res)
-      });
-    };
+    newObj.ativo = 0
+    this.homeService.updateActive(newObj, this.ong, id);
     this.matDialog.open(InfoNotifyComponent, {
       data: {
         dataInfo: obj
@@ -96,12 +95,8 @@ export class AvisosComponent implements OnInit {
     const id = obj.id;
     let newObj = obj;
     delete newObj.id;
-    delete newObj.ativo;
-    if(obj.ativo === 1) {
-      this.homeService.updateActive(newObj, this.ong, id).then(res => {
-        //console.log(res)
-      });
-    };
+    newObj.ativo = 0;
+    this.homeService.updateActive(newObj, this.ong, id)
     this.matDialog.open(ProcuraComponent, {
       data: {
         dataInfo: obj

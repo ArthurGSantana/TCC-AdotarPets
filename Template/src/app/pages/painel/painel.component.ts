@@ -56,7 +56,7 @@ export class PainelComponent implements OnInit {
     this.homeService.getNotification(this.ong).subscribe(result => {
       let objects = Object.entries(result);
       objects.forEach(array => {
-        let newObj = JSON.parse(array[1]);
+        let newObj = array[1];
         newObj.id = array[0].toString();
         this.notify.push(newObj);
       });

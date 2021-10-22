@@ -40,7 +40,7 @@ export class HomeService {
   };
 
   updateActive(obj: any, path: string, key: any): Promise<any>{
-    return this.firebase.list<any>(`notificacoes/${path}`).update(key, obj);
+    return this.firebase.object<any>(`notificacoes/${path}/${key}`).update(obj);
   };
 
   deleteNotification(path: string, key: any): Promise<any> {
