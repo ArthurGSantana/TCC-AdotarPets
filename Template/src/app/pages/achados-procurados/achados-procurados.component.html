@@ -57,15 +57,18 @@
                 <div class="images">
                   <span *ngIF="imagesImport.length < 1">Sem imagens...</span>
                   <section *ngIf="imagesImport.length > 0">
-                    <div *ngFor="let image of imagesImport">
+                    <div *ngFor="let image of imagesImport" class="img-btn">
                       <span>{{image.fileName}}</span>
-                      <button type="button" class="btn-eye" (click)="visibility(image)"><i class="material-icons">visibility</i></button>
+                      <div class="subgroup">
+                        <button type="button" class="btn-eye" (click)="visibility(image)"><i class="material-icons">visibility</i></button>
+                        <button type="button" class="btn-eye" (click)="deleteImage(image)"><i class="material-icons">close</i></button>
+                      </div>
                     </div>
                   </section>
                 </div>
 
                 <div class="img-container">
-                  <span>Adicione imagens do pet <span style="font-size: 15px;">(opcional)</span></span>
+                  <span>Adicione imagens do pet <span style="font-size: 15px;">(obrigatório)</span></span>
                   <button mat-raised-button class="btn" (click)="input.click()">
                     Adicionar
                     <i class="material-icons">image</i>
@@ -145,10 +148,10 @@
                   </mat-card-content>
                 </mat-card>
                 <div class="button-div">
-                  <button mat-raised-button (click)="onSubmit()">Finalizar processo</button>
+                  <button type="button" mat-raised-button (click)="onSubmit()" (click)="stepper.reset()">Finalizar processo</button>
                 </div>
                 <div class="div-button">
-                  <button mat-raised-button matStepperPrevious class="anterior">Anterior</button>
+                  <button type="button" mat-raised-button matStepperPrevious class="anterior">Anterior</button>
                 </div>
               </div>
             </mat-step>

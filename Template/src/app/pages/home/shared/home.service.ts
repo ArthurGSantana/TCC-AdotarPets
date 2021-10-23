@@ -1,12 +1,14 @@
 import { PetsModel } from './../../../shared/interfaces/Pets.model';
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HomeService {
+
+  deleteEvent: Subject<any> = new Subject<any>();
 
   constructor(
     private firebase: AngularFireDatabase
@@ -40,11 +42,12 @@ export class HomeService {
   };
 
   updateActive(obj: any, path: string, key: any): Promise<any>{
-    return this.firebase.object<any>(`notificacoes/${path}/${key}`).update(obj);
+    return this.firebase.list<any>(`notificacoes/${path}`).update(key, obj);
   };
 
   deleteNotification(path: string, key: any): Promise<any> {
-    return this.firebase.object<any>(`notificacoes/${path}/${key}`).remove();
+    const object = this.firebase.object(`notificacoes/${path}/${key}`);
+    return object.remove();
   };
 
 }

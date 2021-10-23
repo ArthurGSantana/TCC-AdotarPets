@@ -1,6 +1,3 @@
-import { ProcuraComponent } from './pages/painel/components/avisos/components/procura/procura.component';
-import { InfoNotifyComponent } from './pages/painel/components/avisos/components/info-notify/info-notify.component';
-import { PetDialogComponent } from './pages/pet-dialog/pet-dialog.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -28,8 +25,6 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatBadgeModule } from '@angular/material/badge';
 
-
-
 //PrimeNg
 import { ButtonModule } from 'primeng/button';
 import { ChartModule } from 'primeng/chart';
@@ -37,6 +32,10 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 //Componentes
 import { AppComponent } from './app.component';
+import { CadastroComponent } from './pages/login/components/cadastro/cadastro.component';
+import { ProcuraComponent } from './pages/painel/components/avisos/components/procura/procura.component';
+import { InfoNotifyComponent } from './pages/painel/components/avisos/components/info-notify/info-notify.component';
+import { PetDialogComponent } from './pages/pet-dialog/pet-dialog.component';
 import { HeaderComponent } from './pages/statics/header/header.component';
 import { SidenavComponent } from './pages/statics/sidenav/sidenav.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -85,7 +84,8 @@ registerLocaleData(en);
     DisplayPetsComponent,
     PetDialogComponent,
     InfoNotifyComponent,
-    ProcuraComponent
+    ProcuraComponent,
+    CadastroComponent
   ],
   imports: [
     BrowserModule,

@@ -14,7 +14,7 @@ body{
     align-items: center;
 
     .img {
-      margin-top: 50px;
+      margin-top: 70px;
       width: 80%;
       height: 500px;
       display: flex;
@@ -28,6 +28,7 @@ body{
         border-radius: 15px;
       }
 
+      
       .card {
         position: absolute;
         right: 0;
@@ -38,6 +39,7 @@ body{
         background-color: $secundary-color;
         border: 4px dashed $primary-color;
         border-radius: 15px;
+        overflow: auto;
 
         .titulo {
           font-size: 32px;

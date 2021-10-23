@@ -87,14 +87,15 @@ body {
 
           section {
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: center;
             flex-direction: column;
             width: 100%;
             height: 100%;
             overflow: auto;
 
-            div {
+            .img-btn {
+              margin-top: 5px;
               width: 80%;
               height: 32px;
               display: flex;
@@ -109,21 +110,41 @@ body {
                 font-weight: bold;
               }
 
-              .btn-eye {
-                margin-right: 5px;
-                width: 25px;
-                height: 25px;
+              .subgroup {
                 display: flex;
-                justify-content: center;
-                align-items: center;
-                outline: none;
-                border: 1px solid #780000;
-                border-radius: 3px;
-                background-color: #ffffff;
+                flex-direction: row;
 
-                i {
-                  font-size: .8rem;
-                  color: #780000;
+                .btn-eye {
+                  margin-right: 5px;
+                  width: 25px;
+                  height: 25px;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  outline: none;
+                  border: 1px solid #780000;
+                  border-radius: 3px;
+                  background-color: #ffffff;
+  
+                  i {
+                    font-size: .9rem;
+                    color: #780000;
+                  }
+                }
+  
+                .btn-close {
+                  margin-right: 5px;
+                  width: 25px;
+                  height: 25px;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  outline: none;
+                  border: 1px solid $secundary-color;
+                  border-radius: 3px;
+                  background-color: $primary-color;
+                  font-size: .9rem;
+                  font-weight: bold;
                 }
               }
             }

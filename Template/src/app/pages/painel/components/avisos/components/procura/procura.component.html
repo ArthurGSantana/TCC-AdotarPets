@@ -45,7 +45,7 @@
       </div>
     </div>
 
-    <div class="image">
+    <div class="image" *ngIf="imageFiles?.length > 0">
       <button *ngIf="imageFiles.length > 1" mat-mini-fab class="left"><i class="material-icons" (click)="carrousel('left')">chevron_left</i></button>
       <div>
         <img [src]="imageNow.fileContent" [alt]="imageNow.fileName">

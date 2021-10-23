@@ -7,6 +7,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { DialogInfoComponent } from './../../shared/dialog-info/dialog-info.component';
 import { HomeService } from './../home/shared/home.service';
 import Swal from 'sweetalert2';
+import { isNgTemplate } from '@angular/compiler';
 
 @Component({
   selector: 'app-achados-procurados',
@@ -25,7 +26,7 @@ export class AchadosProcuradosComponent implements OnInit, OnDestroy {
 
   petForm!: FormGroup;
   clientForm!: FormGroup;
-  file!: File;
+  file!: any;
   preview!: string;
   imagesImport: any[] = [];
   users: any[] = [];
@@ -83,9 +84,8 @@ export class AchadosProcuradosComponent implements OnInit, OnDestroy {
   }
 
   getFileImage(event: any): void {
-    let imgfile = event.target.files[0] as File
-    console.log(imgfile)
-    this.file = imgfile;
+    let imgfile = event.target.files[0] as File;
+    this.file = imgfile as File;
     const reader = new FileReader();
     reader.onload = (event: any) => {
       this.preview = event.target.result;
@@ -120,12 +120,24 @@ export class AchadosProcuradosComponent implements OnInit, OnDestroy {
       this.homeServ.createNotification(sendForm, item);
     });
 
-    Swal.fire({
-      icon: 'success',
-      title: 'As informações foram enviadas com sucesso!',
-      showConfirmButton: false,
-      timer: 1700
-    });
+    setTimeout(() => {
+      Swal.fire({
+        icon: 'success',
+        title: 'As informações foram enviadas com sucesso!',
+        showConfirmButton: false,
+        timer: 1700
+      }).then(result => {
+        this.petForm.reset();
+        this.clientForm.reset();
+        this.imagesImport = [];
+      });
+    }, 100);
+  };
+
+  deleteImage(image: any): void {
+    this.imagesImport = this.imagesImport.filter(item => item.fileName !== image.fileName);
+    this.file = '';
+    this.preview = '';
   };
 
 }

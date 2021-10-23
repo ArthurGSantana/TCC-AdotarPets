@@ -3,10 +3,10 @@
     <span class="notify">Notificações</span>
   </div>
   <mat-card>
-      <span *ngIf="notifyAdocao.length === 0">
+      <span *ngIf="allNotifications?.length === 0" style="margin-top: 150px;">
         Sem notificações até o momento!
       </span>
-      <section class="session" *ngIf="notifyAdocao.length > 0">
+      <section class="session" *ngIf="notifyAdocao.length > 0" style="height: auto;">
         <div *ngFor="let obj of notifyAdocao" class="divider">
           <div>
             <i class="material-icons pointer" [ngClass]="{'pointer-on': obj.ativo, 'pointer-off': !obj.ativo}">fiber_manual_record</i>
@@ -18,8 +18,8 @@
           <button mat-flat-button (click)="openNotify(obj)">Ver Mais</button>
         </div>
       </section>
-      <hr *ngIf="notifyAchado.length > 0" style="width: 100%;">
-      <section class="session" *ngIf="notifyAchado.length > 0">
+      <hr *ngIf="(notifyAdocao.length > 0 && notifyAchado.length > 0) || (notifyAdocao.length > 0 && notifyPerdido.length > 0)" style="width: 100%;">
+      <section class="session" *ngIf="notifyAchado.length > 0" style="height: auto;">
         <div *ngFor="let obj1 of notifyAchado" class="divider">
           <div>
             <i class="material-icons pointer" [ngClass]="{'pointer-on': obj1.ativo, 'pointer-off': !obj1.ativo}">fiber_manual_record</i>
@@ -31,8 +31,8 @@
           <button mat-flat-button (click)="openModal(obj1)">Ver Mais</button>
         </div>
       </section>
-      <hr *ngIf="notifyPerdido.length > 0" style="width: 100%;">
-      <section class="session" *ngIf="notifyPerdido.length > 0">
+      <hr *ngIf="notifyPerdido.length > 0 && notifyAchado.length > 0" style="width: 100%;">
+      <section class="session" *ngIf="notifyPerdido.length > 0" style="height: auto;">
         <div *ngFor="let obj2 of notifyPerdido" class="divider">
           <div>
             <i class="material-icons pointer" [ngClass]="{'pointer-on': obj2.ativo, 'pointer-off': !obj2.ativo}">fiber_manual_record</i>

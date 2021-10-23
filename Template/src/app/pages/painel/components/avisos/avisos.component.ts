@@ -18,8 +18,12 @@ export class AvisosComponent implements OnInit {
   notifyAdocao: any[] = [];
   notifyAchado: any[] = [];
   notifyPerdido: any[] = [];
+  notifyAdocaoAux: any[] = [];
+  notifyAchadoAux: any[] = [];
+  notifyPerdidoAux: any[] = [];
   user!: any;
   ong!: any;
+  control: number = 0;
 
   constructor(
     private homeService: HomeService,
@@ -28,12 +32,6 @@ export class AvisosComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    Swal.fire({
-      title: 'Buscando Notificações...',
-      allowOutsideClick: false,
-      didOpen: () => { Swal.showLoading() },
-    });
-    
     this.user = sessionStorage.getItem('login');
     this.ong = sessionStorage.getItem('ong');
 
@@ -43,45 +41,57 @@ export class AvisosComponent implements OnInit {
   };
 
   getNotification(): void {
+    Swal.fire({
+      title: 'Buscando Notificações...',
+      allowOutsideClick: false,
+      didOpen: () => { Swal.showLoading() },
+    });
+
     this.notifyAchado = [];
     this.notifyAdocao = [];
     this.notifyPerdido = [];
 
     this.homeService.getNotification(this.ong).subscribe(result => {
-      let objects = Object.entries(result);
-      objects.forEach(array => {
-        let newObj = array[1];
-        newObj.id = array[0].toString();
-        if(newObj?.type === 'achado') {
-          this.notifyAchado.push(newObj);
-        } else if(newObj?.type === 'perdido') {
-          this.notifyPerdido.push(newObj);
-        } else {
-          this.notifyAdocao.push(newObj);
+      if(result) {
+        if(this.control === 0) {
+          this.allNotifications = result;
+          let objects = Object.entries(result);
+          objects.forEach(array => {
+            let newObj = array[1];
+            newObj.id = array[0].toString();
+            if(newObj?.type === 'achado') {
+              this.notifyAchado.push(newObj);
+            } else if(newObj?.type === 'perdido') {
+              this.notifyPerdido.push(newObj);
+            } else {
+              this.notifyAdocao.push(newObj);
+            };
+          });
+          
+          this.notifyAchado = this.notifyAchado.reverse();
+          this.notifyAdocao = this.notifyAdocao.reverse();
+          this.notifyPerdido = this.notifyPerdido.reverse();
+          this.control = 1;
+          Swal.close();
         };
-      });
-      /* result.forEach(item => {
-        this.allNotifications.push(item);
-        let objParse = Object.values(item);
-        objParse.forEach(x => {
-          this.allNotifications.push(x);
-        })
-      });
-      this.allNotifications.forEach(item => {
-        this.notify.push(JSON.parse(item));
-      }); */
-
-      Swal.close();
+      } else {
+        this.allNotifications = [];
+        Swal.close();
+      };
     });
   };
 
   openNotify(obj: any): void {
-    const id = obj.id;
-    let newObj = obj;
-    delete newObj.id;
-    newObj.ativo = 0
-    this.homeService.updateActive(newObj, this.ong, id);
-    this.matDialog.open(InfoNotifyComponent, {
+    /* if(obj.ativo === 1) {
+      const id = obj.id;
+      let newObj = obj;
+      delete newObj.id;
+      newObj.ativo = 0
+      this.homeService.updateActive(newObj, this.ong, id).then(res => {
+        //this.getNotification();
+      });
+    }; */
+    const dialogRef = this.matDialog.open(InfoNotifyComponent, {
       data: {
         dataInfo: obj
       },
@@ -89,15 +99,30 @@ export class AvisosComponent implements OnInit {
       width: '700px',
       panelClass: 'info-notify'
     });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if(result === 'excluir') {
+        this.control = 0;
+        this.getNotification();
+        this.homeService.deleteEvent.next(true);
+      } else {
+        if(obj.ativo === 1) {
+          const id = obj.id;
+          let newObj = obj;
+          delete newObj.id;
+          newObj.ativo = 0;
+          this.homeService.updateActive(newObj, this.ong, id).then(res=> {
+            this.control = 0;
+            this.getNotification();
+          });
+        }; 
+      }
+    });
   };
 
   openModal(obj: any): void {
-    const id = obj.id;
-    let newObj = obj;
-    delete newObj.id;
-    newObj.ativo = 0;
-    this.homeService.updateActive(newObj, this.ong, id)
-    this.matDialog.open(ProcuraComponent, {
+    /* */
+    const dialogRef = this.matDialog.open(ProcuraComponent, {
       data: {
         dataInfo: obj
       },
@@ -105,6 +130,25 @@ export class AvisosComponent implements OnInit {
       width: '1050px',
       panelClass: 'info-notify'
     });
-  }
+
+    dialogRef.afterClosed().subscribe(result => {
+      if(result === 'excluir') {
+        this.control = 0;
+        this.getNotification();
+        this.homeService.deleteEvent.next(true);
+      } else {
+        if(obj.ativo === 1) {
+          const id = obj.id;
+          let newObj = obj;
+          delete newObj.id;
+          newObj.ativo = 0;
+          this.homeService.updateActive(newObj, this.ong, id).then(res=> {
+            this.control = 0;
+            this.getNotification();
+          });
+        }; 
+      }
+    });
+  };
 
 }
