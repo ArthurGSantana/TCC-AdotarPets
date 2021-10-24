@@ -52,13 +52,16 @@ section {
         .cima {
           display: flex;
           justify-content: space-around;
-          width: 90%;
+          width: 100%;
+          border: 1px solid $button-color;
+          margin-top: 18px;
+          background-color: #ffffffb6;
 
           .cima-div {
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-top: 18px;
+            //margin-top: 18px;
 
             .dianho {
               font-size: 1.3rem;
