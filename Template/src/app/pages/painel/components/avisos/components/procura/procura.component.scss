@@ -9,6 +9,8 @@ section {
   flex-wrap: wrap;
   align-items: center;
   flex-direction: column;
+  background-image: url('../../../../../../../assets/fundo-patinha.png');
+  background-size: cover;
 
   .title-top {
     width: 100%;
@@ -42,6 +44,7 @@ section {
 
   .pet {
     width: 270px;
+    background-color: #ffffff;
   }
 
   .image {
@@ -90,6 +93,7 @@ section {
 
   .user {
     width: 270px;
+    background-color: #ffffff;
   }
 }
 
@@ -149,6 +153,9 @@ section {
     width: 60%;
     justify-content: space-evenly;
     align-items: center;
+    background-color: #ffffff;
+    margin-bottom: -10px;
+    height: 50px;
 
     .whats {
       background-color: #34af23;

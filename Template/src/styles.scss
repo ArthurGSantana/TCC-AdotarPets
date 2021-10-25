@@ -55,6 +55,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .info-notify .mat-dialog-container {
   padding: 0 !important;
+  border: 2px solid #780000;
+  border-radius: 5px;
 }
 
 .modal-add .mat-dialog-container{

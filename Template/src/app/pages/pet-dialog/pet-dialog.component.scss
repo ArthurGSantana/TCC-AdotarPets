@@ -2,6 +2,11 @@ $primary-color: #780000;
 $secundary-color: #fffaf1;
 $button-color: #c1121ea6;
 
+/* .body {
+  background-image: url('../../../assets/fundo-patinha.png');
+  background-size: cover;
+} */
+
 .container {
   display: flex;
   margin-top: 30px;
@@ -11,7 +16,8 @@ $button-color: #c1121ea6;
   position: absolute;
   margin-left: 975px;
   margin-top: -15px;
-  background-color: $secundary-color;
+  background-color: #ffffff;
+  border: 1px solid $primary-color;
 
   i {
     font-size: 1.3rem;
@@ -164,6 +170,6 @@ hr{
     background: $primary-color;
     color: $secundary-color;
     margin-left: -170px;
-    margin-top: 10px;
+    margin-top: 20px;
   }
 }
