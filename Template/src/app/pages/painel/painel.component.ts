@@ -17,6 +17,7 @@ export class PainelComponent implements OnInit {
   ong!: any;
   notify: any[] = [];
   notifyCount: number = 0;
+  control: number = 0;
 
   constructor(
     private router: Router,
@@ -32,6 +33,15 @@ export class PainelComponent implements OnInit {
     if(this.user) {
       this.getNotification();
     };
+
+    this.homeService.deleteEvent.subscribe(res => {
+      if(res) {
+        setTimeout(() => {
+          this.getNotification();
+          this.control = 0;
+        }, 100);
+      };
+    });
   }
 
 
@@ -49,19 +59,30 @@ export class PainelComponent implements OnInit {
         this.controlBorder=3;
         this.router.navigate(['painel/avisos']);
         break;
+      case '4':
+        this.controlBorder=4;
+        this.router.navigate(['painel/gerenciar']);
+        break;
     };
   };
 
   getNotification(): void {
+    this.notify = [];
     this.homeService.getNotification(this.ong).subscribe(result => {
-      let objects = Object.entries(result);
-      objects.forEach(array => {
-        let newObj = JSON.parse(array[1]);
-        newObj.id = array[0].toString();
-        this.notify.push(newObj);
-      });
-
-      this.notifyCount = this.notify.length;
+      if(result) {
+        if(this.control === 0) {
+          let objects = Object.entries(result);
+          objects.forEach(array => {
+            let newObj = array[1];
+            newObj.id = array[0].toString();
+            this.notify.push(newObj);
+          });
+          this.notifyCount = this.notify.length;
+          this.control = 1;
+        };
+      } else {
+        this.notifyCount = 0;
+      };
     });
   };
 }

@@ -2,6 +2,11 @@ $primary-color: #780000;
 $secundary-color: #fffaf1;
 $button-color: #c1121ea6;
 
+/* .body {
+  background-image: url('../../../assets/fundo-patinha.png');
+  background-size: cover;
+} */
+
 .container {
   display: flex;
   margin-top: 30px;
@@ -11,7 +16,8 @@ $button-color: #c1121ea6;
   position: absolute;
   margin-left: 975px;
   margin-top: -15px;
-  background-color: $secundary-color;
+  background-color: #ffffff;
+  border: 1px solid $primary-color;
 
   i {
     font-size: 1.3rem;
@@ -103,17 +109,21 @@ hr{
 
 .info-ctn {
   width: 100%;
-  height: 100%;
+  //height: 100%;
   display: flex;
   justify-content: center;
   flex-direction: column;
+  border: 2px solid $primary-color;
+  border-radius: 10px;
+  margin-left: 10px;
+  height: 432px;
 
   .title-div {
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-top: -5px;
-    margin-bottom: 25px;
+    margin-top: 15px;
+    margin-bottom: 10px;
 
     span {
       font-family: 'Libre Baskerville', serif;
@@ -160,5 +170,6 @@ hr{
     background: $primary-color;
     color: $secundary-color;
     margin-left: -170px;
+    margin-top: 20px;
   }
 }

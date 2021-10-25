@@ -14,6 +14,11 @@
       <span>Adicionar</span>
     </div>
 
+    <div class="content-info" [class.border-focus]="controlBorder === 4" (click)="navega('4')">
+      <i class="material-icons">settings</i>
+      <span>Gerenciar</span>
+    </div>
+
     <div class="content-info" [class.border-focus]="controlBorder === 3" (click)="navega('3')">
       <i class="material-icons" [matBadge]="notifyCount" matBadgeOverlap="false">error</i>
       <span>Avisos</span>

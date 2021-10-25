@@ -1,3 +1,5 @@
+import { CadastroComponent } from './components/cadastro/cadastro.component';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit, AfterViewInit } from '@angular/core';
@@ -19,7 +21,8 @@ export class LoginComponent implements OnInit, AfterViewInit {
   constructor(
     private formBuilder: FormBuilder,
     private loginService: LoginService,
-    private router: Router
+    private router: Router,
+    private modal: MatDialog
   ) { }
 
   ngOnInit(): void {
@@ -49,6 +52,14 @@ export class LoginComponent implements OnInit, AfterViewInit {
       } else {
         this.loginService.showMessage('Login incorreto, tente novamente!');
       };
+    });
+  };
+
+  openModal(): void {
+    this.modal.open(CadastroComponent, {
+      width: '500px',
+      height: '400px',
+      panelClass: 'cadastro-modal'
     });
   };
 

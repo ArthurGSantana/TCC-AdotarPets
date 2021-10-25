@@ -55,10 +55,25 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .info-notify .mat-dialog-container {
   padding: 0 !important;
+  border: 2px solid #780000;
+  border-radius: 5px;
 }
 
 .modal-add .mat-dialog-container{
   border: 2px solid #780000;
   border-radius: 5px;
   padding: 0px !important;
+}
+
+.cadastro-modal {
+  border: 2px solid #780000;
+  border-radius: 5px;
+  padding: 0px !important;
+}
+
+.edit-notify .mat-dialog-container {
+  background-color: #ffdcdc;
+  padding: 0 !important;
+  border: 2px solid #780000;
+  border-radius: 5px;
 }

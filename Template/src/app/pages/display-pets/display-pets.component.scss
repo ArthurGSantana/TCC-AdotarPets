@@ -14,8 +14,8 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: -45px;
-    margin-bottom: 100px;
+    margin-top: 40px;
+    margin-bottom: 30px;
 
     mat-card {
       padding: 0!important;
@@ -26,6 +26,7 @@ section {
       width: 240px;
       border: 3px solid #780000;
       border-radius: 5px;
+      transition: all 0.3s ease;
 
       .card-title {
         width: 100%;
@@ -52,13 +53,16 @@ section {
         .cima {
           display: flex;
           justify-content: space-around;
-          width: 90%;
+          width: 100%;
+          border: 1px solid $button-color;
+          margin-top: 18px;
+          background-color: #ffffffb6;
 
           .cima-div {
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-top: 18px;
+            //margin-top: 18px;
 
             .dianho {
               font-size: 1.3rem;
@@ -109,6 +113,12 @@ section {
           }
         }
       }
+    }
+
+    mat-card:hover {
+      -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+      transform: scale(1.1)
     }
 
     .btn-ctn {

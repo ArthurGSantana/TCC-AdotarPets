@@ -1,94 +1,97 @@
-<button mat-dialog-close class="close" mat-mini-fab><i class="fa fa-times"></i></button>
-<div class="title">
-  <span> Adota </span>
-  <i class="material-icons iconTolbar">pets</i>
-  <span> Pets </span>
-</div>
+<section class="body">
 
-<section class="container">
+  <button mat-dialog-close class="close" mat-mini-fab><i class="fa fa-times"></i></button>
+  <div class="title">
+    <span> Adota </span>
+    <i class="material-icons iconTolbar">pets</i>
+    <span> Pets </span>
+  </div>
   
-  <section class="img-ctn">
-  
-    <div class="div-ctn">
-      <img [src]="data.pet.imagem" alt="imagem do pet">
-    </div>
-  
-    <mat-card class="card">
-      <h2>Informações</h2>
-      <div style="margin-bottom: 5px;">
-        <span><strong>Espécie: </strong>{{data.pet.especie}}</span>
-        <span><strong>Idade: </strong>{{data.pet.idade}} anos</span>
-        <span><strong>Porte: </strong>{{data.pet.porte}}</span>
-      </div>
-      <div style="margin-bottom: 3px;">
-        <span><strong>Sexo: </strong>{{data.pet.sexo}}</span>
-        <span><strong>Cidade: </strong>{{data.pet.cidade}}</span>
-      </div>
-  
-    </mat-card>
-  </section>
-  
-  <hr>
-  
-  <section class="info-ctn">
-    <div class="title-div">
-      <span><i class="material-icons">drive_file_rename_outline</i>&nbsp;&nbsp;Dados Pessoais</span>
-    </div>
-    <form [formGroup]="clientForm" (ngSubmit)="onSubmit()">
-      <div class="ctn">
-        <i class="material-icons">
-          person
-        </i>
-        <mat-form-field appearance="outline">
-          <mat-label>Nome</mat-label>
-          <input matInput formControlName="name" type="text">
-        </mat-form-field>
+  <section class="container">
+    
+    <section class="img-ctn">
+    
+      <div class="div-ctn">
+        <img [src]="data.pet.imagem" alt="imagem do pet">
       </div>
     
-      <div class="ctn">
-        <i class="material-icons">
-          phone
-        </i>
-        <mat-form-field appearance="outline">
-          <mat-label>Telefone</mat-label>
-          <input matInput formControlName="phone" type="text">
-        </mat-form-field>
-      </div>
+      <mat-card class="card">
+        <h2>Informações</h2>
+        <div style="margin-bottom: 5px;">
+          <span><strong>Espécie: </strong>{{data.pet.especie}}</span>
+          <span><strong>Idade: </strong>{{data.pet.idade}} anos</span>
+          <span><strong>Porte: </strong>{{data.pet.porte}}</span>
+        </div>
+        <div style="margin-bottom: 3px;">
+          <span><strong>Sexo: </strong>{{data.pet.sexo}}</span>
+          <span><strong>Cidade: </strong>{{data.pet.cidade}}</span>
+        </div>
     
-      <div class="ctn">
-        <i class="material-icons">
-          home
-        </i>
-        <mat-form-field appearance="outline">
-          <mat-label>Endereço</mat-label>
-          <input matInput formControlName="address" type="text">
-        </mat-form-field>
-      </div>
+      </mat-card>
+    </section>
     
-      <div class="ctn">
-        <i class="material-icons">
-          location_city
-        </i>
-        <mat-form-field appearance="outline">
-          <mat-label>Cidade</mat-label>
-          <input matInput formControlName="city" type="text">
-        </mat-form-field>
+    <hr>
+    
+    <section class="info-ctn">
+      <div class="title-div">
+        <span><i class="material-icons">drive_file_rename_outline</i>&nbsp;&nbsp;Dados Pessoais</span>
       </div>
-
-      <div class="ctn">
-        <i class="material-icons">
-          email
-        </i>
-        <mat-form-field appearance="outline">
-          <mat-label>E-mail</mat-label>
-          <input matInput formControlName="email" type="text">
-        </mat-form-field>
-      </div>
+      <form [formGroup]="clientForm" (ngSubmit)="onSubmit()">
+        <div class="ctn">
+          <i class="material-icons">
+            person
+          </i>
+          <mat-form-field appearance="outline">
+            <mat-label>Nome</mat-label>
+            <input matInput formControlName="name" type="text">
+          </mat-form-field>
+        </div>
+      
+        <div class="ctn">
+          <i class="material-icons">
+            phone
+          </i>
+          <mat-form-field appearance="outline">
+            <mat-label>Telefone</mat-label>
+            <input matInput formControlName="phone" type="text">
+          </mat-form-field>
+        </div>
+      
+        <div class="ctn">
+          <i class="material-icons">
+            home
+          </i>
+          <mat-form-field appearance="outline">
+            <mat-label>Endereço</mat-label>
+            <input matInput formControlName="address" type="text">
+          </mat-form-field>
+        </div>
+      
+        <div class="ctn">
+          <i class="material-icons">
+            location_city
+          </i>
+          <mat-form-field appearance="outline">
+            <mat-label>Cidade</mat-label>
+            <input matInput formControlName="city" type="text">
+          </mat-form-field>
+        </div>
   
-      <div class="ctn-button">
-        <button type="submit" mat-raised-button [disabled]="!clientForm.dirty || !clientForm.valid">Solicitar Adoção</button>
-      </div>
-    </form>
-  
+        <div class="ctn">
+          <i class="material-icons">
+            email
+          </i>
+          <mat-form-field appearance="outline">
+            <mat-label>E-mail</mat-label>
+            <input matInput formControlName="email" type="text">
+          </mat-form-field>
+        </div>
+    
+        <div class="ctn-button">
+          <button type="submit" mat-raised-button [disabled]="!clientForm.dirty || !clientForm.valid">Solicitar Adoção</button>
+        </div>
+      </form>
+    
+    </section>
   </section>
 </section>

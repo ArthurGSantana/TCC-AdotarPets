@@ -27,22 +27,25 @@ section {
 
   mat-card {
     width: 80%;
-    height: 330px;
+    height: 390px;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    flex-direction: column;
     border: 2px dashed $primary-color;
+    overflow-y: auto;
 
     span {
       color: rgb(155, 154, 154);
       font-weight: bold;
-      font-size: 1rem;
+      font-size: 1.5rem;
     }
   }
 }
 .session {
   display: flex;
   flex-direction: column;
+  height: none !important;
 
   .divider {
     width: 100%;
@@ -59,7 +62,7 @@ section {
       border: 1px solid $primary-color;
       border-radius: 5px;
       background-color: #ffffff;
-      width: 85px;
+      width: 100px;
       display: flex;
       justify-content: center;
       align-items: center;

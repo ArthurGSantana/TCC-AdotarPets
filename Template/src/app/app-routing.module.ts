@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AvisosComponent } from './pages/painel/components/avisos/avisos.component';
 import { LoginGuard } from './guards/loginGuard.service';
+import { GerenciarComponent } from './pages/painel/components/gerenciar/gerenciar.component';
 import { AdicionarPetComponent } from './pages/painel/components/adicionar-pet/adicionar-pet.component';
 import { InformacoesGeraisComponent } from './pages/painel/components/informacoes-gerais/informacoes-gerais.component';
 import { PainelComponent } from './pages/painel/painel.component';
@@ -25,7 +26,8 @@ const routes: Routes = [
   { path: 'painel', component: PainelComponent, children: [
     { path: 'informacoes-gerais', component: InformacoesGeraisComponent, canActivate: [AuthGuard] },
     { path: 'editar', component: AdicionarPetComponent, canActivate: [AuthGuard] },
-    { path: 'avisos', component: AvisosComponent, canActivate: [AuthGuard] }
+    { path: 'avisos', component: AvisosComponent, canActivate: [AuthGuard] },
+    { path: 'gerenciar', component: GerenciarComponent, canActivate: [AuthGuard] }
   ]}
 ];
 
