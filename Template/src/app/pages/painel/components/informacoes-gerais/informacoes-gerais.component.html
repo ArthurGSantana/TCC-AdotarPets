@@ -21,11 +21,11 @@
       </div>
       <hr>
       <div>
-        <span>Ativos: <strong>{{dataOng?.cadastrados - dataOng?.adotados}}</strong></span>
+        <span>Ativos: <strong>{{(dataOng?.cadastrados - dataOng?.adotados) - dataOng?.excluidos}}</strong></span>
       </div>
       <hr>
       <div>
-        <span>Cachorros/Gatos: <strong>{{dataOng?.cachorros + ' / ' + dataOng?.gatos}}</strong></span>
+        <span>Excluídos: <strong>{{dataOng?.excluidos}}</strong></span>
       </div>
     </div>
   </mat-card>

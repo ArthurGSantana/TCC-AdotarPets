@@ -25,6 +25,10 @@ export class HomeService {
     return this.firebase.list<any>('animais').valueChanges();
   };
 
+  getAllPetsPainel(): Observable<any> {
+    return this.firebase.object<any>('animais').valueChanges();
+  };
+
   createNewPet(pet: PetsModel): any{
     return this.firebase.list<any>('animais').push(pet);
   };
@@ -48,6 +52,19 @@ export class HomeService {
   deleteNotification(path: string, key: any): Promise<any> {
     const object = this.firebase.object(`notificacoes/${path}/${key}`);
     return object.remove();
+  };
+
+  deletePet(key: any): Promise<any> {
+    const object = this.firebase.object(`animais/${key}`);
+    return object.remove();
+  };
+
+  editPet(key: any, obj: any): Promise<any> {
+    return this.firebase.list<any>(`animais`).update(key, obj);
+  };
+
+  updateAdota(obj: any, path: string, key: any): Promise<any>{
+    return this.firebase.list<any>(`ong`).update(path, obj);
   };
 
 }

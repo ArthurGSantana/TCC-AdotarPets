@@ -1,0 +1,33 @@
+<section class="section">
+  <mat-card class="card">
+    <div class="title">
+      <div>
+        <span>Gerenciamento dos Pets</span>
+      </div>
+    </div>
+
+    <div class="content">
+      <mat-card class="card-pet" *ngFor="let pet of allPets">
+        <div class="img-ctn">
+          <div class="img">
+            <img [src]="pet.imagem" alt="imagem do pet">
+          </div>
+          <div class="info">
+            <div>
+              <span class="tipo"><i class="material-icons">fiber_manual_record</i> Espécie: <span>{{pet.especie}}</span></span>
+              <span class="tipo"><i class="material-icons">fiber_manual_record</i> Porte: <span>{{pet.porte}}</span></span>
+              <span class="tipo"><i class="material-icons">fiber_manual_record</i> Idade: <span>{{pet.idade}}</span></span>
+              <span class="tipo"><i class="material-icons">fiber_manual_record</i> Sexo: <span>{{pet.sexo}}</span></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="action-ctn">
+          <button mat-flat-button class="edit" (click)="editarPet(pet)">Editar</button>
+          <button mat-flat-button class="adota" (click)="adotaPet(pet)">Adotado</button>
+          <button mat-flat-button class="exclui" (click)="excluirPet(pet)">Excluir</button>
+        </div>
+      </mat-card>
+    </div>
+  </mat-card>
+</section>

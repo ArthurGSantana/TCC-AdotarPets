@@ -59,6 +59,10 @@ export class PainelComponent implements OnInit {
         this.controlBorder=3;
         this.router.navigate(['painel/avisos']);
         break;
+      case '4':
+        this.controlBorder=4;
+        this.router.navigate(['painel/gerenciar']);
+        break;
     };
   };
 

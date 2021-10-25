@@ -1,0 +1,139 @@
+$primary-color: #780000;
+$secundary-color: #fdf0d5;
+
+
+.section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .card {
+    height: 475px;
+    width: 90%;
+    display: flex;
+    border: 3px solid $primary-color;
+    border-radius: 10px;
+    margin-top: 30px;
+    padding: 0;
+    overflow: auto;
+
+    .title {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+
+      div {
+        border: 1px solid $primary-color;
+        border-radius:0 0  8px  8px;
+        background-color: $primary-color;
+        width: 250px;
+        height: 35px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        span {
+          color: $secundary-color;
+          font-weight: bold;
+          font-family: 'Libre Baskerville', serif;
+          font-size: 1.1rem;
+        }
+      }
+    }
+
+    .content {
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+
+      .card-pet {
+        width: 370px;
+        height: 230px;
+        border: 2px solid $primary-color;
+        padding: 0;
+        display: flex;
+        margin-bottom: 30px;
+
+        .img-ctn {
+          width: 60%;
+          border-right: 1px solid gray;
+
+          .img {
+            border: 1px solid rgb(160, 160, 160);
+            width: 100%;
+            height: 150px;
+            border-radius: 0 0 5px 5px;
+            border-bottom: 2px solid gray;
+
+            img {
+              width: 100%;
+              height: 100%;
+            }
+          }
+
+          .info {
+            display: flex;
+            
+            div {
+              width: 100%;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-around;
+
+              .tipo {
+                margin-left: 7px;
+                font-size: .8rem;
+                display: flex;
+                align-items: center;
+                font-weight: bold;
+
+                i {
+                  font-size: .9rem;
+                  color: $primary-color;
+                }
+
+                span {
+                  color: gray;
+                  font-weight: bold;
+                  margin-left: 7px;
+                }
+              }
+            }
+          }
+        }
+
+
+        .action-ctn {
+          width: 40%;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          align-items: center;
+          
+          button {
+            width: 110px;
+          }
+
+          .edit {
+            background-color: rgb(11, 41, 97);
+            color: white;
+          }
+
+          .adota {
+            background-color: $primary-color;
+            color: white;
+          }
+
+          .exclui {
+            background-color: $secundary-color;
+            color: $primary-color;
+            border: 1px solid $primary-color;
+          }
+        }
+      }
+    }
+  }
+}

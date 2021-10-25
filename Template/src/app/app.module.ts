@@ -34,6 +34,8 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { AppComponent } from './app.component';
 import { CadastroComponent } from './pages/login/components/cadastro/cadastro.component';
 import { ProcuraComponent } from './pages/painel/components/avisos/components/procura/procura.component';
+import { GerenciarComponent } from './pages/painel/components/gerenciar/gerenciar.component';
+import { EditarPetsComponent } from './pages/painel/components/gerenciar/components/editar-pets/editar-pets.component';
 import { InfoNotifyComponent } from './pages/painel/components/avisos/components/info-notify/info-notify.component';
 import { PetDialogComponent } from './pages/pet-dialog/pet-dialog.component';
 import { HeaderComponent } from './pages/statics/header/header.component';
@@ -85,7 +87,9 @@ registerLocaleData(en);
     PetDialogComponent,
     InfoNotifyComponent,
     ProcuraComponent,
-    CadastroComponent
+    CadastroComponent,
+    GerenciarComponent,
+    EditarPetsComponent
   ],
   imports: [
     BrowserModule,

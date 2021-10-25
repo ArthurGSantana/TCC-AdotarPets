@@ -1,0 +1,58 @@
+<section>
+  <div class="title">
+    <div>
+      <i class="material-icons">edit</i>
+      <span>Edição</span>
+    </div>
+  </div>
+  <div class="form">
+    <form [formGroup]="petForm">
+      <mat-form-field appearance="outline" class="mat-form">
+        <mat-label>Cidade</mat-label>
+        <mat-select name="cidade" formControlName="cidade">
+          <mat-option *ngFor="let cidade of cidades" [value]="cidade">
+            {{cidade}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="mat-form">
+        <mat-label>Espécie</mat-label>
+        <mat-select name="especie" formControlName="especie">
+          <mat-option *ngFor="let esp of especies" [value]="esp">
+            {{esp}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="mat-form">
+        <mat-label>Porte</mat-label>
+        <mat-select name="porte" formControlName="porte">
+          <mat-option *ngFor="let porte of portes" [value]="porte">
+            {{porte}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="mat-form">
+        <mat-label>Sexo</mat-label>
+        <mat-select name="sexo" formControlName="sexo">
+          <mat-option *ngFor="let sex of sexo" [value]="sex">
+            {{sex}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="mat-form">
+        <mat-label>Idade</mat-label>
+        <input type="number" matInput formControlName="idade">
+      </mat-form-field>
+
+      <div>
+        <button mat-flat-button type="submit">Salvar</button>
+        <button mat-flat-button mat-dialog-close type="button">Voltar</button>
+      </div>
+
+    </form>
+  </div>
+</section>
