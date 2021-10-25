@@ -56,7 +56,7 @@ export class AchadosProcuradosComponent implements OnInit, OnDestroy {
       nome: [''],
       cidade: ['', Validators.required],
       infos: ['', Validators.required],
-      files: ['']
+      files: ['', Validators.required]
     });
 
     this.clientForm = this.formBuilder.group({
@@ -94,7 +94,8 @@ export class AchadosProcuradosComponent implements OnInit, OnDestroy {
         type: imgfile.type,
         fileContent: this.preview
       };
-      this.imagesImport.push(objImage)
+      this.imagesImport.push(objImage);
+      this.petForm.get('files')?.setValue(this.imagesImport);
     };
     reader.readAsDataURL(imgfile);
   };

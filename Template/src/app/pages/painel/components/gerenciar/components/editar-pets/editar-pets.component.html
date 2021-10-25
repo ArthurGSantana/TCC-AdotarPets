@@ -6,7 +6,7 @@
     </div>
   </div>
   <div class="form">
-    <form [formGroup]="petForm">
+    <form [formGroup]="petForm" (ngSubmit)="saveEdit()">
       <mat-form-field appearance="outline" class="mat-form">
         <mat-label>Cidade</mat-label>
         <mat-select name="cidade" formControlName="cidade">
@@ -48,9 +48,9 @@
         <input type="number" matInput formControlName="idade">
       </mat-form-field>
 
-      <div>
-        <button mat-flat-button type="submit">Salvar</button>
-        <button mat-flat-button mat-dialog-close type="button">Voltar</button>
+      <div class="btn-ctn">
+        <button mat-flat-button type="submit" class="edit">Salvar</button>
+        <button mat-flat-button mat-dialog-close type="button" class="back">Voltar</button>
       </div>
 
     </form>

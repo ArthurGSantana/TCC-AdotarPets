@@ -1,6 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
+import Swal from 'sweetalert2';
 
 import { HomeService } from './../../../../../home/shared/home.service';
 
@@ -22,7 +23,8 @@ export class EditarPetsComponent implements OnInit {
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: any,
     private formBuilder: FormBuilder,
-    private homeService: HomeService
+    private homeService: HomeService,
+    private dialog: MatDialog
   ) { }
 
   ngOnInit() {
@@ -42,7 +44,33 @@ export class EditarPetsComponent implements OnInit {
       sexo: [this.pet.sexo, [Validators.required]],
       porte: [this.pet.porte, [Validators.required]],
       cidade: [this.pet.cidade, [Validators.required]]
-    })
-  }
+    });
+  };
+
+  saveEdit(): void {
+    Swal.fire({
+      title: 'Salvando...',
+      allowOutsideClick: false,
+      didOpen: () => { Swal.showLoading() },
+    });
+
+    let ong = sessionStorage.getItem('ong');
+    let newPet = this.petForm.value;
+
+    newPet.imagem = this.pet.imagem;
+    newPet.ong = ong;
+
+    this.homeService.editPet(this.pet.id, newPet).then(res => {
+      Swal.close();
+      Swal.fire({
+        title: 'Edição realizada com sucesso!',
+        icon: 'success',
+        showConfirmButton: false,
+        timer: 1500
+      }).then(value => {
+        this.dialog.closeAll();
+      });
+    });
+  };
 
 }

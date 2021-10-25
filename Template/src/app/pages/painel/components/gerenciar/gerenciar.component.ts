@@ -60,8 +60,8 @@ export class GerenciarComponent implements OnInit {
         dataInfo: pet
       },
       height: '500px',
-      width: '500px',
-      panelClass: 'info-notify'
+      width: '450px',
+      panelClass: 'edit-notify'
     });
   };
 

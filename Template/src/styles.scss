@@ -70,3 +70,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   border-radius: 5px;
   padding: 0px !important;
 }
+
+.edit-notify .mat-dialog-container {
+  background-color: #ffdcdc;
+  padding: 0 !important;
+  border: 2px solid #780000;
+  border-radius: 5px;
+}
