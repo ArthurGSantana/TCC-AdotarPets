@@ -151,3 +151,60 @@ section {
     }
   }
 }
+
+
+@media (max-width: 750px) {
+  .nav-list {
+    span {
+      font-size: .7rem;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-list {
+    z-index: 500;
+    flex-wrap: wrap;
+
+    a {
+      background: $primary-color !important;
+      margin-top: -1px;
+    }
+  }
+
+  .toolbar {
+    .btn-menu {
+      width: 40px;
+      min-width: 0px;
+
+      i {
+        font-size: 1.8rem !important;
+        margin-left: 0px !important;
+      }
+    }
+
+    a {
+      div {
+        span {
+          font-size: 1.3rem !important;
+        }
+
+        i {
+          font-size: 2rem !important;
+        }
+      }
+    }
+
+    .login {
+      width: 40px !important;
+      min-width: 0px !important;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      span {
+        display: none;
+      }
+    }
+  }
+}

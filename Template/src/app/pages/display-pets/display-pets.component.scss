@@ -156,3 +156,10 @@ section {
     }
   }
 }
+
+
+@media (max-width: 730px) {
+  .section {
+    flex-direction: column !important;
+  }
+}

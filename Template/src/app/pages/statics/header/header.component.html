@@ -1,5 +1,5 @@
 <mat-toolbar class="toolbar d-flex">
-  <button mat-button (click)="ativaSidenav()">
+  <button mat-button (click)="ativaSidenav()" class="btn-menu">
     <i class="material-icons menu"> menu </i>
   </button>
 
@@ -12,11 +12,11 @@
   </a>
   <button mat-stroked-button class="login" routerLink="/login" *ngIf="!userOn">
     <i class="material-icons"> exit_to_app </i>
-    Login
+    <span>Login</span>
   </button>
   <button mat-stroked-button class="login" routerLink="/painel/informacoes-gerais" *ngIf="userOn">
     <i class="material-icons"> exit_to_app </i>
-    Painel
+    <span>Painel</span>
   </button>
 </mat-toolbar>
 
