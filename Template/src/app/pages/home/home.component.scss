@@ -83,6 +83,13 @@ $button-color: #c1121f;
       width: 480px;
     }
   }
+
+  @media (max-width: 450px){
+
+    .mat-card {
+      width: 340px !important;
+    }
+  }
 }
 
 .body2 {
@@ -197,5 +204,11 @@ $button-color: #c1121f;
   color: $primary-color;
 }
 
-
+@media (max-width: 450px) {
+  .f-2, .f-1 {
+    span {
+      font-size: .8rem;
+    }
+  }
+}
 

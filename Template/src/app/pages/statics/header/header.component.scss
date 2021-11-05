@@ -205,6 +205,14 @@ section {
       span {
         display: none;
       }
+
+      i {
+        margin-left: 0px !important;
+      }
     }
   }
+}
+
+.section-fade {
+  z-index: 500;
 }

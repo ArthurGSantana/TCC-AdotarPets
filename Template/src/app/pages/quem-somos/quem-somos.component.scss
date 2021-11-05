@@ -58,7 +58,18 @@ body{
       }
     }
   }
+}
 
+@media (max-width: 450px) {
 
+  .img {
+    display: none !important;
+  }
 
+  .card {
+    width: 330px !important;
+    height: 390px !important;
+    margin-top: 0px !important;
+    margin-left: 0px !important;
+  }
 }
