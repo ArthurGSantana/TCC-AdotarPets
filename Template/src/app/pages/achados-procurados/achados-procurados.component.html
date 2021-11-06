@@ -15,8 +15,9 @@
             <mat-step [stepControl]="petForm">
               <form [formGroup]="petForm">
                 <ng-template matStepLabel>Informações sobre o pet</ng-template>
+                <div class="title-info"><span>Informações do Pet</span></div>
                 <div class="div-container primeira-div">
-                  <mat-form-field appearance="outline" class="form-field" >
+                  <mat-form-field appearance="outline" class="form-field">
                     <mat-label>Espécie</mat-label>
                     <mat-select  name="food" formControlName="especie" >
                       <mat-option *ngFor="let especie of especies" [value]="especie">
@@ -87,6 +88,7 @@
             <mat-step [stepControl]="clientForm">
               <form [formGroup]="clientForm">
                 <ng-template matStepLabel>Informações sobre você</ng-template>
+                <div class="title-info" style="margin-bottom: 10px;"><span>Informações sobre você</span></div>
                 <div class=" div-client">
                   <div class="div-interior">
                     <i class="material-icons">account_box</i>

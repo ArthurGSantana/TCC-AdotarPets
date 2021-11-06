@@ -62,6 +62,10 @@ $button-color: #c1121f;
   }
 }
 
+.pq {
+  margin-left: 28px;
+}
+
 section {
   z-index: 100;
   width: 100%;
@@ -215,4 +219,10 @@ section {
 
 .section-fade {
   z-index: 500;
+}
+
+@media (max-width: 450px) {
+  .pq {
+    margin-left: 0px !important;
+  }
 }

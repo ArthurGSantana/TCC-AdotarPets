@@ -13,3 +13,9 @@ $button-color: #c1121f;
     color: $primary-color;
   }
 }
+
+@media (max-width: 450px) {
+  .container {
+    width: 250px !important;
+  }
+}

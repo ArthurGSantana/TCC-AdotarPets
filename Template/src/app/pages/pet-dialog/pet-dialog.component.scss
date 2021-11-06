@@ -173,3 +173,48 @@ hr{
     margin-top: 20px;
   }
 }
+
+@media (max-width: 450px) {
+  .ctn-button {
+    position: relative;
+    margin-bottom: -45px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    button {
+      width: 200px;
+      margin-left: 0px;
+
+    }
+  }
+
+  .close {
+    right: 0;
+    margin-right: 20px;
+    margin-top: -20px;
+    z-index: 200;
+    margin-left: 0px !important;
+  }
+
+  .info-ctn {
+    margin-left: 0px !important;
+  }
+
+  hr {
+    margin-top: 0px !important;
+  }
+
+  .card {
+    height: 130px !important;
+  }
+
+  .container {
+    flex-direction: column;
+  }
+
+  .div-ctn {
+    width: 100% !important;
+    height: 220px !important;
+  }
+}
