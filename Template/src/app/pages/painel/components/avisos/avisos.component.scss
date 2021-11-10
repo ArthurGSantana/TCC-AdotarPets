@@ -1,6 +1,10 @@
 $primary-color: #780000;
 $secundary-color: #fdf0d5;
 
+.eyes {
+  display: none;
+}
+
 section {
   width: 100%;
   display: flex;
@@ -92,12 +96,15 @@ section {
 
     button {
       background-color: $primary-color;
-      color: $secundary-color;
       width: 100px;
       height: 30px;
       display: flex;
       justify-content: center;
       align-items: center;
+
+      span {
+        color: $secundary-color;
+      }
     }
   }
 
@@ -110,4 +117,33 @@ section {
   color: $primary-color !important;
   font-weight: bold;
   font-family: 'Libre Baskerville', serif;
+}
+
+@media (max-width: 450px) {
+  .ctn-span {
+    width: 60% !important;
+
+    .notify {
+      font-size: 1rem !important;
+    }
+  }
+
+  mat-card {
+    width: 95% !important;
+  }
+
+  .show {
+    display: none !important;
+  }
+
+  .eyes {
+    display: block !important;
+    color: $secundary-color;
+    font-size: 1.4rem;
+  }
+
+  .plus {
+    min-width: 0px !important;
+    width: 40px !important;
+  }
 }

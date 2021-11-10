@@ -285,3 +285,44 @@ section {
 
   }
 }
+
+
+@media (max-width: 450px) {
+  .title-top {
+    span {
+      font-size: 1.1rem !important;
+    }
+  }
+
+  .mid {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  .ctn-1 {
+    width: 90% !important;
+  }
+
+  .ctn-2 {
+    width: 90% !important;
+  }
+
+  .footer-low {
+    width: 70% !important;
+  }
+
+  .whats, .close, .del {
+    min-width: 0px !important;
+    width: 50px !important;
+    justify-content: center !important;
+    margin-right: 5px !important;
+  }
+
+  .show {
+    display: none !important;
+  }
+
+  .info-infra {
+    font-size: .8rem !important;
+  }
+}

@@ -73,3 +73,9 @@ section {
     }
   }
 }
+
+@media (max-width: 450px) {
+  .edit, .back {
+    width: 100px !important;
+  }
+}

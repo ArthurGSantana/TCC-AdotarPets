@@ -189,3 +189,43 @@ section {
   }
 }
 
+@media (max-width: 450px) {
+  .container {
+    flex-direction: column !important;
+    margin-top: 10px !important;
+
+    .pet {
+      width: 250px !important;
+      margin-bottom: 45px;
+    }
+
+    .image {
+      width: 250px !important;
+      height: 250px !important;
+      margin-bottom: 45px;
+    }
+
+    .user {
+      width: 250px !important;
+    }
+  }
+
+  .footer-infra {
+    height: 60px !important;
+    align-items: center !important;
+
+    .footer-low {
+      width: 70% !important;
+
+      .whats, .close, .del {
+        min-width: 0px !important;
+        width: 50px !important;
+        justify-content: center !important;
+      }
+    }
+  }
+
+  .show {
+    display: none !important;
+  }
+}
