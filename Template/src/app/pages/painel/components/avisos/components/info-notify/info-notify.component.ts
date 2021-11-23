@@ -20,7 +20,6 @@ export class InfoNotifyComponent implements OnInit {
 
   ngOnInit() {
     this.ong = sessionStorage.getItem('ong');
-    console.log(this.data)
   }
 
   deleteNotify(): void {

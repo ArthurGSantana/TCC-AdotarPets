@@ -27,7 +27,6 @@ export class ProcuraComponent implements OnInit {
     this.imageFiles = this.data.dataInfo.pet.files;
     this.imageNow = this.imageFiles[this.controler];
     this.ong = sessionStorage.getItem('ong');
-    //console.log(this.ong)
   }
 
   carrousel(type: string): void {
