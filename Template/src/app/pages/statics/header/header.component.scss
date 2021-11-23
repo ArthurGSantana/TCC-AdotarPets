@@ -62,6 +62,10 @@ $button-color: #c1121f;
   }
 }
 
+.pq {
+  margin-left: 28px;
+}
+
 section {
   z-index: 100;
   width: 100%;
@@ -149,5 +153,76 @@ section {
       color: $secundary-color;
       font-weight: bold;
     }
+  }
+}
+
+
+@media (max-width: 750px) {
+  .nav-list {
+    span {
+      font-size: .7rem;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-list {
+    z-index: 500;
+    flex-wrap: wrap;
+
+    a {
+      background: $primary-color !important;
+      margin-top: -1px;
+    }
+  }
+
+  .toolbar {
+    .btn-menu {
+      width: 40px;
+      min-width: 0px;
+
+      i {
+        font-size: 1.8rem !important;
+        margin-left: 0px !important;
+      }
+    }
+
+    a {
+      div {
+        span {
+          font-size: 1.3rem !important;
+        }
+
+        i {
+          font-size: 2rem !important;
+        }
+      }
+    }
+
+    .login {
+      width: 40px !important;
+      min-width: 0px !important;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      span {
+        display: none;
+      }
+
+      i {
+        margin-left: 0px !important;
+      }
+    }
+  }
+}
+
+.section-fade {
+  z-index: 500;
+}
+
+@media (max-width: 450px) {
+  .pq {
+    margin-left: 0px !important;
   }
 }

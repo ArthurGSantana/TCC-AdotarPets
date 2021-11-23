@@ -15,7 +15,7 @@ body {
     .card {
       margin-top: 10px;
       width: 70%;
-      height: 520px;
+      height: 535px;
       border: 2px solid $primary-color;
       border-radius: 15px;
       background-color: $secundary-color;
@@ -313,14 +313,91 @@ body {
   }
 }
 
-/* @media (max-width: 1350px) {
-  .icon-fab {
-    display: none;
+.title-info {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  span {
+    font-size: .9rem;
+    color: gray;
+    font-weight: bold;
   }
-} */
+}
 
 
 ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
   color: $primary-color;
 };
 
+@media (max-width: 450px) {
+  .card-container {
+    .card {
+      width: 95% !important;
+      margin-top: 30px !important;
+
+      .header {
+        i {
+          font-size: 3rem !important;
+        }
+      }
+    }
+
+    .title {
+      font-size: 1.3rem !important;
+    }
+
+    ::ng-deep .mat-horizontal-content-container {
+      padding: 0px !important;
+    }
+  }
+
+  .images {
+    position: relative !important;
+    height: 50px !important;
+    margin-left: 10px !important;
+  }
+
+  .img-container {
+    display: block !important;
+    margin-left: 10px !important;
+
+    span {
+      display: none !important;
+    }
+  }
+
+  .next {
+    margin-right: 0px !important;
+    width: 80px !important;
+  }
+
+  .div-client {
+    flex-direction: column !important;
+    margin-top: 0px !important;
+  }
+
+  .steper {
+    .buttons {
+      margin-top: 50px !important;
+      display: flex;
+      justify-content: space-evenly !important;
+      width: 100% !important;
+    }
+  }
+
+  .card-finish {
+    width: 95% !important;
+    height: 280px !important;
+  }
+
+  .button-div {
+    width: 95% !important;
+  }
+
+  .anterior {
+    margin-left: 0px !important;
+    margin-top: 20px !important;
+  }
+}

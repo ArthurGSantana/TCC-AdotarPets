@@ -70,3 +70,21 @@ body {
   }
 
 }
+
+@media (max-width: 450px) {
+
+  .card-container {
+    background-image: url('../../../assets/fundo-patinha.png');
+    height: auto !important;
+    flex-direction: column !important;
+    
+    .card {
+      height: 300px !important;
+      width: 200px !important;
+    }
+
+    i {
+      display: none !important;
+    }
+  }
+}

@@ -67,7 +67,7 @@ export class HomeComponent implements OnInit {
       this.guardPets = res;
       Swal.close();
     }, error => {
-      console.log(error);
+      //console.log(error);
     });
   };
 
@@ -97,7 +97,6 @@ export class HomeComponent implements OnInit {
         if(petAux.length > 1 && index > 0) {
           this.allPets = this.petsFilter;
           this.petsFilter = [];
-          console.log(this.allPets)
         }
         this.allPets.forEach(pet => {
           let objValues = Object.values(pet);

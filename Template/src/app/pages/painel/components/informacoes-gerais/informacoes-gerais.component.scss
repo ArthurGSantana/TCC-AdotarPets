@@ -74,3 +74,38 @@ $secundary-color: #fdf0d5;
   }
 }
 
+@media (max-width: 450px) {
+  .card-container {
+
+    .card {
+      width: 95% !important;
+      height: 400px !important;
+      flex-direction: column !important;
+  
+      ::ng-deep .chartjs-render-monitor {
+        width: 300px !important;
+        height: 150px !important;
+        margin-left: 0px !important;
+      }
+  
+      .chart {
+        width: 100% !important;
+      }
+
+      .info-box {
+        margin-top: 10px !important;
+        width: 100% !important;
+        border-left: 2px solid $primary-color;
+
+        .ong {
+          margin-top: 5px !important;
+        }
+
+        hr {
+          margin: 5px !important;
+        }
+      }
+    }
+  }
+}
+

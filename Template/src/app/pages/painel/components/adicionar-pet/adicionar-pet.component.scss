@@ -105,3 +105,51 @@ $secundary-color: #fdf0d5;
 ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
   color: #780000 !important;
 }
+
+
+@media (max-width: 450px) {
+  .card {
+    width: 95% !important;
+    overflow-y: auto !important;
+
+    .title  {
+      font-size: 1.2rem !important;
+    }
+
+    .content {
+      flex-direction: column-reverse !important;
+
+      .seletores {
+        width: 100% !important;
+
+        .mat-form {
+          width: 130px !important;
+          height: 55px !important;
+        }
+      }
+
+      .preview {
+        width: 100% !important;
+        height: 250px !important;
+
+        div {
+          width: 250px !important;
+          height: 200px !important;
+        }
+
+        button {
+          width: 250px !important;
+        }
+      }
+    }
+
+    .footer {
+      margin-top: 20px !important;
+      margin-bottom: 15px !important;
+
+      button {
+        width: 150px !important;
+      }
+    }
+  }
+}

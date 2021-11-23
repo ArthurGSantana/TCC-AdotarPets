@@ -138,3 +138,9 @@ $secundary-color: #fdf0d5;
     }
   }
 }
+
+@media (max-width: 450px) {
+  .card-pet {
+    width: 300px !important;
+  }
+}
