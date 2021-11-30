@@ -51,6 +51,7 @@ export class PetDialogComponent implements OnInit {
           didOpen: () => { Swal.showLoading() },
         });
         let values = this.clientForm.value;
+        values.phone = `+55${values.phone}`;
         let ong = this.data.pet.ong
         this.homeService.createNotification(values, ong);
         Swal.close();
