@@ -50,7 +50,10 @@ export class GerenciarComponent implements OnInit {
         };
       });
 
-      Swal.close();
+      setTimeout(() => {
+        Swal.close();
+        
+      }, 500);
     });
   };
 

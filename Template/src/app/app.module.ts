@@ -24,6 +24,8 @@ import { MatRippleModule } from '@angular/material/core';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatBadgeModule } from '@angular/material/badge';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+
 
 //PrimeNg
 import { ButtonModule } from 'primeng/button';
@@ -121,6 +123,7 @@ registerLocaleData(en);
     MatDividerModule,
     MatTabsModule,
     MatBadgeModule,
+    MatProgressSpinnerModule,
     SweetAlert2Module.forRoot()
   ],
   providers: [],

@@ -91,6 +91,9 @@
       </span>
     </div>
   </div>
+  <div *ngIf="allPets.length < 1" style="width: 100%; display: flex; justify-content: center; align-items: center; height: 100%; margin-top: 30px;">
+    <mat-spinner diameter="40"></mat-spinner>
+  </div>
   <app-display-pets [petsAll]="allPets"></app-display-pets>
 
   <section class="footer">

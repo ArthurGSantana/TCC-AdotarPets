@@ -7,6 +7,9 @@
     </div>
 
     <div class="content">
+      <div *ngIf="allPets.length < 1" style="width: 100%; display: flex; justify-content: center; align-items: center; height: 100%; margin-top: 30px;">
+        <mat-spinner diameter="40"></mat-spinner>
+      </div>
       <mat-card class="card-pet" *ngFor="let pet of allPets">
         <div class="img-ctn">
           <div class="img">

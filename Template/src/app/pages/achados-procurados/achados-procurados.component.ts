@@ -116,6 +116,8 @@ export class AchadosProcuradosComponent implements OnInit, OnDestroy {
       type: this.info,
       ativo: 1
     };
+
+    sendForm.user.telefone = `+55${sendForm.user.telefone}`;
     
     this.users.forEach((item, index, array)=> {
       this.homeServ.createNotification(sendForm, item);

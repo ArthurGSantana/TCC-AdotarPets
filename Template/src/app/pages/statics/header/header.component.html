@@ -31,11 +31,11 @@
       <span>Quem somos?</span>
     </a>
 
-    <a mat-list-item class="list-item" [routerLink]="['/achados-perdidos/perdido']">
+    <a mat-list-item class="list-item" [routerLink]="['/achados-perdidos/perdido']" (click)="invert()">
       <span>Perdi meu Pet!</span>
     </a>
 
-    <a mat-list-item class="list-item" [routerLink]="['/achados-perdidos/achado']">
+    <a mat-list-item class="list-item" [routerLink]="['/achados-perdidos/achado']" (click)="invert()">
       <span>Achei um Pet!</span>
     </a>
 

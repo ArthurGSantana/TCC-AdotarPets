@@ -68,7 +68,7 @@ $button-color: #c1121ea6;
   .card {
     background-color: $secundary-color;
     width: 100%;
-    height: 100px;
+    height: 110px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -117,7 +117,7 @@ hr{
   border: 2px solid $primary-color;
   border-radius: 10px;
   margin-left: 10px;
-  height: 432px;
+  height: 442px;
   background-color: #ffffffd4;
 
   .title-div {
@@ -208,7 +208,7 @@ hr{
   }
 
   .card {
-    height: 130px !important;
+    height: 145px !important;
   }
 
   .container {
