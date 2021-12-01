@@ -12,7 +12,8 @@
         <section class="cima">
           <div class="cima-div">
             <span class="dianho">{{pet.idade}}</span>
-            <span>Anos</span>
+            <span *ngIf="pet.idade !== 1">Anos</span>
+            <span *ngIf="pet.idade === 1">Ano</span>
           </div>
           <div class="cima-div">
             <span class="dianho">{{pet.porte === 'Grande' && 'G' ||
