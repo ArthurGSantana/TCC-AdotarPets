@@ -24,6 +24,11 @@ export class GerenciarComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    Swal.fire({
+      title: 'Buscando Pets...',
+      allowOutsideClick: false,
+      didOpen: () => { Swal.showLoading() },
+    });
     this.getAllPets();
     this.ong = sessionStorage.getItem('ong')
 
@@ -33,11 +38,6 @@ export class GerenciarComponent implements OnInit {
   }
 
   getAllPets(): void {
-    Swal.fire({
-      title: 'Buscando Pets...',
-      allowOutsideClick: false,
-      didOpen: () => { Swal.showLoading() },
-    });
 
     this.homeService.getAllPetsPainel().subscribe(res => {
       this.allPets = [];
@@ -53,7 +53,7 @@ export class GerenciarComponent implements OnInit {
       setTimeout(() => {
         Swal.close();
         
-      }, 500);
+      }, 1500);
     });
   };
 
@@ -86,9 +86,10 @@ export class GerenciarComponent implements OnInit {
             icon: 'success',
             showConfirmButton: false,
             timer: 1500
+          }).then(value => {
+            this.updateOng('adotado');
           });
         });
-        this.updateOng('adotado');
       };
     });
   };
@@ -111,9 +112,10 @@ export class GerenciarComponent implements OnInit {
             icon: 'success',
             showConfirmButton: false,
             timer: 1500
+          }).then(value => {
+            this.updateOng('excluido');
           });
         });
-        this.updateOng('excluido');
       };
     });
   };

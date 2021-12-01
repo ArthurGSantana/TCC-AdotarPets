@@ -92,16 +92,15 @@ export class AdicionarPetComponent implements OnInit {
       }).then((result) => {
         if (result.isConfirmed) {
           this.homeService.createNewPet(this.pet);
-          this.updateOng();
-          this.clearFields();
-          setTimeout(() => {
-            Swal.fire({
-              icon: 'success',
-              title: 'Seu novo Pet foi adicionado!',
-              showConfirmButton: false,
-              timer: 1500
-            });
-          }, 150);
+          Swal.fire({
+            icon: 'success',
+            title: 'Seu novo Pet foi adicionado!',
+            showConfirmButton: false,
+            timer: 1500
+          }).then(value => {
+            this.updateOng();
+            this.clearFields();
+          })
         };
       });
 

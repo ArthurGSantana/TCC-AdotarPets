@@ -65,7 +65,10 @@ export class HomeComponent implements OnInit {
     this.homeServ.getAllPets().subscribe(res => {
       this.allPets = res;
       this.guardPets = res;
-      Swal.close();
+      setTimeout(() => {
+        Swal.close();
+        
+      }, 1000);
     }, error => {
       //console.log(error);
     });
